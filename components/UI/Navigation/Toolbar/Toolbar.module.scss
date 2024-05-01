@@ -1,0 +1,24 @@
+@import "../../../../styles/abstracts/variables.scss";
+
+.Toolbar {
+  background-color: $color-primary;
+
+  &__Inner {
+    height: 16.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__Brand {
+      height: 80%;
+      display: flex;
+      align-items: center;
+
+      &__Logo {
+        height: 100%;
+        width: 12rem;
+        position: relative;
+      }
+    }
+  }
+}
