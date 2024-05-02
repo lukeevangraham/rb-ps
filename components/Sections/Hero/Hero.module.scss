@@ -1,0 +1,49 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.Hero {
+  position: relative;
+  height: 60vh;
+  background-image: linear-gradient(
+    to bottom right,
+    $color-secondary,
+    $color-secondary
+  );
+
+  &__Text {
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    transform: translateY(-50%);
+    font-size: 4.778rem;
+    // width: 43%;
+    // background-image: linear-gradient(
+    //   to right,
+    //   $color-secondary,
+    //   rgba($color-ternary, 1) 90%,
+    //   rgba($color-ternary, 0) 100%
+    // );
+    z-index: 1;
+    // margin-left: 2%;
+    padding-left: 4rem;
+    // height: 100%;
+    // display: flex;
+    // align-items: center;
+  }
+
+  &__MainImage {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    height: 85%;
+    width: 60%;
+    object-fit: cover;
+    margin: 0 4rem;
+
+    img {
+      z-index: 0;
+      object-fit: cover;
+      clip-path: url("#blob3");
+    }
+  }
+}
