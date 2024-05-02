@@ -2,13 +2,14 @@
 $color-primary: #2c854f;
 $color-primary-light: lighten($color-primary, 80);
 
-$color-secondary: #ABEBC5;
+$color-secondary: #abebc5;
 
-$color-ternary: #DEFFEB;
+$color-ternary: #deffeb;
 
-$color-quaternary: #2B523B;
+$color-quaternary: #2b523b;
+$color-quaternary-dark: darken($color-quaternary, 10);
 
-$color-quinary: #ABFFCD;
+$color-quinary: #abffcd;
 
 $color-grey-light-1: rgb(235, 235, 235);
 $color-grey-dark: #383838;

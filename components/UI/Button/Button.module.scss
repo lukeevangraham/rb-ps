@@ -1,0 +1,20 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.Button {
+  background-color: $color-quaternary;
+  padding: 1rem 3rem;
+  border-radius: 1.1rem;
+  color: $color-white !important;
+  transition: all 0.3s;
+  font-size: 2rem;
+  font-weight: 400;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-quaternary-dark;
+  }
+
+  &:active {
+    transform: translateY(0.4rem);
+  }
+}

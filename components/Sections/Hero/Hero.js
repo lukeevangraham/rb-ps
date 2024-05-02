@@ -1,12 +1,18 @@
 import Image from "next/image";
+import Button from "@/components/UI/Button/Button";
 
 import classes from "./Hero.module.scss";
 
 const Hero = ({ data }) => (
   <section className={classes.Hero}>
-    {console.log("Data", data.mainImage.data.attributes)}
+    {console.log("Data", data.Button)}
     <div className={classes.Hero__Text}>
-      <div>{data.headline}</div>
+      <div className={classes.Hero__Text__Headline}>{data.headline}</div>
+      <div className={classes.Hero__Text__Subheading}>{data.subheading}</div>
+
+      {data.Button
+        ? data.Button.map((button) => <Button button={button} />)
+        : null}
     </div>
     <div className={classes.Hero__MainImage}>
       <Image
@@ -16,16 +22,17 @@ const Hero = ({ data }) => (
         priority
       />
     </div>
-    <svg viewBox="0 0 390.3 414.4" width="0" height="0">
+
+    <svg viewBox="0 0 398.6 435.4" width="0" height="0">
       <clipPath
-        id="blob3"
+        id="blob1"
         clipPathUnits="objectBoundingBox"
-        transform="scale(0.002562, 0.002413)"
+        transform="scale(0.002508, 0.002296)"
       >
         <path
-          d="M276.8,56.9c23.5,25.9,33.9,61.3,53.7,95.3c19.8,33.9,49,66.4,57.3,104.6c8.2,38.2-4.5,82.3-35.2,102.2
-	c-30.6,20-79.2,15.8-121.3,23.7c-42.1,7.8-77.8,27.6-118.6,31.1c-40.9,3.5-86.9-9.3-99.3-41.4c-12.3-32.1,8.9-83.4,8.9-127.5
-	c0-44.2-21.1-81.2-22.3-121.6C-1.1,82.9,17.9,39,51.2,17.6C84.6-3.9,132.3-2.9,174.5,5.8S253.3,30.9,276.8,56.9z"
+          d="M332.3,48.8c32.6,18.1,58.5,49.4,64.7,83.7c6.3,34.3-7.1,71.5-15.8,107.1c-8.6,35.7-12.6,69.7-26,108.4
+		c-13.5,38.6-36.5,81.9-68,86.9c-31.4,5-71.5-28.3-117.1-41.8c-45.7-13.6-97.1-7.5-123.9-28.3c-26.7-20.8-28.9-68.5-35-115.4
+		c-6.2-46.8-16.4-92.6-8-138c8.3-45.3,35.3-90,74.7-105s91.3-0.3,136.9,9.6C260.4,25.8,299.7,30.6,332.3,48.8z"
         />
       </clipPath>
     </svg>

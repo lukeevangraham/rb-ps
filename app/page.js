@@ -6,7 +6,9 @@ import Sections from "@/components/Sections/Sections";
 const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
-    fetchAPI(`/ps-home?populate[Sections][populate]=*`),
+    fetchAPI(`/ps-home?populate[Sections][populate]=*`, {
+      next: { revalidate: 60 },
+    }),
   ]);
 
   return res;
@@ -20,10 +22,14 @@ export default async function Home() {
   return (
     <Layout global={globalData.data.attributes}>
       <main>
-        {/* <p>Hello world, testing</p> */}
         {homeData.data.attributes.Sections.map((section, index) => (
           <Sections sectionData={section} key={index} />
         ))}
+        <div
+          style={{ backgroundColor: "#2B523B", height: "50rem", color: "#eee" }}
+        >
+          lorem ipsum
+        </div>
       </main>
     </Layout>
   );

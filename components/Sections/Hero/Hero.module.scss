@@ -2,32 +2,28 @@
 
 .Hero {
   position: relative;
-  height: 60vh;
+  height: 70vh;
   background-image: linear-gradient(
     to bottom right,
-    $color-secondary,
-    $color-secondary
+    $color-ternary,
+    $color-ternary
   );
 
   &__Text {
     position: absolute;
     top: 50%;
-    width: 30%;
+    width: 47%;
     transform: translateY(-50%);
     font-size: 4.778rem;
-    // width: 43%;
-    // background-image: linear-gradient(
-    //   to right,
-    //   $color-secondary,
-    //   rgba($color-ternary, 1) 90%,
-    //   rgba($color-ternary, 0) 100%
-    // );
+    font-weight: 300;
     z-index: 1;
-    // margin-left: 2%;
-    padding-left: 4rem;
-    // height: 100%;
-    // display: flex;
-    // align-items: center;
+    padding-left: 6rem;
+
+    &__Subheading {
+      margin-top: 1.5rem;
+      font-size: 2.765rem;
+      font-weight: 400;
+    }
   }
 
   &__MainImage {
@@ -35,15 +31,16 @@
     top: 50%;
     transform: translateY(-50%);
     right: 0;
-    height: 85%;
-    width: 60%;
+    height: 80%;
+    width: 45%;
     object-fit: cover;
-    margin: 0 4rem;
+    margin-right: 6rem;
+    filter: drop-shadow(0 0 9px rgba($color-black, 0.4));
 
     img {
       z-index: 0;
       object-fit: cover;
-      clip-path: url("#blob3");
+      clip-path: url("#blob1");
     }
   }
 }
