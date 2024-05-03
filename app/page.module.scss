@@ -1,0 +1,8 @@
+@import "../styles/abstracts/variables.scss";
+
+.Home {
+  section:nth-child(2) {
+    background-color: $color-quaternary;
+    color: $color-white;
+  }
+}

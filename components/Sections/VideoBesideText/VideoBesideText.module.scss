@@ -1,0 +1,33 @@
+.VideoBesideText {
+  width: 100%;
+  gap: 2rem;
+  padding: 10rem 0;
+  display: flex;
+  align-items: center;
+  // grid-template-columns: 50% 50%;
+
+  &__Video {
+    // grid-column: 1/2;
+    flex: 0 1 40%;
+
+    &__Frame {
+      position: relative;
+      height: 33rem;
+      video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  &__Text {
+    flex: 0 1 60%;
+    // grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

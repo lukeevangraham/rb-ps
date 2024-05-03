@@ -5,7 +5,7 @@ import classes from "./Hero.module.scss";
 
 const Hero = ({ data }) => (
   <section className={classes.Hero}>
-    {console.log("Data", data.Button)}
+    {/* {console.log("Data", data.Button)} */}
     <div className={classes.Hero__Text}>
       <div className={classes.Hero__Text__Headline}>{data.headline}</div>
       <div className={classes.Hero__Text__Subheading}>{data.subheading}</div>

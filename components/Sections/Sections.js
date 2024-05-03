@@ -1,20 +1,25 @@
 import Hero from "./Hero/Hero";
+import ImageBesideText from "./ImageBesideText/ImageBesideText";
+import VideoBesideText from "./VideoBesideText/VideoBesideText";
+import HeadingAboveColumns from "./HeadingAboveColumns/HeadingAboveColumns";
 
 const sectionComponents = {
-    "section.hero": Hero
-}
+  "section.hero": Hero,
+  "section.image-beside-text": ImageBesideText,
+  "section.video-beside-text": VideoBesideText,
+  "section.heading-above-columns": HeadingAboveColumns
+};
 
 // DISPLAY A SECTION INDIVIDUALLY
 const Sections = ({ sectionData }) => {
+  const SectionComponent = sectionComponents[sectionData.__component];
 
-    const SectionComponent = sectionComponents[sectionData.__component];
+  if (!SectionComponent) {
+    return null;
+  }
 
-    if (!SectionComponent) {
-        return null
-    }
-
-    // DISPLAY THE SECTION
-    return <SectionComponent data={sectionData} />
-}
+  // DISPLAY THE SECTION
+  return <SectionComponent data={sectionData} />;
+};
 
 export default Sections;

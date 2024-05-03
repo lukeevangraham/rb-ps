@@ -6,24 +6,27 @@ body {
 
 p {
   font-size: $default-font-size;
-  line-height: 2.15;
+  line-height: 1.9;
   margin-bottom: 2.4rem;
 }
 
 h1 {
-  font-size: 3.052rem;
+  font-size: 5.375rem;
 }
 
 h2 {
-  font-size: 2.441rem;
-  text-transform: uppercase;
+  font-size: 4.4791rem;
+  margin-bottom: 3rem;
+  // text-transform: uppercase;
 }
 
 h3 {
-  font-size: 1.953rem;
+  font-size: 3.732rem;
 }
 
 h4 {
-  font-size: 1.563rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.592rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 2rem;
 }

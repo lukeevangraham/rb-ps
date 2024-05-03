@@ -1,0 +1,16 @@
+.HeadingAboveColumns {
+  padding: 0 2%;
+  //   background-color: orangered;
+  text-align: center;
+
+  &__Columns {
+    // background-color: yellowgreen;
+    display: flex;
+    gap: 3rem;
+    text-align: left;
+
+    & > * {
+      flex: 1 1 0;
+    }
+  }
+}
