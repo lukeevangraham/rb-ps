@@ -8,15 +8,26 @@ import classes from "./page.module.scss";
 
 const homeDataQuery = qs.stringify({
   populate: {
-    Sections: { populate: "*" }
-  }
-})
+    Sections: {
+      on: {
+        "section.heading-above-columns": {
+          populate: { Column: { populate: "*" } },
+        },
+        "section.video-beside-text": { populate: "*" },
+        "section.hero": { populate: "*" },
+      },
+    },
+  },
+  // populate: {
+  //   Sections: { populate: "*" },
+  // },
+});
 
 const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
-    // fetchAPI(`/ps-home?populate[Sections][populate]=*`, {
-    fetchAPI(`/ps-home?populate[Sections][populate]=*`, {
+    fetchAPI(`/ps-home?${homeDataQuery}`, {
+      // fetchAPI(`/ps-home?populate[Sections][populate]=*`, {
       next: { revalidate: 0 },
     }),
   ]);

@@ -1,16 +1,33 @@
+@import "../../../styles/abstracts/variables.scss";
+
 .HeadingAboveColumns {
   padding: 0 2%;
-  //   background-color: orangered;
   text-align: center;
 
   &__Columns {
-    // background-color: yellowgreen;
     display: flex;
     gap: 3rem;
     text-align: left;
 
-    & > * {
+    &__Column {
       flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba($color-primary-dark, .1);
+      padding: 2rem 1rem;
+      border-radius: 1rem;
+
+      &__Image {
+        width: 5rem;
+        height: 5rem;
+        position: relative;
+        margin-bottom: .5rem;
+      }
+
+      &__Text {
+        text-align: center;
+      }
     }
   }
 }

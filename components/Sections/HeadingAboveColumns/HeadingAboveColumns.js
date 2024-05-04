@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import classes from "./HeadingAboveColumns.module.scss";
 
 const HeadingAboveColumns = ({ data }) => (
@@ -5,9 +7,22 @@ const HeadingAboveColumns = ({ data }) => (
     <div className={classes.HeadingAboveColumns}>
       <h2>{data.Heading}</h2>
       <div className={classes.HeadingAboveColumns__Columns}>
-        {console.log("D: ", data)}
         {data.Column.map((column) => (
-          <div dangerouslySetInnerHTML={{ __html: column.Text }} />
+          <div className={classes.HeadingAboveColumns__Columns__Column}>
+            <div
+              className={classes.HeadingAboveColumns__Columns__Column__Image}
+            >
+              <Image
+                src={column.Image.data.attributes.url}
+                alt={column.Image.data.attributes.alternativeText}
+                fill
+              />
+            </div>
+            <div
+              dangerouslySetInnerHTML={{ __html: column.Text }}
+              className={classes.HeadingAboveColumns__Columns__Column__Text}
+            />
+          </div>
         ))}
       </div>
     </div>
