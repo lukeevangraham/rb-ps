@@ -15,6 +15,7 @@ const homeDataQuery = qs.stringify({
         },
         "section.video-beside-text": { populate: "*" },
         "section.hero": { populate: "*" },
+        "section.testimonies": { populate: { Testimony: { populate: "*" } } },
       },
     },
   },

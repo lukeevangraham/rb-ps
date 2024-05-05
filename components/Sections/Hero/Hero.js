@@ -11,7 +11,9 @@ const Hero = ({ data }) => (
       <div className={classes.Hero__Text__Subheading}>{data.subheading}</div>
 
       {data.Button
-        ? data.Button.map((button) => <Button button={button} />)
+        ? data.Button.map((button) => (
+            <Button button={button} key={button.id} />
+          ))
         : null}
     </div>
     <div className={classes.Hero__MainImage}>

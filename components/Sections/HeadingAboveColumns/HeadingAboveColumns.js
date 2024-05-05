@@ -8,7 +8,10 @@ const HeadingAboveColumns = ({ data }) => (
       <h2>{data.Heading}</h2>
       <div className={classes.HeadingAboveColumns__Columns}>
         {data.Column.map((column) => (
-          <div className={classes.HeadingAboveColumns__Columns__Column}>
+          <div
+            className={classes.HeadingAboveColumns__Columns__Column}
+            key={column.id}
+          >
             <div
               className={classes.HeadingAboveColumns__Columns__Column__Image}
             >
