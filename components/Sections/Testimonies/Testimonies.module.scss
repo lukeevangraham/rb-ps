@@ -4,10 +4,11 @@
   h2 {
     text-align: center;
     color: $color-white;
+    margin-bottom: 5rem;
   }
   &__Group {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(13, 1fr);
     gap: 2rem;
 
     div {
@@ -18,7 +19,7 @@
         grid-column: 4 / 11;
       }
       &:nth-child(3) {
-        grid-column: 6 / 13;
+        grid-column: 7 / 14;
       }
     }
     &__Testimony {
