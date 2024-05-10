@@ -1,23 +1,32 @@
-import Image from "next/image";
+import classes from "./HeadingAboveCards.module.scss";
 
-import classes from "./Testimonies.module.scss";
-
-const Testimonies = ({ data }) => (
+const HeadingAboveCards = ({ data }) => (
   <section className="u-padding-y-large">
     <div className="row">
-      <div className={classes.Testimonies}>
+      <div className={classes.HeadingAboveCards}>
         <h2>{data.Heading}</h2>
-        <div className={classes.Testimonies__Group}>
+        <div className={classes.HeadingAboveCards__Group}>
           {data.Testimony.map((testimony) => (
             <div
               key={testimony.id}
-              className={classes.Testimonies__Group__Testimony}
+              className={classes.HeadingAboveCards__Group__Card}
             >
-              <div className={classes.Testimonies__Group__Testimony__Text}>
-                <p>{testimony.Statement}</p>
+              <p>{testimony.Statement}</p>
+              <div className={classes.HeadingAboveCards__Group__Card__Bottom}>
                 <div
                   className={
-                    classes.Testimonies__Group__Testimony__Text__Bottom
+                    classes.HeadingAboveCards__Group__Card__Bottom__Image
+                  }
+                >
+                  <Image
+                    src={testimony.Photo.data.attributes.url}
+                    alt={testimony.Photo.data.attributes.alternativeText}
+                    fill
+                  />
+                </div>
+                <div
+                  className={
+                    classes.HeadingAboveCards__Group__Card__Bottom__Info
                   }
                 >
                   <h5>
@@ -42,14 +51,6 @@ const Testimonies = ({ data }) => (
                   </div>
                 </div>
               </div>
-
-              <div className={classes.Testimonies__Group__Testimony__Image}>
-                <Image
-                  src={testimony.Photo.data.attributes.url}
-                  alt={testimony.Photo.data.attributes.alternativeText}
-                  fill
-                />
-              </div>
             </div>
           ))}
         </div>
@@ -58,4 +59,4 @@ const Testimonies = ({ data }) => (
   </section>
 );
 
-export default Testimonies;
+export default HeadingAboveCards;

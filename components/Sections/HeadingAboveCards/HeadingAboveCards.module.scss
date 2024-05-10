@@ -1,0 +1,51 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.HeadingAboveCards {
+  h2 {
+    text-align: center;
+    color: $color-white;
+  }
+  &__Group {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+    &__Card {
+      background-color: $color-quinary;
+      flex: 1 1 30%;
+      border-radius: 2rem;
+      padding: 1rem;
+
+      &__Bottom {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        &__Image {
+          position: relative;
+          height: 10rem;
+          width: 10rem;
+          border-radius: 20rem;
+          overflow: hidden;
+
+          img {
+            object-fit: cover;
+          }
+        }
+
+        &__Info {
+          display: flex;
+          // align-items: center;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          svg {
+            width: 2rem;
+            height: 2rem;
+            fill: $color-primary;
+          }
+        }
+      }
+    }
+  }
+}
