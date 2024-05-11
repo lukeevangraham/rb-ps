@@ -1,48 +1,76 @@
 @import "../../../styles/abstracts/variables.scss";
 
-.HeadingAboveCards {
+.Programs {
   h2 {
     text-align: center;
-    color: $color-white;
   }
+
   &__Group {
     display: flex;
-    // flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 2rem;
-    &__Card {
-      background-color: $color-quinary;
-      flex: 1 1 30%;
-      border-radius: 2rem;
-      padding: 1rem;
 
-      &__Bottom {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
+    &__Program {
+      flex: 0 1 30%;
+      // padding: 1rem;
+      box-shadow: 0 0 10px $color-grey;
+      background-color: $color-quinary-lighter;
+      border-radius: 2px;
+      overflow: hidden;
+
+      &__Top {
+        position: relative;
 
         &__Image {
           position: relative;
-          height: 10rem;
-          width: 10rem;
-          border-radius: 20rem;
-          overflow: hidden;
+          height: auto;
+          aspect-ratio: 16 / 8;
 
-          img {
+          & > * {
             object-fit: cover;
           }
         }
 
-        &__Info {
-          display: flex;
-          // align-items: center;
-          flex-direction: column;
-          gap: 0.5rem;
+        &__Text {
+          color: $color-quinary;
+          position: absolute;
+          right: 0.5rem;
+          bottom: 0.5rem;
+          font-size: xx-large;
 
-          svg {
-            width: 2rem;
-            height: 2rem;
-            fill: $color-primary;
+          h5 {
+            background-color: rgba($color-primary, 0.95);
+            margin-bottom: 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            padding: 0.4rem 0.7rem 0.7rem 0.4rem;
+            text-align: right;
+            line-height: 1;
+          }
+        }
+      }
+
+      &__Body {
+        font-size: $default-font-size;
+        text-align: center;
+
+        p {
+          padding: 2.5rem 3.5rem 0 3.5rem;
+          font-weight: 200;
+          text-align: left;
+          line-height: 1.5;
+          margin-bottom: 0;
+        }
+
+        ul {
+          padding: 2.5rem 3.5rem;
+          list-style: none;
+
+          li {
+            padding: 1rem;
+            &:not(:last-child) {
+              border-bottom: solid 1px $color-grey-light;
+            }
           }
         }
       }

@@ -2,6 +2,7 @@ import Hero from "./Hero/Hero";
 import ImageBesideText from "./ImageBesideText/ImageBesideText";
 import VideoBesideText from "./VideoBesideText/VideoBesideText";
 import HeadingAboveColumns from "./HeadingAboveColumns/HeadingAboveColumns";
+import HeadingAboveCards from "./HeadingAboveCards/HeadingAboveCards";
 import Testimonies from "./Testimonies/Testimonies";
 
 const sectionComponents = {
@@ -10,6 +11,7 @@ const sectionComponents = {
   "section.video-beside-text": VideoBesideText,
   "section.heading-above-columns": HeadingAboveColumns,
   "section.testimonies": Testimonies,
+  "section.heading-above-cards": HeadingAboveCards,
 };
 
 // DISPLAY A SECTION INDIVIDUALLY
