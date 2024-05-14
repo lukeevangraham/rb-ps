@@ -1,3 +1,9 @@
-.QandA {
+.FAQs {
   // background-color: orangered;
+  max-width: 70rem;
+  margin: auto;
+
+  & > * {
+    margin-bottom: 6rem;
+  }
 }
