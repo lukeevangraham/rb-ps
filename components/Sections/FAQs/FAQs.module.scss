@@ -3,7 +3,11 @@
   max-width: 70rem;
   margin: auto;
 
-  & > * {
-    margin-bottom: 6rem;
+  &__Group {
+
+    & > * {
+
+      margin-bottom: 6rem;
+    }
   }
 }
