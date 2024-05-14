@@ -4,6 +4,7 @@ import VideoBesideText from "./VideoBesideText/VideoBesideText";
 import HeadingAboveColumns from "./HeadingAboveColumns/HeadingAboveColumns";
 import HeadingAboveCards from "./HeadingAboveCards/HeadingAboveCards";
 import Testimonies from "./Testimonies/Testimonies";
+import FAQs from "./FAQs/FAQs";
 
 const sectionComponents = {
   "section.hero": Hero,
@@ -12,10 +13,12 @@ const sectionComponents = {
   "section.heading-above-columns": HeadingAboveColumns,
   "section.testimonies": Testimonies,
   "section.heading-above-cards": HeadingAboveCards,
+  "section.fa-qs": FAQs,
 };
 
 // DISPLAY A SECTION INDIVIDUALLY
 const Sections = ({ sectionData }) => {
+
   const SectionComponent = sectionComponents[sectionData.__component];
 
   if (!SectionComponent) {

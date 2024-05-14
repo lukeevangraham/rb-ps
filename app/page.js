@@ -19,6 +19,7 @@ const homeDataQuery = qs.stringify({
         "section.heading-above-cards": {
           populate: { Cards: { populate: "*" } },
         },
+        "section.fa-qs": { populate: "*" },
       },
     },
   },
@@ -31,7 +32,7 @@ const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
     fetchAPI(`/ps-home?${homeDataQuery}`, {
-      // fetchAPI(`/ps-home?populate[Sections][populate]=*`, {
+      // fetchAPI(`/ps-home?populate=*`, {
       next: { revalidate: 0 },
     }),
   ]);
@@ -42,13 +43,15 @@ const getData = async () => {
 export default async function Home() {
   const [globalData, homeData] = await getData();
 
-  // console.log("HD: ", homeData.data.attributes);
+  // console.log("HD: ", homeData.data.attributes.Sections);
 
   return (
     <Layout global={globalData.data.attributes}>
       <main className={classes.Home}>
         {homeData.data.attributes.Sections.map((section, index) => (
-          <Sections sectionData={section} key={index} />
+          <>
+            <Sections sectionData={section} key={index} />
+          </>
         ))}
       </main>
     </Layout>
