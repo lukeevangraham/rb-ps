@@ -13,6 +13,7 @@ const homeDataQuery = qs.stringify({
         "section.heading-above-columns": {
           populate: { Column: { populate: "*" } },
         },
+        "section.heading-above-button": { populate: "*" },
         "section.video-beside-text": { populate: "*" },
         "section.hero": { populate: "*" },
         "section.testimonies": { populate: { Testimony: { populate: "*" } } },
