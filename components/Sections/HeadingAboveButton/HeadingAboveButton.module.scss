@@ -1,0 +1,12 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.HeadingAboveButton {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  h3 {
+    margin-bottom: 2.75rem;
+    color: $color-ternary;
+  }
+}

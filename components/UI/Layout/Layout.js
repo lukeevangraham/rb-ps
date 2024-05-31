@@ -2,6 +2,7 @@
 
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import NavigationItems from "../Navigation/Navigation Items/Navigation Items";
+import Footer from "../Navigation/Footer/Footer";
 
 // const lato = Lato({
 //   weight: "400",
@@ -19,6 +20,7 @@ const Layout = ({ global, children }) => (
       />
     </Toolbar>
     {children}
+    <Footer />
   </>
 );
 
