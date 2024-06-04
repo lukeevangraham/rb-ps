@@ -1,7 +1,54 @@
+@import "../../styles/abstracts/variables.scss";
+
 .About {
   padding-bottom: 0;
 
   h1 {
     text-align: center;
+  }
+
+  &__Staff {
+    background-color: $color-quaternary;
+    h2 {
+      text-align: center;
+      color: $color-white;
+    }
+
+    &__Group {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+
+      &__Member {
+        // background-color: orangered;
+        // height: 20rem;
+        flex: 1 1 25%;
+        // overflow: hidden;
+        font-size: $default-font-size;
+        position: relative;
+
+        &__Image {
+          aspect-ratio: 1/1;
+          border-radius: 9px 9px 0 0;
+          position: relative;
+          overflow: hidden;
+
+          img {
+            object-fit: cover;
+          }
+        }
+        &__BottomBar {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 3;
+          background-color: rgba($color-secondary, .7);
+          width: 100%;
+          // backdrop-filter: blur(10px);
+          padding: 1rem;
+          text-align: center;
+        }
+      }
+    }
   }
 }

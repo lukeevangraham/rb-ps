@@ -2,6 +2,7 @@ import QueryString from "qs";
 import Layout from "@/components/UI/Layout/Layout";
 import { fetchAPI, getGlobalInfo } from "@/lib/api";
 import Sections from "@/components/Sections/Sections";
+import Image from "next/image";
 
 import classes from "./page.module.scss";
 
@@ -17,27 +18,50 @@ const getData = async () => {
     fetchAPI(`/ps-about?${aboutDataQuery}`, {
       next: { revalidate: 0 },
     }),
+    fetchAPI(`/ps-staffs?populate=*`, {
+      next: { revalidate: 0 },
+    }),
   ]);
 
   return res;
 };
 
 export default async function AboutUs() {
-  const [globalData, aboutData] = await getData();
+  const [globalData, aboutData, staffData] = await getData();
 
   return (
     <Layout global={globalData.data.attributes}>
-      <div className="row">
-        <div className={`${classes.About} u-padding-y-large`}>
+      <div className={`${classes.About} u-padding-y-large`}>
+        <div className="row">
           <h1>About Us</h1>
         </div>
+        {aboutData.data.attributes.Sections.map((section, index) => (
+          <>
+            <Sections sectionData={section} key={index} />
+          </>
+        ))}
+        {console.log("SD: ", staffData.data[0])}
       </div>
-      {aboutData.data.attributes.Sections.map((section, index) => (
-        <>
-          <Sections sectionData={section} key={index} />
-        </>
-      ))}
-      {console.log("AD: ", aboutData.data.attributes.Sections)}
+      <section className={`${classes.About__Staff} u-padding-y-large`}>
+        <div>
+          <h2>Staff</h2>
+        </div>
+        <div className={`${classes.About__Staff__Group} row`}>
+          {staffData.data.map((member) => (
+            <div
+              key={member.id}
+              className={classes.About__Staff__Group__Member}
+            >
+              <div className={classes.About__Staff__Group__Member__Image}>
+                <Image src={member.attributes.Image.data.attributes.url} fill />
+                <div className={classes.About__Staff__Group__Member__BottomBar}>
+                  {member.attributes.FirstName} {member.attributes.LastName}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </Layout>
   );
 }
