@@ -14,15 +14,20 @@
       color: $color-white;
     }
 
+    h3 {
+      text-align: center;
+    }
+
     &__Group {
       display: flex;
       gap: 2rem;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      margin-bottom: 6rem;
 
       &__Member {
         // background-color: orangered;
         // height: 20rem;
-        flex: 1 1 25%;
+        flex: 0 1 30%;
         // overflow: hidden;
         font-size: $default-font-size;
         position: relative;
@@ -42,11 +47,12 @@
           bottom: 0;
           left: 0;
           z-index: 3;
-          background-color: rgba($color-secondary, .7);
+          background-color: rgba($color-secondary, 0.7);
           width: 100%;
           // backdrop-filter: blur(10px);
           padding: 1rem;
           text-align: center;
+          font-weight: 1000;
         }
       }
     }

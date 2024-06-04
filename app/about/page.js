@@ -29,6 +29,20 @@ const getData = async () => {
 export default async function AboutUs() {
   const [globalData, aboutData, staffData] = await getData();
 
+  const renderStaffMember = (member) => (
+    <div key={member.id} className={classes.About__Staff__Group__Member}>
+      <div className={classes.About__Staff__Group__Member__Image}>
+        <Image src={member.attributes.Image.data.attributes.url} fill />
+        <div className={classes.About__Staff__Group__Member__BottomBar}>
+          <h5>
+            {member.attributes.FirstName} {member.attributes.LastName}
+          </h5>
+          <div>{member.attributes.Title}</div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Layout global={globalData.data.attributes}>
       <div className={`${classes.About} u-padding-y-large`}>
@@ -46,20 +60,19 @@ export default async function AboutUs() {
         <div>
           <h2>Staff</h2>
         </div>
+        <h3>Administration Staff Member Profiles</h3>
         <div className={`${classes.About__Staff__Group} row`}>
-          {staffData.data.map((member) => (
-            <div
-              key={member.id}
-              className={classes.About__Staff__Group__Member}
-            >
-              <div className={classes.About__Staff__Group__Member__Image}>
-                <Image src={member.attributes.Image.data.attributes.url} fill />
-                <div className={classes.About__Staff__Group__Member__BottomBar}>
-                  {member.attributes.FirstName} {member.attributes.LastName}
-                </div>
-              </div>
-            </div>
-          ))}
+          {staffData.data
+            .filter((member) => member.attributes.AdminStaffMember)
+            .map((member) => renderStaffMember(member))}
+        </div>
+        <div>
+          <h3>Teaching Staff Member Profiles</h3>
+          <div className={classes.About__Staff__Group}>
+            {staffData.data
+              .filter((member) => member.attributes.AdminStaffMember !== true)
+              .map((member) => renderStaffMember(member))}
+          </div>
         </div>
       </section>
     </Layout>
