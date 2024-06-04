@@ -1,21 +1,23 @@
-import Hero from "./Hero/Hero";
-import ImageBesideText from "./ImageBesideText/ImageBesideText";
-import VideoBesideText from "./VideoBesideText/VideoBesideText";
-import HeadingAboveButton from "./HeadingAboveButton/HeadingAboveButton";
-import HeadingAboveColumns from "./HeadingAboveColumns/HeadingAboveColumns";
-import HeadingAboveCards from "./HeadingAboveCards/HeadingAboveCards";
-import Testimonies from "./Testimonies/Testimonies";
 import FAQs from "./FAQs/FAQs";
+import Hero from "./Hero/Hero";
+import HeadingAboveButton from "./HeadingAboveButton/HeadingAboveButton";
+import HeadingAboveCards from "./HeadingAboveCards/HeadingAboveCards";
+import HeadingAboveColumns from "./HeadingAboveColumns/HeadingAboveColumns";
+import ImageBesideText from "./ImageBesideText/ImageBesideText";
+import RichText from "./RichText/RichText";
+import Testimonies from "./Testimonies/Testimonies";
+import VideoBesideText from "./VideoBesideText/VideoBesideText";
 
 const sectionComponents = {
-  "section.hero": Hero,
-  "section.image-beside-text": ImageBesideText,
-  "section.video-beside-text": VideoBesideText,
-  "section.heading-above-button": HeadingAboveButton,
-  "section.heading-above-columns": HeadingAboveColumns,
-  "section.testimonies": Testimonies,
-  "section.heading-above-cards": HeadingAboveCards,
   "section.fa-qs": FAQs,
+  "section.hero": Hero,
+  "section.heading-above-button": HeadingAboveButton,
+  "section.heading-above-cards": HeadingAboveCards,
+  "section.heading-above-columns": HeadingAboveColumns,
+  "section.image-beside-text": ImageBesideText,
+  "section.rich-text": RichText,
+  "section.testimonies": Testimonies,
+  "section.video-beside-text": VideoBesideText,
 };
 
 // DISPLAY A SECTION INDIVIDUALLY
