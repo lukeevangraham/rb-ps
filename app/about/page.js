@@ -12,13 +12,18 @@ const aboutDataQuery = QueryString.stringify({
   },
 });
 
+const staffsQuery = QueryString.stringify({
+  populate: { Image: { populate: "*" } },
+  sort: ["LastName:asc"],
+});
+
 const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
     fetchAPI(`/ps-about?${aboutDataQuery}`, {
       next: { revalidate: 0 },
     }),
-    fetchAPI(`/ps-staffs?populate=*`, {
+    fetchAPI(`/ps-staffs?${staffsQuery}`, {
       next: { revalidate: 0 },
     }),
   ]);
@@ -32,13 +37,24 @@ export default async function AboutUs() {
   const renderStaffMember = (member) => (
     <div key={member.id} className={classes.About__Staff__Group__Member}>
       <div className={classes.About__Staff__Group__Member__Image}>
-        <Image src={member.attributes.Image.data.attributes.url} fill />
+        <Image
+          src={member.attributes.Image.data.attributes.url}
+          fill
+          alt={
+            member.attributes.Image.data.alternativeText
+              ? member.attributes.Image.data.alternativeText
+              : `Photo of ${member.attributes.FirstName} ${member.attributes.LastName}`
+          }
+        />
         <div className={classes.About__Staff__Group__Member__BottomBar}>
           <h5>
             {member.attributes.FirstName} {member.attributes.LastName}
           </h5>
           <div>{member.attributes.Title}</div>
         </div>
+      </div>
+      <div className={classes.About__Staff__Group__Member__Bio}>
+        {member.attributes.Bio}
       </div>
     </div>
   );

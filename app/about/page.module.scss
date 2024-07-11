@@ -25,6 +25,7 @@
       gap: 2rem;
       justify-content: space-evenly;
       margin-bottom: 6rem;
+      flex-wrap: wrap;
 
       &__Member {
         // background-color: orangered;
@@ -55,6 +56,12 @@
           padding: 1rem;
           text-align: center;
           font-weight: 1000;
+        }
+
+        &__Bio {
+          background-color: $color-secondary;
+          padding: 1rem;
+          line-height: 1.5;
         }
       }
     }
