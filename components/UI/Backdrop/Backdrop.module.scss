@@ -1,0 +1,26 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.Backdrop {
+  background-color: none;
+  backdrop-filter: blur(0);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-out;
+  // touch-action: none;
+
+  &__show {
+    backdrop-filter: blur(0.5rem);
+    background-color: rgba($color-primary, .65);
+    z-index: 100;
+  }
+
+  &__hidden {
+    background-color: transparent;
+    backdrop-filter: blur(0);
+    z-index: -1;
+  }
+}

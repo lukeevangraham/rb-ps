@@ -11,12 +11,17 @@
     margin-left: 4rem;
     margin-bottom: 0;
 
-
     li {
       list-style: none;
 
       a {
         border-bottom: none;
+        color: $color-ternary;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-quinary;
+        }
       }
     }
   }

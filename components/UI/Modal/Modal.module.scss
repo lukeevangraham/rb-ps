@@ -1,0 +1,14 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.Modal {
+  position: fixed;
+  background-color: $color-white;
+  width: 70%;
+  padding: 1.6rem;
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 150;
+  border-radius: 9px;
+  box-shadow: 0 1rem 4rem $color-grey-dark;
+}

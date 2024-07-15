@@ -1,5 +1,5 @@
 // import { Lato } from "next/font/google";
-
+import Modal from "../Modal/Modal";
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import NavigationItems from "../Navigation/Navigation Items/Navigation Items";
 import Footer from "../Navigation/Footer/Footer";
@@ -13,6 +13,7 @@ import Footer from "../Navigation/Footer/Footer";
 
 const Layout = ({ global, children }) => (
   <>
+    {/* <Modal show /> */}
     <Toolbar global={global}>
       <NavigationItems
         links={global.Navbar.Links}

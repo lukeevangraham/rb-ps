@@ -35,13 +35,13 @@ body {
 }
 
 a {
-  color: $color-ternary;
+  color: $color-primary;
+  border-bottom: 1px solid $color-primary;
   text-decoration: none;
-  border-bottom: 1px solid $color-ternary;
   transition: color .2s;
 
   &:hover {
-    color: $color-quinary;
+    color: $color-quaternary;
   }
 }
 
