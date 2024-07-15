@@ -48,7 +48,10 @@
             }
 
             img {
-              opacity: .3;
+              opacity: 0.3;
+              -moz-opacity: 0.5;
+              -webkit-opacity: .5;
+              filter: alpha(opacity=50);
             }
           }
 
