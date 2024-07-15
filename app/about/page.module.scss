@@ -40,9 +40,21 @@
           border-radius: 9px 9px 0 0;
           position: relative;
           overflow: hidden;
+          background-color: $color-ternary;
+
+          &:hover {
+            a {
+              opacity: 1;
+            }
+
+            img {
+              opacity: 50%;
+            }
+          }
 
           img {
             object-fit: cover;
+            transition: all 0.3s;
           }
 
           a {
@@ -51,6 +63,8 @@
             left: 50%;
             transform: translateX(-50%);
             margin-bottom: 2rem;
+            opacity: 0;
+            transition: all 0.3s;
           }
         }
         &__BottomBar {
