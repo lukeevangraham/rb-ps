@@ -7,6 +7,10 @@
     text-align: center;
   }
 
+  section:nth-child(3) {
+    background-color: $color-quinary-light;
+  }
+
   &__Staff {
     background-color: $color-quaternary;
     // color: $color-white;

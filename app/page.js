@@ -10,17 +10,18 @@ const homeDataQuery = qs.stringify({
   populate: {
     Sections: {
       on: {
+        "section.fa-qs": { populate: "*" },
         "section.heading-above-columns": {
           populate: { Column: { populate: "*" } },
         },
         "section.heading-above-button": { populate: "*" },
-        "section.video-beside-text": { populate: "*" },
         "section.hero": { populate: "*" },
-        "section.testimonies": { populate: { Testimony: { populate: "*" } } },
         "section.heading-above-cards": {
           populate: { Cards: { populate: "*" } },
         },
-        "section.fa-qs": { populate: "*" },
+        "section.rich-text": { populate: "*" },
+        "section.testimonies": { populate: { Testimony: { populate: "*" } } },
+        "section.video-beside-text": { populate: "*" },
       },
     },
   },

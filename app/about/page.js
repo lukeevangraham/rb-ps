@@ -13,7 +13,22 @@ import classes from "./page.module.scss";
 
 const aboutDataQuery = QueryString.stringify({
   populate: {
-    Sections: { populate: "*" },
+    Sections: {
+      on: {
+        "section.fa-qs": { populate: "*" },
+        "section.heading-above-columns": {
+          populate: { Column: { populate: "*" } },
+        },
+        "section.heading-above-button": { populate: "*" },
+        "section.hero": { populate: "*" },
+        "section.heading-above-cards": {
+          populate: { Cards: { populate: "*" } },
+        },
+        "section.rich-text": { populate: "*" },
+        "section.testimonies": { populate: { Testimony: { populate: "*" } } },
+        "section.video-beside-text": { populate: "*" },
+      },
+    },
   },
 });
 
@@ -54,7 +69,8 @@ export default function AboutUs() {
   const renderStaffMember = (member) => (
     <div key={member.id} className={classes.About__Staff__Group__Member}>
       <div className={classes.About__Staff__Group__Member__Image}>
-      <div className={classes.About__Staff__Group__Member__Image__Overlay} />
+        <div className={classes.About__Staff__Group__Member__Image__Overlay} />
+        {console.log("AD: ", aboutData)}
         <Image
           src={member.attributes.Image.data.attributes.url}
           fill

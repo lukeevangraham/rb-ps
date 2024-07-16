@@ -26,7 +26,9 @@
       }
 
       &__Text {
-        // text-align: center;
+        li {
+          font-size: $default-font-size;
+        }
       }
     }
   }
