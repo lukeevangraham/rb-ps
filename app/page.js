@@ -1,6 +1,6 @@
 import qs from "qs";
 import Image from "next/image";
-import { fetchAPI, getGlobalInfo } from "../lib/api";
+import { fetchAPI, getGlobalInfo, sectionQuery } from "../lib/api";
 import Layout from "@/components/UI/Layout/Layout";
 import Sections from "@/components/Sections/Sections";
 
@@ -8,22 +8,7 @@ import classes from "./page.module.scss";
 
 const homeDataQuery = qs.stringify({
   populate: {
-    Sections: {
-      on: {
-        "section.fa-qs": { populate: "*" },
-        "section.heading-above-columns": {
-          populate: { Column: { populate: "*" } },
-        },
-        "section.heading-above-button": { populate: "*" },
-        "section.hero": { populate: "*" },
-        "section.heading-above-cards": {
-          populate: { Cards: { populate: "*" } },
-        },
-        "section.rich-text": { populate: "*" },
-        "section.testimonies": { populate: { Testimony: { populate: "*" } } },
-        "section.video-beside-text": { populate: "*" },
-      },
-    },
+    Sections: sectionQuery,
   },
   // populate: {
   //   Sections: { populate: "*" },
