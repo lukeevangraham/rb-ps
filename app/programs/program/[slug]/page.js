@@ -53,7 +53,7 @@ export default function ClassOption({ params }) {
     const endTime = new Date(startTime);
     endTime.setHours(endTime.getHours() + increment);
     return (
-      <div
+      <td
         className={classes.ClassOption__Classes__Class__Time}
       >{`${startTime.toLocaleString("en-US", {
         hour: "numeric",
@@ -63,13 +63,13 @@ export default function ClassOption({ params }) {
         hour: "numeric",
         minute: "numeric",
         hour12: true,
-      })}`}</div>
+      })}`}</td>
     );
   };
 
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+  }
 
   return (
     <>
@@ -79,20 +79,32 @@ export default function ClassOption({ params }) {
             <div className="row">
               <h1>{classData.attributes.Title}</h1>
               <h2>Classes</h2>
-              <div className={classes.ClassOption__Classes}>
-                {classData.attributes.Class.map((item) => (
-                  <div
-                    key={item.id}
-                    className={classes.ClassOption__Classes__Class}
-                  >
-                    <div>{item.dayOfWeek}</div>
-                    <div>{`${item.dailyClassHours} hours -- ${item.numberOfDaysPerWeek}x a week`}</div>
-                    {renderClassTimes(item.startTime, item.dailyClassHours)}
-                    <div>{`$${numberWithCommas(item.annualTuition)}`}</div>
-                    <div>{`$${numberWithCommas(item.annualTuition / 10)}`}</div>
-                  </div>
-                ))}
-              </div>
+              <table className={classes.ClassOption__Classes}>
+                <thead>
+                  <tr>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th>Annual Tuition</th>
+                    <th>Ten Equal Payments of</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {classData.attributes.Class.map((item) => (
+                    <tr
+                      key={item.id}
+                      className={classes.ClassOption__Classes__Class}
+                    >
+                      <td>{item.dayOfWeek}</td>
+                      <td>{`${item.dailyClassHours} hours -- ${item.numberOfDaysPerWeek}x a week`}</td>
+                      {renderClassTimes(item.startTime, item.dailyClassHours)}
+                      <td>{`$${numberWithCommas(item.annualTuition)}`}</td>
+                      <td>{`$${numberWithCommas(item.annualTuition / 10)}`}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </main>
         </Layout>
