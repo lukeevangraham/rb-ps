@@ -8,7 +8,7 @@ import classes from "./page.module.scss";
 
 const homeDataQuery = qs.stringify({
   populate: {
-    Sections: sectionQuery,
+    Sections: sectionQuery
   },
   // populate: {
   //   Sections: { populate: "*" },

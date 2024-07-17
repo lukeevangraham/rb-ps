@@ -55,7 +55,6 @@ export default function AboutUs() {
     <div key={member.id} className={classes.About__Staff__Group__Member}>
       <div className={classes.About__Staff__Group__Member__Image}>
         <div className={classes.About__Staff__Group__Member__Image__Overlay} />
-        {console.log("AD: ", aboutData)}
         <Image
           src={member.attributes.Image.data.attributes.url}
           fill

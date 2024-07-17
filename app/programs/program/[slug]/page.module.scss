@@ -1,0 +1,19 @@
+@import "../../../../styles/abstracts/variables.scss";
+
+.ClassOption {
+  &__Classes {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__Class {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: $default-font-size;
+
+        &__Time {
+            text-transform: lowercase;
+        }
+    }
+  }
+}
