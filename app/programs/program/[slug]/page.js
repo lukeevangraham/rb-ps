@@ -89,6 +89,7 @@ export default function ClassOption({ params }) {
                     <div>{`${item.dailyClassHours} hours -- ${item.numberOfDaysPerWeek}x a week`}</div>
                     {renderClassTimes(item.startTime, item.dailyClassHours)}
                     <div>{`$${numberWithCommas(item.annualTuition)}`}</div>
+                    <div>{`$${numberWithCommas(item.annualTuition / 10)}`}</div>
                   </div>
                 ))}
               </div>
