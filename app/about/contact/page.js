@@ -10,8 +10,6 @@ const getData = async () => {
 const Contact = async () => {
   const [globalData] = await getData();
 
-  console.log("GD: ", globalData);
-
   return (
     <>
       <Layout global={globalData.data.attributes}>

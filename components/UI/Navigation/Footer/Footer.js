@@ -16,12 +16,24 @@ const Footer = () => (
           <div>Office hours: Mon.-Fri., 8:00am - 4:00pm</div>
         </div>
         <div>
-          <div>About Us</div>
-          <div>Our Philosophy</div>
+          <div>
+            <Link href="/about">About Us</Link>
+          </div>
+          <div>
+            <Link href="/about#Philosophy">Our Philosophy</Link>
+          </div>
           <div>FAQs</div>
-          <div>Our Staff</div>
-          <Link href="/about/contact">Contact Us</Link>
-          <div>Donate Here</div>
+          <div>
+            <Link href="/about#OurStaff">Our Staff</Link>
+          </div>
+          <div>
+            <Link href="/about/contact">Contact Us</Link>
+          </div>
+          <div>
+            <a href="https://www.shelbygiving.com/app/Form%2Fa136edcf-c499-44f6-8b62-263a79a26cfb" target="_blank">
+              Donate Here
+            </a>
+          </div>
         </div>
         <div>
           <div>Programs</div>

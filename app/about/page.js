@@ -127,11 +127,16 @@ export default function AboutUs() {
             <div className="row">
               <h1>About Us</h1>
             </div>
-            {aboutData.data.attributes.Sections.map((section, index) => (
-              <Sections sectionData={section} key={index} />
-            ))}
+            <div id="Philosophy">
+              {aboutData.data.attributes.Sections.map((section, index) => (
+                <Sections sectionData={section} key={index} />
+              ))}
+            </div>
           </div>
-          <section className={`${classes.About__Staff} u-padding-y-large`}>
+          <section
+            className={`${classes.About__Staff} u-padding-y-large`}
+            id="OurStaff"
+          >
             <div>
               <h2>Staff</h2>
             </div>

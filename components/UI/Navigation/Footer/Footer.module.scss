@@ -14,13 +14,24 @@
       & > * {
         // background-color: orangered;
       }
-      
+      a {
+        color: $color-quaternary;
+        border-bottom: 1px solid rgba($color-primary, 0);
+        transition: border-bottom 0.2s;
+
+        &:hover {
+          border-bottom: 1px solid rgba($color-black, 1);
+          color: $color-black;
+        }
+        // background-color: orangered;
+      }
+
       & > div:first-child {
         font-weight: 900;
         padding-bottom: 1rem;
         text-transform: uppercase;
       }
-      
+
       & > :not(div:first-child) {
         margin: 1.5rem 0;
         // background-color: orangered;
