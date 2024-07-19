@@ -7,8 +7,24 @@
   &__Container {
     display: flex;
     justify-content: space-around;
-    & > div:nth-child(1) {
-    //   background-color: orangered;
+
+    & > :not(div:first-child) {
+      // background-color: yellowgreen;
+
+      & > * {
+        // background-color: orangered;
+      }
+      
+      & > div:first-child {
+        font-weight: 900;
+        padding-bottom: 1rem;
+        text-transform: uppercase;
+      }
+      
+      & > :not(div:first-child) {
+        padding: 1rem 0;
+        // background-color: orangered;
+      }
     }
   }
 }
