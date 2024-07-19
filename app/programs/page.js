@@ -5,29 +5,44 @@ import Sections from "@/components/Sections/Sections";
 import ClassList from "@/components/School/ClassList/ClassList";
 
 import classes from "./page.module.scss";
+import { sectionQuery } from "@/lib/api";
 
 const programsDataQuery = QueryString.stringify({
   populate: "*",
 });
 
+const homeDataQuery = QueryString.stringify({
+  populate: {
+    Sections: sectionQuery,
+  },
+});
+
 const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
-    fetchAPI(`/ps-programs?${programsDataQuery}`),
-    { next: { revalidate: 0 } },
+    fetchAPI(`/ps-programs?${programsDataQuery}`, { next: { revalidate: 0 } }),
+    fetchAPI(`/ps-home?${homeDataQuery}`, { next: { revalidate: 0 } }),
+    ,
   ]);
 
   return res;
 };
 
 const Programs = async () => {
-  const [globalData, programsData] = await getData();
+  const [globalData, programsData, homeData] = await getData();
 
   return (
     <Layout global={globalData.data.attributes}>
       <main className={classes.Programs}>
         <div className={`row u-padding-y-large`}>
           <h1>Our Programs</h1>
+          <div>
+            {homeData.data.attributes.Sections.filter(
+              (section) => section.Heading === "Our Programs"
+            ).map((section) => (
+              <Sections sectionData={section} />
+            ))}
+          </div>
           <h2>Preschool</h2>
           {programsData.data.map((program) => (
             <div className={classes.Programs__Program} key={program.id}>

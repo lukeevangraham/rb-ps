@@ -8,7 +8,7 @@ import classes from "./page.module.scss";
 
 const homeDataQuery = qs.stringify({
   populate: {
-    Sections: sectionQuery
+    Sections: sectionQuery,
   },
   // populate: {
   //   Sections: { populate: "*" },
@@ -35,7 +35,6 @@ export default async function Home() {
   return (
     <Layout global={globalData.data.attributes}>
       <main className={classes.Home}>
-        {console.log("HD: ", homeData.data.attributes.Sections)}
         {homeData.data.attributes.Sections.map((section, index) => (
           <>
             <Sections sectionData={section} key={index} />
