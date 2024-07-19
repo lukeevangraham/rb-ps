@@ -27,6 +27,7 @@ const Programs = async () => {
     <Layout global={globalData.data.attributes}>
       <main className={classes.Programs}>
         <div className={`row u-padding-y-large`}>
+          <h1>Our Programs</h1>
           {programsData.data.map((program) => (
             <div className={classes.Programs__Program} key={program.id}>
               <h2>{program.attributes.Title}</h2>

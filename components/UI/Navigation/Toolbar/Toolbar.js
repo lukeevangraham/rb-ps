@@ -12,8 +12,9 @@ const Toolbar = ({ global, children }) => (
           <Link href="/">
             <Image
               src={global.Navbar.Logo.data.attributes.url}
-              fill={true}
               alt="RBCPC Preschool logo"
+              fill
+              priority
             />
           </Link>
         </div>
