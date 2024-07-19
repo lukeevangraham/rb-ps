@@ -26,8 +26,6 @@ const getData = async () => {
 const Tuition = async () => {
   const [globalData, tuitionData] = await getData();
 
-  console.log("TD: ", tuitionData.data.attributes);
-
   return (
     <Layout global={globalData.data.attributes}>
       <main className={classes.Tuition}>

@@ -1,3 +1,11 @@
 .Tuition {
+  // background-color: orangered;
+
+  section:nth-child(3) {
+    padding-bottom: 3rem;
+  }
+  section:nth-child(4) {
     // background-color: orangered;
+    padding-top: 0;
+  }
 }
