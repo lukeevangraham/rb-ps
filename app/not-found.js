@@ -13,7 +13,7 @@ const NotFound = async () => {
   return (
     <Layout global={globalData.data.attributes}>
       <main className="row u-padding-y-large">
-        <h1>We can't find this page</h1>
+        <h1>We can not find this page</h1>
       </main>
     </Layout>
   );
