@@ -28,9 +28,10 @@ const Programs = async () => {
       <main className={classes.Programs}>
         <div className={`row u-padding-y-large`}>
           <h1>Our Programs</h1>
+          <h2>Preschool</h2>
           {programsData.data.map((program) => (
             <div className={classes.Programs__Program} key={program.id}>
-              <h2>{program.attributes.Title}</h2>
+              <h3>{program.attributes.Title}</h3>
               <div>
                 For children who turn {program.attributes.Title[0]}-years-old{" "}
                 <u>

@@ -1,10 +1,13 @@
 @import "../../../styles/abstracts/variables.scss";
 
 .Brandname {
-    // background-color: orangered;
-font-size: 3.4rem;
-color: $color-white;
-padding-left: 1rem;
-// border-bottom: none;
+  // background-color: orangered;
+  font-size: 3.4rem;
+  color: $color-white;
+  padding-left: 1rem;
+  // border-bottom: none;
+}
 
+.FromFooter {
+  color: $color-quaternary;
 }

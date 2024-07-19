@@ -21,7 +21,7 @@ const Layout = ({ global, children }) => (
       />
     </Toolbar>
     {children}
-    <Footer />
+    <Footer global={global} />
   </>
 );
 

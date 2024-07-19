@@ -2,13 +2,29 @@ import Brandname from "../../Brandname/Brandname";
 import Link from "next/link";
 
 import classes from "./Footer.module.scss";
+import Image from "next/image";
 
-const Footer = () => (
+const Footer = ({ global }) => (
   <section className={`${classes.Footer} u-padding-y-large`}>
     <div className="row">
       <div className={classes.Footer__Container}>
-        <div>
-          <div>RBCPC Preschool</div>
+        <div className={classes.Footer__Container__FirstColumn}>
+          <div className={classes.Footer__Container__FirstColumn__Brand}>
+            <Link href="/">
+              <div
+                className={classes.Footer__Container__FirstColumn__Brand__Logo}
+              >
+                <Image
+                  src={global.Navbar.Logo.data.attributes.url}
+                  alt="RBCPC Preschool Logo"
+                  fill
+                />
+              </div>
+              <div>
+                <Brandname footer />
+              </div>
+            </Link>
+          </div>
           <div>17010 Pomerado Road, San Diego, CA 92128</div>
           <div>Phone: (858) 487-0824</div>
           <div>Fax: (858) 487-8203</div>
@@ -30,20 +46,27 @@ const Footer = () => (
             <Link href="/about/contact">Contact Us</Link>
           </div>
           <div>
-            <a href="https://www.shelbygiving.com/app/Form%2Fa136edcf-c499-44f6-8b62-263a79a26cfb" target="_blank">
+            <a
+              href="https://www.shelbygiving.com/app/Form%2Fa136edcf-c499-44f6-8b62-263a79a26cfb"
+              target="_blank"
+            >
               Donate Here
             </a>
           </div>
         </div>
         <div>
-          <div>Programs</div>
+          <div>
+            <Link href="/programs">Programs</Link>
+          </div>
           <div>Parent & Child Classes</div>
           <div>Preschool</div>
           <div>Extended Day</div>
           <div></div>
         </div>
         <div>
-          <div>Tuition</div>
+          <div>
+            <Link href="/tuition">Tuition</Link>
+          </div>
         </div>
         <div>
           <div>Parents</div>
@@ -53,7 +76,9 @@ const Footer = () => (
           <div>Helpful Resources</div>
         </div>
         <div>
-          <div>Special Events</div>
+          <div>
+            <Link href="/events">Special Events</Link>
+          </div>
         </div>
       </div>
     </div>

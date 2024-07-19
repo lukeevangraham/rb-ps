@@ -8,12 +8,29 @@
     display: flex;
     justify-content: space-around;
 
-    & > :not(div:first-child) {
-      // background-color: yellowgreen;
+    &__FirstColumn {
+      line-height: 1.5;
+      a {
+        display: flex;
+        gap: 1rem;
+        line-height: 1.5;
+        font-size: larger;
+        border-bottom: none;
 
-      & > * {
-        // background-color: orangered;
+        & > *:nth-child(1) {
+          flex: 0 0 25%;
+          height: 10rem;
+          position: relative;
+
+          img {
+            object-fit: contain;
+            object-position: left;
+          }
+        }
       }
+    }
+
+    & > :not(div:first-child) {
       a {
         color: $color-quaternary;
         border-bottom: 1px solid rgba($color-primary, 0);
@@ -23,7 +40,6 @@
           border-bottom: 1px solid rgba($color-black, 1);
           color: $color-black;
         }
-        // background-color: orangered;
       }
 
       & > div:first-child {
@@ -34,7 +50,6 @@
 
       & > :not(div:first-child) {
         margin: 1.5rem 0;
-        // background-color: orangered;
       }
     }
   }
