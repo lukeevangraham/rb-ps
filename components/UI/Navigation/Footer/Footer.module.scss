@@ -10,21 +10,27 @@
 
     &__FirstColumn {
       line-height: 1.5;
-      a {
-        display: flex;
-        gap: 1rem;
-        line-height: 1.5;
-        font-size: larger;
-        border-bottom: none;
 
-        & > *:nth-child(1) {
-          flex: 0 0 25%;
-          height: 10rem;
-          position: relative;
+      &__Brand {
+        // background-color: orangered;
+        margin-bottom: 1rem;
 
-          img {
-            object-fit: contain;
-            object-position: left;
+        a {
+          display: flex;
+          gap: 1rem;
+          line-height: 1.5;
+          font-size: larger;
+          border-bottom: none;
+
+          & > *:nth-child(1) {
+            flex: 0 0 25%;
+            height: 10rem;
+            position: relative;
+
+            img {
+              object-fit: contain;
+              object-position: left;
+            }
           }
         }
       }
