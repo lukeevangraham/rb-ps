@@ -9,6 +9,7 @@ import {
   getClassData,
 } from "@/lib/api";
 import Layout from "@/components/UI/Layout/Layout";
+import ClassList from "@/components/School/ClassList/ClassList";
 
 import classes from "./page.module.scss";
 
@@ -79,32 +80,29 @@ export default function ClassOption({ params }) {
             <div className="row">
               <h1>{classData.attributes.Title}</h1>
               <h2>Classes</h2>
-              <table className={classes.ClassOption__Classes}>
-                <thead>
-                  <tr>
-                    <th> </th>
-                    <th> </th>
-                    <th> </th>
-                    <th>Annual Tuition</th>
-                    <th>Ten Equal Payments of</th>
-                  </tr>
-                </thead>
+              <ClassList program={classData} />
+              {/* <div className={classes.ClassOption__Classes}>
+                <div> </div>
+                <div> </div>
+                <div> </div>
+                <div>Annual Tuition</div>
+                <div>Ten Equal Payments of</div>
 
-                <tbody>
-                  {classData.attributes.Class.map((item) => (
-                    <tr
+                {classData.attributes.Class.map((item) => (
+                  <>
+                    <div
                       key={item.id}
                       className={classes.ClassOption__Classes__Class}
                     >
-                      <td>{item.dayOfWeek}</td>
-                      <td>{`${item.dailyClassHours} hours -- ${item.numberOfDaysPerWeek}x a week`}</td>
-                      {renderClassTimes(item.startTime, item.dailyClassHours)}
-                      <td>{`$${numberWithCommas(item.annualTuition)}`}</td>
-                      <td>{`$${numberWithCommas(item.annualTuition / 10)}`}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                      {item.dayOfWeek}
+                    </div>
+                    <div>{`${item.dailyClassHours} hours -- ${item.numberOfDaysPerWeek}x a week`}</div>
+                    {renderClassTimes(item.startTime, item.dailyClassHours)}
+                    <div>{`$${numberWithCommas(item.annualTuition)}`}</div>
+                    <div>{`$${numberWithCommas(item.annualTuition / 10)}`}</div>
+                  </>
+                ))}
+              </div> */}
             </div>
           </main>
         </Layout>

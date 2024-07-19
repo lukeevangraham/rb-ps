@@ -1,0 +1,13 @@
+@import "../../styles/abstracts/variables.scss";
+
+.Programs {
+  &__Program {
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    & > div:nth-child(2) {
+      font-size: $default-font-size;
+    }
+  }
+}

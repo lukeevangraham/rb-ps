@@ -2,6 +2,7 @@ import { fetchAPI, getGlobalInfo } from "@/lib/api";
 import QueryString from "qs";
 import Layout from "@/components/UI/Layout/Layout";
 import Sections from "@/components/Sections/Sections";
+import ClassList from "@/components/School/ClassList/ClassList";
 
 import classes from "./page.module.scss";
 
@@ -24,7 +25,24 @@ const Programs = async () => {
 
   return (
     <Layout global={globalData.data.attributes}>
-      {console.log("P: ", programsData.data)}Programs
+      <main className={classes.Programs}>
+        <div className={`row u-padding-y-large`}>
+          {programsData.data.map((program) => (
+            <div className={classes.Programs__Program} key={program.id}>
+              <h2>{program.attributes.Title}</h2>
+              <div>
+                For children who turn {program.attributes.Title[0]}-years-old{" "}
+                <u>
+                  {" "}
+                  <em> on or before</em> September 1,{" "}
+                  {program.attributes.schoolYearBeginning}
+                </u>
+              </div>
+              <ClassList program={program} />
+            </div>
+          ))}
+        </div>
+      </main>
     </Layout>
   );
 };
