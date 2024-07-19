@@ -1,4 +1,5 @@
 import Brandname from "../../Brandname/Brandname";
+import Link from "next/link";
 
 import classes from "./Footer.module.scss";
 
@@ -19,7 +20,7 @@ const Footer = () => (
           <div>Our Philosophy</div>
           <div>FAQs</div>
           <div>Our Staff</div>
-          <div>Contact Us</div>
+          <Link href="/about/contact">Contact Us</Link>
           <div>Donate Here</div>
         </div>
         <div>
