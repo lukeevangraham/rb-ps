@@ -39,7 +39,7 @@ const Programs = async () => {
           {homeData.data.attributes.Sections.filter(
             (section) => section.Heading === "Our Programs"
           ).map((section) => (
-            <Sections sectionData={section} />
+            <Sections sectionData={section} key={section.id} />
           ))}
           <h2>Preschool</h2>
           {programsData.data.map((program) => (
