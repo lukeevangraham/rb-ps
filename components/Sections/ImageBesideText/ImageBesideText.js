@@ -9,6 +9,7 @@ const ImageBesideText = ({ data }) => (
         <div className={classes.ImageBesideText__Image__Frame}>
           <Image
             src={data.image.data.attributes.url}
+            alt={data.image.data.attributes.alternativeText}
             fill
             style={{ objectFit: "cover" }}
           />

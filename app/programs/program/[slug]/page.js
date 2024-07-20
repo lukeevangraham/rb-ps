@@ -37,7 +37,7 @@ export default function ClassOption({ params }) {
       setGlobalData(res[0]);
       setClassData(res[1]);
     });
-  }, []);
+  }, [params]);
 
   const router = useRouter();
 
