@@ -4,6 +4,22 @@
   // h2 {
   //   margin-bottom: 1rem;
   // }
+
+  section:first-of-type {
+    // background-color: orangered;
+    padding-top: 0;
+
+    & > div:nth-child(1) {
+      max-width: unset;
+      padding: unset;
+      margin: unset;
+    }
+
+    h2 {
+      display: none;
+    }
+  }
+
   &__Program {
     & > div:nth-child(2) {
       font-size: $default-font-size;

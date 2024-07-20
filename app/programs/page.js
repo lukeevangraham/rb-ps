@@ -36,13 +36,11 @@ const Programs = async () => {
       <main className={classes.Programs}>
         <div className={`row u-padding-y-large`}>
           <h1>Our Programs</h1>
-          <div>
-            {homeData.data.attributes.Sections.filter(
-              (section) => section.Heading === "Our Programs"
-            ).map((section) => (
-              <Sections sectionData={section} />
-            ))}
-          </div>
+          {homeData.data.attributes.Sections.filter(
+            (section) => section.Heading === "Our Programs"
+          ).map((section) => (
+            <Sections sectionData={section} />
+          ))}
           <h2>Preschool</h2>
           {programsData.data.map((program) => (
             <div className={classes.Programs__Program} key={program.id}>

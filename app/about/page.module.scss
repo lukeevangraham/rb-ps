@@ -11,6 +11,15 @@
     background-color: $color-quinary-light;
   }
 
+  &__Philosophy {
+    
+    & > section:first-of-type {
+      // background-color: orangered;
+padding: 0;
+
+    }
+  }
+
   &__Staff {
     background-color: $color-quaternary;
     // color: $color-white;
