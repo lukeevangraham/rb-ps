@@ -1,5 +1,6 @@
 import qs from "qs";
 import Image from "next/image";
+import Link from "next/link";
 import { fetchAPI, getGlobalInfo, sectionQuery } from "../lib/api";
 import Layout from "@/components/UI/Layout/Layout";
 import Sections from "@/components/Sections/Sections";

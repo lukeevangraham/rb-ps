@@ -1,0 +1,35 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.Modal {
+  position: fixed;
+  background-color: $color-white;
+  width: 70%;
+  padding: 1.6rem;
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 150;
+  border-radius: 9px;
+  box-shadow: 0 1rem 4rem $color-grey-dark;
+
+  &__Close {
+    background-color: rgba($color-quaternary, .3);
+    color: $color-white;
+    font-size: 1.9rem;
+    position: absolute;
+    text-align: center;
+    right: 1.6rem;
+    top: 1.6rem;
+    z-index: 9;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border-radius: 5px 0 5px 5px;
+    transition: all .2s;
+
+    &:hover {
+      background-color: rgba($color-quaternary, .9);
+
+    }
+  }
+}

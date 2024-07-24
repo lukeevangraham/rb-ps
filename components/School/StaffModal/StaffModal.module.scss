@@ -1,0 +1,27 @@
+.StaffModal {
+    // background-color: orangered;
+  display: flex;
+  gap: 2rem;
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  h5 {
+    margin-bottom: 0.7rem;
+  }
+
+  h6 {
+    margin-bottom: 2rem;
+  }
+
+  &__Image {
+    flex: 0 0 30%;
+    position: relative;
+    height: 30rem;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}

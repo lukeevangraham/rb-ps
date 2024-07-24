@@ -1,8 +1,9 @@
-"use client";
+// "use client";
 
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import QueryString from "qs";
 import Image from "next/image";
+import Link from "next/link";
 import Layout from "@/components/UI/Layout/Layout";
 import Button from "@/components/UI/Button/Button";
 import Modal from "@/components/UI/Modal/Modal";
@@ -36,20 +37,20 @@ const getData = async () => {
   return res;
 };
 
-export default function AboutUs() {
-  // const [globalData, aboutData, staffData] = await getData();
-  const [showModal, setShowModal] = useState(false);
-  const [globalData, setGlobalData] = useState(null);
-  const [aboutData, setAboutData] = useState(null);
-  const [staffData, setStaffData] = useState(null);
+export default async function AboutUs() {
+  const [globalData, aboutData, staffData] = await getData();
+  // const [showModal, setShowModal] = useState(false);
+  // const [globalData, setGlobalData] = useState(null);
+  // const [aboutData, setAboutData] = useState(null);
+  // const [staffData, setStaffData] = useState(null);
 
-  useEffect(() => {
-    getData().then(function (res) {
-      setGlobalData(res[0]);
-      setAboutData(res[1]);
-      setStaffData(res[2]);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getData().then(function (res) {
+  //     setGlobalData(res[0]);
+  //     setAboutData(res[1]);
+  //     setStaffData(res[2]);
+  //   });
+  // }, []);
 
   const renderStaffMember = (member) => (
     <div key={member.id} className={classes.About__Staff__Group__Member}>
@@ -64,14 +65,16 @@ export default function AboutUs() {
               : `Photo of ${member.attributes.FirstName} ${member.attributes.LastName}`
           }
         />
+        {/* <Link href={`/staff/${member.id}`}> */}
         <Button
           button={{
-            url: null,
+            url: `/staff/${member.id}`,
             text: "More info",
-            clicked: () => setShowModal(member),
+            // clicked: () => setShowModal(member),
             fromAbout: true,
           }}
         />
+        {/* </Link> */}
       </div>
       <div className={classes.About__Staff__Group__Member__BottomBar}>
         <h5>
@@ -85,44 +88,43 @@ export default function AboutUs() {
     </div>
   );
 
-  const renderModal = showModal ? (
-    <Modal show={showModal} modalClosed={() => setShowModal(false)}>
-      <div className={classes.StaffModal}>
-        <div>
-          <h3>
-            {showModal.attributes.FirstName} {showModal.attributes.LastName}
-          </h3>
-          <h5>{showModal.attributes.Title}</h5>
-          <h6>
-            {" "}
-            <a href={`mailto:${showModal.attributes.Email}`}>
-              {showModal.attributes.Email}
-            </a>
-          </h6>
-          <p>{showModal.attributes.Bio}</p>
-          {console.log("M: ", showModal)}
-        </div>
-        <div className={classes.StaffModal__Image}>
-          <Image
-            src={showModal.attributes.Image.data.attributes.url}
-            alt={
-              showModal.attributes.Image.data.alternativeText
-                ? showModal.attributes.Image.data.alternativeText
-                : `Photo of ${showModal.attributes.FirstName} ${showModal.attributes.LastName}`
-            }
-            width={285}
-            height={300}
-          />
-        </div>
-      </div>
-    </Modal>
-  ) : null;
+  // const renderModal = showModal ? (
+  //   <Modal show={showModal} modalClosed={() => setShowModal(false)}>
+  //     <div className={classes.StaffModal}>
+  //       <div>
+  //         <h3>
+  //           {showModal.attributes.FirstName} {showModal.attributes.LastName}
+  //         </h3>
+  //         <h5>{showModal.attributes.Title}</h5>
+  //         <h6>
+  //           {" "}
+  //           <a href={`mailto:${showModal.attributes.Email}`}>
+  //             {showModal.attributes.Email}
+  //           </a>
+  //         </h6>
+  //         <p>{showModal.attributes.Bio}</p>
+  //       </div>
+  //       <div className={classes.StaffModal__Image}>
+  //         <Image
+  //           src={showModal.attributes.Image.data.attributes.url}
+  //           alt={
+  //             showModal.attributes.Image.data.alternativeText
+  //               ? showModal.attributes.Image.data.alternativeText
+  //               : `Photo of ${showModal.attributes.FirstName} ${showModal.attributes.LastName}`
+  //           }
+  //           width={285}
+  //           height={300}
+  //         />
+  //       </div>
+  //     </div>
+  //   </Modal>
+  // ) : null;
 
   return (
     <>
       {globalData && globalData.data ? (
         <Layout global={globalData.data.attributes}>
-          {renderModal}
+          {/* {renderModal} */}
           <div className={`${classes.About} u-padding-y-large`}>
             <div className="row">
               <h1>About Us</h1>
