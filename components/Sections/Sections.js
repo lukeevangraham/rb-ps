@@ -21,8 +21,7 @@ const sectionComponents = {
 };
 
 // DISPLAY A SECTION INDIVIDUALLY
-const Sections = ({ sectionData }) => {
-
+const Sections = ({ sectionData, fromProgramsPage }) => {
   const SectionComponent = sectionComponents[sectionData.__component];
 
   if (!SectionComponent) {
@@ -30,7 +29,12 @@ const Sections = ({ sectionData }) => {
   }
 
   // DISPLAY THE SECTION
-  return <SectionComponent data={sectionData} />;
+  return (
+    <SectionComponent
+      data={sectionData}
+      fromProgramsPage={fromProgramsPage ? fromProgramsPage : null}
+    />
+  );
 };
 
 export default Sections;

@@ -1,8 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import classes from "./HeadingAboveCards.module.scss";
 
-const HeadingAboveCards = ({ data }) => (
+const renderProgramLinks = (program, group) => (
+  <li key={program.id}>
+    <Link href={`/programs/${group.group}/${program.id}`}>
+      {program.Title ? program.Title : program.Name}
+    </Link>
+  </li>
+);
+
+const HeadingAboveCards = ({ data, fromProgramsPage }) => (
   <section className={`u-padding-y-large ${classes.Programs}`}>
     <div className="row">
       <h2>{data.Heading}</h2>
@@ -26,6 +35,31 @@ const HeadingAboveCards = ({ data }) => (
               className={classes.Programs__Group__Program__Body}
               dangerouslySetInnerHTML={{ __html: card.TopInfo }}
             />
+            {fromProgramsPage ? (
+              <div className={classes.Programs__Group__Program__Body}>
+                <ul>
+                  {card.Heading === "Preschool"
+                    ? fromProgramsPage.preschoolPrograms.map((program) =>
+                        renderProgramLinks(program, {
+                          group: "preschool",
+                        })
+                      )
+                    : card.Heading.includes("Parent And Child")
+                    ? fromProgramsPage.parentAndChildPrograms.map((program) =>
+                        renderProgramLinks(program, {
+                          group: "parent-and-child",
+                        })
+                      )
+                    : card.Heading.includes("Options")
+                    ? fromProgramsPage.extendedDayOptions.map((program) =>
+                        renderProgramLinks(program, {
+                          group: "options",
+                        })
+                      )
+                    : null}
+                </ul>
+              </div>
+            ) : null}
           </div>
         ))}
       </div>

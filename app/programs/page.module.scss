@@ -20,9 +20,5 @@
     }
   }
 
-  &__Program {
-    & > div:nth-child(2) {
-      font-size: $default-font-size;
-    }
-  }
+  
 }

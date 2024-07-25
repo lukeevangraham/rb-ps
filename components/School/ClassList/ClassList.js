@@ -37,7 +37,9 @@ const ClassList = ({ program }) => (
       Ten Equal Payments of
     </div>
 
-    {program.attributes.Class.map((item) => (
+    {console.log("P: ",)}
+
+    {program.Class.map((item) => (
       <>
         <div key={item.id} className={`${classes.ClassList__DayOfWeek} ${classes.ClassList__Body}`}>
           {item.dayOfWeek}
