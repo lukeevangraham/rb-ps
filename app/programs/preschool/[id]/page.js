@@ -1,20 +1,16 @@
 import QueryString from "qs";
-// import { useState, useEffect } from "react";
-import Layout from "@/components/UI/Layout/Layout";
-import ClassList from "@/components/School/ClassList/ClassList";
 import PreschoolClass from "@/components/School/PreschoolClass/PreschoolClass";
 import { getGlobalInfo, fetchAPI } from "@/lib/api";
 
 import classes from "./page.module.scss";
 
-// export async function generateStaticParams() {
-//   const programData = await fetchAPI(`ps-programs-st?${preschoolQuery}`);
-//   console.log("LOOK HERE: ", programData);
+export async function generateStaticParams() {
+  const programData = await fetchAPI(`/ps-programs-st?${preschoolQuery}`);
 
-//   return programData.data.attributes.preschoolPrograms.map((program) => ({
-//     id: program.id,
-//   }));
-// }
+  return programData.data.attributes.preschoolPrograms.map((program) => ({
+    id: program.id.toString(),
+  }));
+}
 
 const preschoolQuery = QueryString.stringify({
   populate: {

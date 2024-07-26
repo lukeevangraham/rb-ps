@@ -1,7 +1,7 @@
 @import "../../../styles/abstracts/variables.scss";
 
 .Program {
-  //   background-color: orangered;
+    // background-color: orangered;
 
   &__Overview {
     // background-color: orangered;
@@ -18,5 +18,9 @@
   }
   ul {
     font-size: $default-font-size;
+  }
+
+  &__Details {
+    // background-color: orangered;
   }
 }

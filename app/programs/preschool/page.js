@@ -28,7 +28,7 @@ const Preschool = async () => {
 
   return (
     <Layout global={globalData.data.attributes}>
-      {/* {console.log("PD: ", preschoolData)} */}
+      {console.log("PD: ", preschoolData)}
       <main className={classes.Preschool}>
         <div className="row u-padding-y-large">
           <h1>Preschool</h1>

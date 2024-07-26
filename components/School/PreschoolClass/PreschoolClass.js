@@ -6,7 +6,7 @@ import { getGlobalInfo, fetchAPI } from "@/lib/api";
 import Layout from "@/components/UI/Layout/Layout";
 import ClassList from "../ClassList/ClassList";
 
-import classes from "./PreschoolClass.module.scss"
+import classes from "./PreschoolClass.module.scss";
 
 const preschoolQuery = QueryString.stringify({
   populate: {
@@ -66,7 +66,7 @@ const PreschoolClass = ({ id }) => {
               </div>
             </section>
             <section className="u-padding-y-medium u-max-width-p">
-              <div dangerouslySetInnerHTML={{ __html: programData.Details }} />
+              <div className={classes.Program__Details} dangerouslySetInnerHTML={{ __html: programData.Details }} />
             </section>
           </main>
         </Layout>
