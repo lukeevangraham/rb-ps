@@ -38,7 +38,7 @@ const ParentAndChildClass = async ({ id }) => {
             dangerouslySetInnerHTML={{ __html: parentAndChildData.Overview }}
           />
         </div>
-          <ParentAndChildClassList program={parentAndChildData} />
+        <ParentAndChildClassList program={parentAndChildData} />
       </main>
     </Layout>
   );

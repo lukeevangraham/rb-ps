@@ -30,65 +30,80 @@ const renderClassTimes = (oldTime, increment) => {
     .toLowerCase()}`;
 };
 
-const ParentAndChildClassList = ({ program }) => (
-  <div className={`u-padding-y-medium ${classes.ParentAndChildClassList}`}>
-    <div className="u-max-width-p">
-      <div className={classes.ParentAndChildClassList__Offerings}>
-        <h3>Classes are offered on:</h3>
-        <div className={classes.ParentAndChildClassList__Offerings__List}>
-          {program.Class.map((PACClass) => (
-            <div key={PACClass.id}>
-              {`${PACClass.dayOfWeek}, `}{" "}
-              {renderClassTimes(PACClass.startTime, PACClass.dailyClassHours)}
+const ParentAndChildClassList = ({ program }) => {
+  // FORMATTING REGISTRATION DATE FOR LOWERCASE AM WITH CAPITALIZED MONTH NAME
+  let registrationDate = new Date(program.registrationOpenDate)
+    .toLocaleString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    })
+    .split(" ")
+    .map((string, index, array) => {
+      if (index === array.length - 1) {
+        return string.toLowerCase();
+      } else {
+        return string;
+      }
+    })
+    .join(" ");
+
+  return (
+    <div className={`u-padding-y-medium ${classes.ParentAndChildClassList}`}>
+      <div className="u-max-width-p">
+        <div className={classes.ParentAndChildClassList__Offerings}>
+          <h3>Classes are offered on:</h3>
+          <div className={classes.ParentAndChildClassList__Offerings__List}>
+            {program.Class.map((PACClass) => (
+              <div key={PACClass.id}>
+                {`${PACClass.dayOfWeek}, `}{" "}
+                {renderClassTimes(PACClass.startTime, PACClass.dailyClassHours)}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="u-max-width-p">
+        <div className={`${classes.ParentAndChildClassList__Sessions}`}>
+          {program.Session.map((session) => (
+            <div key={session.id}>
+              <h6 key={session.id}>{session.Name}</h6>
+              <div>
+                Class Dates:{" "}
+                {`${new Date(
+                  `${session.sessionStartDate} PST`
+                ).toLocaleDateString("en-US")} through ${new Date(
+                  `${session.sessionEndDate} PST`
+                ).toLocaleDateString("en-US")}`}
+              </div>
+              <div>{`$${(Math.round(session.Tuition * 100) / 100).toFixed(
+                2
+              )} (${session.weeksOfClass} weeks)`}</div>
+              <div>{`NO CLASS: ${session.noClassDates}`}</div>
             </div>
           ))}
         </div>
-      </div>
-    </div>
-    <div className="u-max-width-p">
-      <div className={`${classes.ParentAndChildClassList__Sessions}`}>
+        <div dangerouslySetInnerHTML={{ __html: program.Note }} />
         {program.Session.map((session) => (
-          <div key={session.id}>
-            <h6 key={session.id}>{session.Name}</h6>
-            <div>
-              Class Dates:{" "}
-              {`${new Date(
-                `${session.sessionStartDate} PST`
-              ).toLocaleDateString("en-US")} through ${new Date(
-                `${session.sessionEndDate} PST`
-              ).toLocaleDateString("en-US")}`}
-            </div>
-            <div>{`$${(Math.round(session.Tuition * 100) / 100).toFixed(2)} (${
-              session.weeksOfClass
-            } weeks)`}</div>
-            <div>{`NO CLASS: ${session.noClassDates}`}</div>
-          </div>
+          <div
+            className={classes.ParentAndChildClassList__PaymentDate}
+            key={session.id}
+          >{`Payment for ${session.Name} is due ${new Date(
+            `${session.paymentDueDate} PST`
+          ).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}`}</div>
         ))}
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: program.Note }} />
-      {program.Session.map((session) => (
         <div
-          className={classes.ParentAndChildClassList__PaymentDate}
-          key={session.id}
-        >{`Payment for ${session.Name} is due ${new Date(
-          `${session.paymentDueDate} PST`
-        ).toLocaleDateString("en-US", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-        })}`}</div>
-      ))}
-      <div className={classes.ParentAndChildClassList__Registration}>{`Online registration opens on ${new Date(
-        program.registrationOpenDate
-      ).toLocaleString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-      })}`}</div>
+          className={classes.ParentAndChildClassList__Registration}
+        >{`Online registration opens on ${registrationDate}`}</div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default ParentAndChildClassList;
