@@ -48,7 +48,7 @@ const PreschoolClass = ({ id }) => {
             <div className="u-padding-y-medium">
               <h1>{programData.Title}</h1>
               <div
-                className={classes.Program__Overview}
+                className={`u-max-width-p`}
                 dangerouslySetInnerHTML={{ __html: programData.Overview }}
               />
             </div>
