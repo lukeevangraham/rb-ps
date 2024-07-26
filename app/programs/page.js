@@ -1,4 +1,4 @@
-import { fetchAPI, getGlobalInfo } from "@/lib/api";
+import { fetchAPI, getGlobalInfo, programsDataQuery } from "@/lib/api";
 import QueryString from "qs";
 import Layout from "@/components/UI/Layout/Layout";
 import Sections from "@/components/Sections/Sections";
@@ -8,30 +8,18 @@ import ClassList from "@/components/School/ClassList/ClassList";
 import classes from "./page.module.scss";
 import { sectionQuery } from "@/lib/api";
 
-const programsDataQuery = QueryString.stringify({
-  populate: "*",
-});
-
 const homeDataQuery = QueryString.stringify({
   populate: {
     Sections: sectionQuery,
   },
 });
 
-const programsDataQueryNew = QueryString.stringify({
-  populate: {
-    preschoolPrograms: { populate: "*" },
-    parentAndChildPrograms: { populate: "*" },
-    extendedDayOptions: { populate: "*" },
-  },
-});
-
 const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
-    fetchAPI(`/ps-programs?${programsDataQuery}`, { next: { revalidate: 0 } }),
+
     fetchAPI(`/ps-home?${homeDataQuery}`, { next: { revalidate: 0 } }),
-    fetchAPI(`/ps-programs-st?${programsDataQueryNew}`, {
+    fetchAPI(`/ps-programs-st?${programsDataQuery}`, {
       next: { revalidate: 0 },
     }),
   ]);
@@ -40,14 +28,10 @@ const getData = async () => {
 };
 
 const Programs = async () => {
-  const [globalData, programsData, homeData, programsDataNew] = await getData();
+  const [globalData, homeData, programsData] = await getData();
 
   return (
     <Layout global={globalData.data.attributes}>
-      {/* {programsDataNew.data.attributes
-        ? console.log("PDN: ", programsDataNew.data.attributes)
-        : null} */}
-
       <main className={classes.Programs}>
         <div className={`row u-padding-y-large`}>
           <h1>Our Programs</h1>
@@ -58,7 +42,7 @@ const Programs = async () => {
               <Sections
                 sectionData={section}
                 key={section.id}
-                fromProgramsPage={programsDataNew.data.attributes}
+                fromProgramsPage={programsData.data.attributes}
               />
             </>
           ))}

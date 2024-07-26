@@ -32,15 +32,6 @@ const renderClassTimes = (oldTime, increment) => {
 
 const ParentAndChildClassList = ({ program }) => {
 
-  console.log("HERE: ", new Date(`${program.registrationOpenDate}`).toLocaleString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    timeZone: "PST"
-  }))
-
   // FORMATTING REGISTRATION DATE FOR LOWERCASE AM WITH CAPITALIZED MONTH NAME
   let registrationDate = new Date(`${program.registrationOpenDate}`)
     .toLocaleString("en-US", {
