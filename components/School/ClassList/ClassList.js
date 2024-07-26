@@ -1,3 +1,5 @@
+import React from "react";
+
 import classes from "./ClassList.module.scss";
 
 const renderClassTimes = (oldTime, increment) => {
@@ -37,20 +39,24 @@ const ClassList = ({ program }) => (
       Ten Equal Payments of
     </div>
 
-    {console.log("P: ",)}
-
     {program.Class.map((item) => (
-      <>
-        <div key={item.id} className={`${classes.ClassList__DayOfWeek} ${classes.ClassList__Body}`}>
+      <React.Fragment key={item.id}>
+        <div
+          className={`${classes.ClassList__DayOfWeek} ${classes.ClassList__Body}`}
+        >
           {item.dayOfWeek}
         </div>
         <div
           className={`${classes.ClassOption__Classes__Class} ${classes.ClassList__Body}`}
         >{`${item.dailyClassHours} hours -- ${item.numberOfDaysPerWeek}x a week`}</div>
         {renderClassTimes(item.startTime, item.dailyClassHours)}
-        <div className={classes.ClassList__Body}>{`$${numberWithCommas(item.annualTuition)}`}</div>
-        <div className={classes.ClassList__Body}>{`$${numberWithCommas(item.annualTuition / 10)}`}</div>
-      </>
+        <div className={classes.ClassList__Body}>{`$${numberWithCommas(
+          item.annualTuition
+        )}`}</div>
+        <div className={classes.ClassList__Body}>{`$${numberWithCommas(
+          item.annualTuition / 10
+        )}`}</div>
+      </React.Fragment>
     ))}
   </div>
 );

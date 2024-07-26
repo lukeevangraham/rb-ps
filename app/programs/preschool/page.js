@@ -1,4 +1,5 @@
 import QueryString from "qs";
+import Link from "next/link";
 import Layout from "@/components/UI/Layout/Layout";
 import ClassList from "@/components/School/ClassList/ClassList";
 import { getGlobalInfo, fetchAPI } from "@/lib/api";
@@ -33,7 +34,9 @@ const Preschool = async () => {
           <h1>Preschool</h1>
           {preschoolData.data.attributes.preschoolPrograms.map((program) => (
             <div className={classes.Preschool__Program} key={program.id}>
-              <h3>{program.Title}</h3>
+              <Link href={`/programs/preschool/${program.id}`}>
+                <h3>{program.Title}</h3>
+              </Link>
               <div>
                 For children who turn {program.Title[0]}-years-old{" "}
                 <u>

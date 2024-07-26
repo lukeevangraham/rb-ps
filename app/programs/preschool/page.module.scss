@@ -4,6 +4,7 @@
   // background-color: orangered;
 
   &__Program {
+    margin-bottom: 5rem;
     & > div:nth-child(2) {
       font-size: $default-font-size;
     }

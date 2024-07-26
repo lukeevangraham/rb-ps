@@ -11,7 +11,7 @@
 }
 
 .u-padding-y-medium {
-  margin: 8rem 0;
+  padding: 8rem 0;
 }
 
 .u-padding-y-large {
@@ -20,4 +20,9 @@
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem;
+}
+
+.u-max-width-p {
+  max-width: 60rem;
+  margin: auto;
 }
