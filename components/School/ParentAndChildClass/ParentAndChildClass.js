@@ -1,15 +1,15 @@
 import QueryString from "qs";
-import { getGlobalInfo, fetchAPI } from "@/lib/api";
+import { getGlobalInfo, fetchAPI, parentAndChildQuery } from "@/lib/api";
 import Layout from "@/components/UI/Layout/Layout";
 import ParentAndChildClassList from "./ParentAndChildClassList/ParentAndChildClassList";
 
 import classes from "./ParentAndChildClass.module.scss";
 
-const parentAndChildQuery = QueryString.stringify({
-  populate: {
-    parentAndChildPrograms: { populate: "*" },
-  },
-});
+// const parentAndChildQuery = QueryString.stringify({
+//   populate: {
+//     parentAndChildPrograms: { populate: "*" },
+//   },
+// });
 
 const getData = async () => {
   const res = await Promise.all([
