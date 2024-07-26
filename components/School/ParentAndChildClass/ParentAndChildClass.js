@@ -1,6 +1,7 @@
 import QueryString from "qs";
 import { getGlobalInfo, fetchAPI } from "@/lib/api";
 import Layout from "@/components/UI/Layout/Layout";
+import ParentAndChildClassList from "./ParentAndChildClassList/ParentAndChildClassList";
 
 import classes from "./ParentAndChildClass.module.scss";
 
@@ -27,15 +28,17 @@ const ParentAndChildClass = async ({ id }) => {
       (program) => program.id == id
     )[0];
 
-  console.log("PAC: ", parentAndChildData);
-
   return (
     <Layout global={globalData.data.attributes}>
       <main className={classes.ParentAndChildClass}>
         <div className="u-padding-y-medium">
           <h1>{parentAndChildData.Title}</h1>
-          <div className={`u-max-width-p`} dangerouslySetInnerHTML={{ __html: parentAndChildData.Overview }} />
+          <div
+            className={`u-max-width-p`}
+            dangerouslySetInnerHTML={{ __html: parentAndChildData.Overview }}
+          />
         </div>
+          <ParentAndChildClassList program={parentAndChildData} />
       </main>
     </Layout>
   );
