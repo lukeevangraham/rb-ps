@@ -26,11 +26,8 @@ const ParentAndChild = async () => {
         <div className={classes.ParentAndChild__Programs}>
           {parentAndChildData.data.attributes.parentAndChildPrograms.map(
             (program) => (
-              <div className="row">
-                <div
-                  key={program.id}
-                  className={classes.ParentAndChild__Programs__Program}
-                >
+              <div className="row" key={program.id}>
+                <div className={classes.ParentAndChild__Programs__Program}>
                   <h3>
                     <Link href={`./parent-and-child/${program.id}`}>
                       {program.Title}
