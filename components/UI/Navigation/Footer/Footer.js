@@ -58,7 +58,7 @@ const Footer = ({ global }) => (
           <div>
             <Link href="/programs">Programs</Link>
           </div>
-          <div>Parent & Child Classes</div>
+          <div><Link href="/programs/parent-and-child">Parent & Child Classes</Link></div>
           <div> <Link href="/programs/preschool">Preschool</Link> </div>
           <div>Extended Day</div>
           <div></div>
