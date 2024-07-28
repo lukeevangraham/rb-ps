@@ -60,7 +60,7 @@ const Footer = ({ global }) => (
           </div>
           <div><Link href="/programs/parent-and-child">Parent & Child Classes</Link></div>
           <div> <Link href="/programs/preschool">Preschool</Link> </div>
-          <div>Extended Day</div>
+          <div> <Link href="/programs/options"> Extended Day</Link></div>
           <div></div>
         </div>
         <div>
