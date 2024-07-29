@@ -16,14 +16,13 @@ const Options = async () => {
   const [globalData, optionsData] = await getData();
   return (
     <Layout global={globalData.data.attributes}>
-      {console.log("OD: ", optionsData.data.attributes.extendedDayOptions)}
       <div className={`u-padding-y-large ${classes.Options}`}>
         <h1>Extended Day Options</h1>
         <div className="row">
           {optionsData.data.attributes.extendedDayOptions.map((option) => (
             <div key={option.id} className={`u-max-width-p ${classes.Options__Option}`}>
               <h2>
-                <Link href={`./programs/options/${option.id}`}>
+                <Link href={`./options/${option.id}`}>
                   {option.Name}
                 </Link>
               </h2>

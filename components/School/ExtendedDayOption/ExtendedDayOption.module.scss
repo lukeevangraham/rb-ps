@@ -1,0 +1,15 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.ExtendedDayOption {
+  font-size: $default-font-size;
+
+  &__Overview {
+    // background-color: orangered;
+    line-height: 1.5;
+  }
+
+  &__Detail {
+    // background-color: orangered;
+    margin-bottom: 4rem;
+  }
+}

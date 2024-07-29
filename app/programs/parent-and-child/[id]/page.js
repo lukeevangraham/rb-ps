@@ -1,4 +1,3 @@
-import QueryString from "qs";
 import { fetchAPI, parentAndChildQuery } from "@/lib/api";
 import ParentAndChildClass from "@/components/School/ParentAndChildClass/ParentAndChildClass";
 
