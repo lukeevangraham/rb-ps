@@ -8,12 +8,13 @@
 
   // a {
   &__Inner {
-    height: 16.5rem;
+    // height: 16.5rem;
     display: flex;
-    align-items: center;
+    // align-items: center;
 
     &__Brand {
-      height: 80%;
+      margin: 1.65rem 0;
+      height: 13.2rem;
       display: flex;
       align-items: center;
 
@@ -33,5 +34,4 @@
       }
     }
   }
-  // }
 }

@@ -3,6 +3,8 @@
 .Nav {
   width: 100%;
   font-size: 1.92rem;
+  display: grid;
+  grid-template-rows: 16.5rem 1fr;
 
   &__List {
     display: flex;
@@ -23,6 +25,25 @@
           color: $color-quinary;
         }
       }
+    }
+  }
+
+  &__MegaMenu {
+    height: 0;
+    background-color: $color-primary;
+    color: $color-white;
+    display: flex;
+    justify-content: space-around;
+    transition: all 0.5s;
+    
+    &__on {
+      padding: 2rem 0 3rem 0;
+      margin-left: 4rem;
+    }
+    
+    &__off {
+      padding: 0;
+      transition: all 0.5s;
     }
   }
 }
