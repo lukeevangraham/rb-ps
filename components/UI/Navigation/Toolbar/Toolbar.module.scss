@@ -2,7 +2,8 @@
 
 .Toolbar {
   background-color: $color-primary;
-  position: relative;
+  position: absolute;
+  width: 100%;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.9);
   z-index: 2;
 

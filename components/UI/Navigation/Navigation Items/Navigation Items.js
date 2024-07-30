@@ -28,7 +28,7 @@ const NavigationItems = ({ links, button }) => {
           <div>Registration Packets</div>
           <div>Helpful Resources</div>
         </div>
-      ) : <div className={`${classes.Nav__MegaMenu__off}`}></div> }
+      ) : <div className={`${classes.Nav__MegaMenu} ${classes.Nav__MegaMenu__off}`}></div> }
     </nav>
   );
 };

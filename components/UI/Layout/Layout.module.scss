@@ -1,0 +1,12 @@
+.Layout {
+  position: relative;
+
+  &__Main {
+    position: absolute;
+    top: 16.5rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}

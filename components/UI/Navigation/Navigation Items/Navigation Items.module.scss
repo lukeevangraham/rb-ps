@@ -29,21 +29,21 @@
   }
 
   &__MegaMenu {
-    height: 0;
     background-color: $color-primary;
-    color: $color-white;
     display: flex;
     justify-content: space-around;
     transition: all 0.5s;
-    
+    margin-left: 4rem;
+
     &__on {
-      padding: 2rem 0 3rem 0;
-      margin-left: 4rem;
+      padding: 0rem 0 3rem 0;
+      color: rgba($color-white, 1);
+      transform: translateY(0rem);
     }
-    
+
     &__off {
-      padding: 0;
-      transition: all 0.5s;
+      color: rgba($color-white, 0);
+      transform: translateY(-5rem);
     }
   }
 }

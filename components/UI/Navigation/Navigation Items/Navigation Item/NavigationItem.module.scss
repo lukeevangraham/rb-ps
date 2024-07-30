@@ -1,0 +1,15 @@
+.MenuChoice {
+  display: flex;
+  gap: 0.5rem;
+
+  &__Arrow {
+    // background-color: orangered;
+    rotate: 90deg;
+    transition: rotate 0.5s;
+
+    &__Reverse {
+      rotate: -90deg;
+      transition: rotate 0.5s;
+    }
+  }
+}

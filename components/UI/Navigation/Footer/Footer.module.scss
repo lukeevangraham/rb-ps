@@ -1,8 +1,10 @@
 @import "../../../../styles/abstracts/variables.scss";
 
 .Footer {
+  position: relative;
   background-color: $color-secondary;
   font-size: $default-font-size;
+margin-top: auto;
 
   &__Container {
     display: flex;
