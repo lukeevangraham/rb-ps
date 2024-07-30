@@ -22,13 +22,19 @@ const NavigationItems = ({ links, button }) => {
       </ul>
 
       {parentsClicked ? (
-        <div className={`${classes.Nav__MegaMenu} ${classes.Nav__MegaMenu__on}`}>
+        <div
+          className={`${classes.Nav__MegaMenu} ${classes.Nav__MegaMenu__on}`}
+        >
           <div>Parent Handbook</div>
           <div>Calendar & Dates</div>
           <div>Registration Packets</div>
           <div>Helpful Resources</div>
         </div>
-      ) : <div className={`${classes.Nav__MegaMenu} ${classes.Nav__MegaMenu__off}`}></div> }
+      ) : (
+        <div
+          className={`${classes.Nav__MegaMenu} ${classes.Nav__MegaMenu__off}`}
+        ></div>
+      )}
     </nav>
   );
 };
