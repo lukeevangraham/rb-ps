@@ -1,0 +1,11 @@
+.Handbook {
+  // background-color: orangered;
+
+  &__Items {
+    margin: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+  }
+}

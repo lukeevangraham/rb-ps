@@ -1,0 +1,14 @@
+.Registration {
+  // background-color: orangered;
+
+  &__Items {
+    & > * {
+      //   background-color: orangered;
+      padding-bottom: 5rem;
+      h4 {
+        // background-color: orangered;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

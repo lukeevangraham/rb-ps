@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import NavigationItem from "./Navigation Item/Navigation Item";
+import Link from "next/link";
 
 import classes from "./Navigation Items.module.scss";
 
@@ -25,10 +26,18 @@ const NavigationItems = ({ links, button }) => {
         <div
           className={`${classes.Nav__MegaMenu} ${classes.Nav__MegaMenu__on}`}
         >
-          <div>Parent Handbook</div>
-          <div>Calendar & Dates</div>
-          <div>Registration Packets</div>
-          <div>Helpful Resources</div>
+          <div>
+            <Link href={`/parents/handbook`}>Parent Handbook</Link>
+          </div>
+          <div>
+            <Link href={`/parents/calendar`}>Calendar & Dates</Link>
+          </div>
+          <div>
+            <Link href={`/parents/registration`}>Registration Packets</Link>
+          </div>
+          <div>
+            <Link href={`/parents/resources`}>Helpful Resources</Link>
+          </div>
         </div>
       ) : (
         <div

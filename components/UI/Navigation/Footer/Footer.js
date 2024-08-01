@@ -58,9 +58,19 @@ const Footer = ({ global }) => (
           <div>
             <Link href="/programs">Programs</Link>
           </div>
-          <div><Link href="/programs/parent-and-child">Parent & Child Classes</Link></div>
-          <div> <Link href="/programs/preschool">Preschool</Link> </div>
-          <div> <Link href="/programs/options"> Extended Day</Link></div>
+          <div>
+            <Link href="/programs/parent-and-child">
+              Parent & Child Classes
+            </Link>
+          </div>
+          <div>
+            {" "}
+            <Link href="/programs/preschool">Preschool</Link>{" "}
+          </div>
+          <div>
+            {" "}
+            <Link href="/programs/options"> Extended Day</Link>
+          </div>
           <div></div>
         </div>
         <div>
@@ -70,10 +80,18 @@ const Footer = ({ global }) => (
         </div>
         <div>
           <div>Parents</div>
-          <div>Parent Handbook</div>
-          <div>Calendar & Dates</div>
-          <div>Registration Packets</div>
-          <div>Helpful Resources</div>
+          <div>
+            <Link href={`/parents/handbook`}>Parent Handbook</Link>
+          </div>
+          <div>
+            <Link href={`/parents/calendar`}>Calendar & Dates</Link>
+          </div>
+          <div>
+            <Link href={`/parents/registration`}>Registration Packets</Link>
+          </div>
+          <div>
+            <Link href={`/parents/resources`}>Helpful Resources</Link>
+          </div>
         </div>
         <div>
           <div>

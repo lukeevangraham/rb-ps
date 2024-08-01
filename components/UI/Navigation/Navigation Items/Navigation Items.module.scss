@@ -35,8 +35,16 @@
     transition: all 0.5s;
     margin-left: 4rem;
 
+    a {
+      color: $color-ternary;
+
+      &:hover {
+        color: $color-quinary;
+      }
+    }
+
     &__on {
-      padding: 0rem 0 3rem 0;
+      padding: 0rem 0 2rem 0;
       color: rgba($color-white, 1);
       transform: translateY(0rem);
     }
