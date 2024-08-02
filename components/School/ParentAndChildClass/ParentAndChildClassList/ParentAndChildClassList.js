@@ -53,7 +53,7 @@ const ParentAndChildClassList = ({ program }) => {
     .join(" ");
 
   return (
-    <div className={`u-padding-y-medium ${classes.ParentAndChildClassList}`}>
+    <div className={`u-padding-y-large ${classes.ParentAndChildClassList}`}>
       <div className="u-max-width-p">
         <div className={classes.ParentAndChildClassList__Offerings}>
           <h3>Classes are offered on:</h3>
