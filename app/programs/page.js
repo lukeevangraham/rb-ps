@@ -41,7 +41,7 @@ const Programs = async () => {
             <>
               <Sections
                 sectionData={section}
-                key={section.id}
+                keyData={section.id}
                 fromProgramsPage={programsData.data.attributes}
               />
             </>

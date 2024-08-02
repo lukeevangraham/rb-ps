@@ -11,8 +11,8 @@ const renderProgramLinks = (program, group) => (
   </li>
 );
 
-const HeadingAboveCards = ({ data, fromProgramsPage }) => (
-  <section className={`u-padding-y-large ${classes.Programs}`}>
+const HeadingAboveCards = ({ data, fromProgramsPage, keyData }) => (
+  <section className={`u-padding-y-large ${classes.Programs}`} key={keyData}>
     <div className="row">
       <h2>{data.Heading}</h2>
 

@@ -21,7 +21,7 @@ const sectionComponents = {
 };
 
 // DISPLAY A SECTION INDIVIDUALLY
-const Sections = ({ sectionData, fromProgramsPage, key }) => {
+const Sections = ({ sectionData, fromProgramsPage, keyData }) => {
   const SectionComponent = sectionComponents[sectionData.__component];
 
   if (!SectionComponent) {
@@ -32,7 +32,7 @@ const Sections = ({ sectionData, fromProgramsPage, key }) => {
   return (
     <SectionComponent
       data={sectionData}
-      key={key}
+      keyData={keyData}
       fromProgramsPage={fromProgramsPage ? fromProgramsPage : null}
     />
   );

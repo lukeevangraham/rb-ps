@@ -46,7 +46,7 @@ export default async function Home() {
       <main className={classes.Home}>
         {homeData.data.attributes.Sections.map((section, index) => (
           <>
-            <Sections sectionData={section} key={index} fromProgramsPage={programsData.data.attributes} />
+            <Sections sectionData={section} keyData={index} fromProgramsPage={programsData.data.attributes} />
           </>
         ))}
       </main>
