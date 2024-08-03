@@ -6,6 +6,7 @@ import Modal from "../Modal/Modal";
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import NavigationItems from "../Navigation/Navigation Items/Navigation Items";
 import Footer from "../Navigation/Footer/Footer";
+import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 
 import classes from "./Layout.module.scss";
 
@@ -17,7 +18,7 @@ import classes from "./Layout.module.scss";
 // });
 
 const Layout = ({ global, children }) => {
-  const [showSideDrawer, setShowSideDrawer] = useState(false);
+  const [showSideDrawer, setShowSideDrawer] = useState(true);
 
   const sideDrawerClosedHandler = () => {
     setShowSideDrawer(false);
@@ -33,13 +34,17 @@ const Layout = ({ global, children }) => {
       <div className={classes.Layout}>
         <Toolbar global={global} drawerToggleClicked={sideDrawerToggleHandler}>
           <div className={classes.Layout__DesktopOnly}>
-
-          <NavigationItems
-            links={global.Navbar.Links}
-            button={global.Navbar.Button}
+            <NavigationItems
+              links={global.Navbar.Links}
+              button={global.Navbar.Button}
             />
-            </div>
+          </div>
         </Toolbar>
+        <SideDrawer
+          open={showSideDrawer}
+          closed={sideDrawerClosedHandler}
+          global={global}
+        />
         <div className={classes.Layout__Main}>
           {children}
 
