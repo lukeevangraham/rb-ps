@@ -18,7 +18,7 @@ import classes from "./Layout.module.scss";
 // });
 
 const Layout = ({ global, children }) => {
-  const [showSideDrawer, setShowSideDrawer] = useState(true);
+  const [showSideDrawer, setShowSideDrawer] = useState(false);
 
   const sideDrawerClosedHandler = () => {
     setShowSideDrawer(false);
