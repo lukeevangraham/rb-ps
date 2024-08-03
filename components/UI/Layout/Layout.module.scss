@@ -1,5 +1,16 @@
+@import "../../../styles/abstracts/mixins";
+
 .Layout {
   position: relative;
+
+  &__DesktopOnly {
+    // background-color: orangered;
+    width: 100%;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
 
   &__Main {
     position: absolute;

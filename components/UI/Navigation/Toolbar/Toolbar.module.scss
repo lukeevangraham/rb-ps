@@ -14,7 +14,8 @@
   &__Inner {
     // height: 16.5rem;
     display: flex;
-    // align-items: center;
+    align-items: center;
+    justify-content: space-between;
 
     &__Brand {
       margin: 1.65rem 0;

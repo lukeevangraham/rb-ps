@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Brandname from "../../Brandname/Brandname";
+import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
 
 import classes from "./Toolbar.module.scss";
 
-const Toolbar = ({ global, children }) => (
+const Toolbar = ({ global, children, drawerToggleClicked }) => (
   <div className={classes.Toolbar}>
     <div className={`${classes.Toolbar__Inner} row`}>
       <div className={classes.Toolbar__Inner__Brand}>
@@ -23,6 +24,7 @@ const Toolbar = ({ global, children }) => (
         </Link>
       </div>
       {children}
+      <DrawerToggle clicked={drawerToggleClicked} />
     </div>
   </div>
 );

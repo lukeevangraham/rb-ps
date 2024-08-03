@@ -1,0 +1,54 @@
+@import "../../../../../styles/abstracts/variables.scss";
+@import "../../../../../styles/abstracts/mixins";
+
+.DrawerToggle {
+  background-color: $color-secondary;
+  height: 5.5rem;
+  width: 9.9rem;
+  border-radius: 1.1rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  gap: 1rem;
+
+  @include respond(tab-port) {
+    display: flex;
+  }
+
+  &__IconWrap {
+    // background-color: orangered;
+    &__Icon {
+      position: relative;
+      margin-top: 0.85rem;
+      margin-left: 1rem;
+
+      &,
+      &::before,
+      &::after {
+        width: 2.3rem;
+        height: 2px;
+        background-color: $color-grey-dark;
+        display: inline-block;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all 0.2s;
+      }
+
+      &::before {
+        top: -0.7rem;
+      }
+      &::after {
+        top: 0.7rem;
+      }
+    }
+  }
+  &__Label {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+  }
+}
