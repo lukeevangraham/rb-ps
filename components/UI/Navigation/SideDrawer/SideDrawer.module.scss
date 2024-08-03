@@ -10,7 +10,7 @@
   z-index: 150;
   color: $color-white;
   padding: 4rem;
-  transition: transform .3s ease-out;
+  transition: transform 0.3s ease-out;
 
   &__open {
     transform: translateX(0);
