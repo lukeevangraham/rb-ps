@@ -10,6 +10,7 @@
   display: none;
   align-items: center;
   gap: 1rem;
+  transition: all .25s;
 
   @include respond(tab-port) {
     display: flex;
@@ -50,5 +51,16 @@
   &__Label {
     text-transform: uppercase;
     font-size: 1.6rem;
+  }
+
+  &:hover {
+    background-color: $color-secondary-dark;
+  }
+
+  &:hover &__IconWrap &__IconWrap__Icon::before {
+    top: -1rem;
+  }
+  &:hover &__IconWrap &__IconWrap__Icon::after {
+    top: 1rem;
   }
 }
