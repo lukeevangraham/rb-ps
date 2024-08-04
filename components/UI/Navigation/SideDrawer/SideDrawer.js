@@ -30,7 +30,7 @@ const SideDrawer = ({ open, closed, global }) => (
       <div className={classes.SideDrawer__Nav}>
         <ul>
           {global.Navbar.Links.map((link) => (
-            <li>
+            <li key={link.id}>
               <Link href={`.${link.url}`}>{link.text}</Link>
             </li>
           ))}
