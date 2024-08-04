@@ -19,4 +19,38 @@
   &__closed {
     transform: translateX(100%);
   }
+
+  &__Brand {
+    display: flex;
+    align-items: center;
+    &__Logo {
+      position: relative;
+      height: 6rem;
+      width: 5rem;
+    }
+
+    &__Brandname {
+      width: 8rem;
+
+      & > * {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  &__Nav {
+    ul {
+      list-style-type: none;
+margin: 3rem 0 0 0ƒ;
+      font-size: $default-font-size;
+      a {
+        color: $color-ternary;
+        border-bottom: none;
+
+        &:hover {
+          color: $color-quinary;
+        }
+      }
+    }
+  }
 }
