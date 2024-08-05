@@ -47,12 +47,22 @@
         padding: 1rem 0;
       }
       a {
+        display: flex;
         color: $color-ternary;
         border-bottom: none;
 
         &:hover {
           color: $color-quinary;
         }
+      }
+    }
+
+    &__MenuChoice {
+      // background-color: orangered;
+      display: flex;
+      gap: 0.5rem;
+      &__Arrow {
+        rotate: -90deg;
       }
     }
   }

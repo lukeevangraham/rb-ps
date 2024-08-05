@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Backdrop from "../../Backdrop/Backdrop";
 import Brandname from "../../Brandname/Brandname";
+import NavigationItems from "../Navigation Items/Navigation Items";
 
 import classes from "./SideDrawer.module.scss";
 
@@ -27,15 +28,25 @@ const SideDrawer = ({ open, closed, global }) => (
           </div>
         </div>
       </Link>
-      <div className={classes.SideDrawer__Nav}>
+      <NavigationItems links={global.Navbar.Links} />
+      {/* <div className={classes.SideDrawer__Nav}>
         <ul>
           {global.Navbar.Links.map((link) => (
             <li key={link.id}>
-              <Link href={`.${link.url}`}>{link.text}</Link>
+              {link.url == "/parents" ? (
+                <a href="#" className={classes.SideDrawer__Nav__MenuChoice} >
+                  <div>{`${link.text} `}</div>
+                  <div className={classes.SideDrawer__Nav__MenuChoice__Arrow}>
+                    &gt;
+                  </div>
+                </a>
+              ) : (
+                <Link href={`.${link.url}`}>{link.text}</Link>
+              )}
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
       {/* {console.log("SD G: ", global.Navbar)} */}
     </div>
   </>
