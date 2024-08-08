@@ -11,6 +11,7 @@
   align-items: center;
   gap: 1rem;
   transition: all .25s;
+  align-self: center;
 
   @include respond(tab-port) {
     display: flex;
