@@ -10,7 +10,9 @@ const NavigationItems = ({ links, button }) => {
   const [parentsClicked, setParentsClicked] = useState(false);
 
   const parentMenu = (source) => (
-    <div className={source == "toolbar" ? classes.DesktopOnly : classes.MobileOnly}>
+    <div
+      className={source == "toolbar" ? classes.DesktopOnly : classes.MobileOnly}
+    >
       <div className={`${classes.Nav__MegaMenu} ${classes.Nav__MegaMenu__on}`}>
         <li>
           <Link href={`/parents/handbook`}>Parent Handbook</Link>

@@ -44,6 +44,9 @@
   }
 
   &__MegaMenu {
+    li {
+      list-style: none;
+    }
     background-color: $color-primary;
     display: flex;
     justify-content: space-around;
@@ -92,6 +95,5 @@
   @include respond(tab-port) {
     // margin-top: 1.5rem;
     display: block;
-
   }
 }
