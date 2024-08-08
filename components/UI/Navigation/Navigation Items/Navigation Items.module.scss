@@ -7,6 +7,10 @@
   display: grid;
   grid-template-rows: 16.5rem 1fr;
 
+  @include respond(tab-port) {
+    display: unset;
+  }
+
   &__List {
     display: flex;
     justify-content: space-between;
@@ -17,7 +21,7 @@
     @include respond(tab-port) {
       flex-direction: column;
       align-items: flex-start;
-margin-left: 0;
+      margin-left: 0;
     }
 
     li {
@@ -46,6 +50,11 @@ margin-left: 0;
     transition: all 0.5s;
     margin-left: 4rem;
 
+    @include respond(tab-port) {
+      background-color: unset;
+      flex-direction: column;
+    }
+
     a {
       color: $color-ternary;
 
@@ -58,11 +67,31 @@ margin-left: 0;
       padding: 0rem 0 2rem 0;
       color: rgba($color-white, 1);
       transform: translateY(0rem);
+
+      @include respond(tab-port) {
+        padding: 0;
+      }
     }
 
     &__off {
       color: rgba($color-white, 0);
       transform: translateY(-5rem);
     }
+  }
+}
+
+.DesktopOnly {
+  display: block;
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.MobileOnly {
+  display: none;
+  @include respond(tab-port) {
+    // margin-top: 1.5rem;
+    display: block;
+
   }
 }
