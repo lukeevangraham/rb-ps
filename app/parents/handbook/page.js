@@ -28,26 +28,28 @@ const ParentHandbook = async () => {
   return (
     <Layout global={globalData.data.attributes}>
       <main className={`u-padding-y-large ${classes.Handbook}`}>
-        <h1>Parent Handbook</h1>
-        <div className="u-max-width-p">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: parentData.data.attributes.ParentHandbookTopInfo,
-            }}
-          />
-        </div>
-        <div className={classes.Handbook__Items}>
-          {parentData.data.attributes.HandbookItems.data.map((item) => (
-            <div key={item.id}>
-              <Button
-                button={{
-                  newTab: true,
-                  text: item.attributes.name,
-                  url: item.attributes.url,
-                }}
-              />{" "}
-            </div>
-          ))}
+        <div className="row">
+          <h1>Parent Handbook</h1>
+          <div className="u-max-width-p">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: parentData.data.attributes.ParentHandbookTopInfo,
+              }}
+            />
+          </div>
+          <div className={classes.Handbook__Items}>
+            {parentData.data.attributes.HandbookItems.data.map((item) => (
+              <div key={item.id}>
+                <Button
+                  button={{
+                    newTab: true,
+                    text: item.attributes.name,
+                    url: item.attributes.url,
+                  }}
+                />{" "}
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </Layout>
