@@ -40,7 +40,6 @@ const Layout = ({ global, children }) => {
             />
           </div>
         </Toolbar>
-        <div>Hello</div>
         <SideDrawer
           open={showSideDrawer}
           closed={sideDrawerClosedHandler}
