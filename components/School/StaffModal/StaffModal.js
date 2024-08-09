@@ -5,7 +5,7 @@ const StaffModal = ({ memberData }) => {
   return (
     <>
       <div className={classes.StaffModal}>
-        <div>
+        <div className={classes.StaffModal__Body}>
           <h3>
             {memberData.attributes.FirstName} {memberData.attributes.LastName}
           </h3>
@@ -26,8 +26,9 @@ const StaffModal = ({ memberData }) => {
                 ? memberData.attributes.Image.data.alternativeText
                 : `Photo of ${memberData.attributes.FirstName} ${memberData.attributes.LastName}`
             }
-            width={285}
-            height={300}
+            // width={285}
+            // height={300}
+            fill
           />
         </div>
       </div>

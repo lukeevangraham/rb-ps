@@ -120,7 +120,7 @@ export default async function AboutUs() {
             </div>
             <div>
               <h3>Teaching Staff Member Profiles</h3>
-              <div className={`${classes.About__Staff__Group} row`}>
+              <div className={`${classes.About__Staff__Group}`}>
                 {staffData.data
                   .filter(
                     (member) => member.attributes.AdminStaffMember !== true

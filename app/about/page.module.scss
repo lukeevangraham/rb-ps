@@ -41,6 +41,7 @@
 
       @include respond(tab-port) {
         flex-direction: column;
+        padding: 0 2%;
       }
 
       &__Member {
