@@ -5,7 +5,6 @@ import classes from "./Hero.module.scss";
 
 const Hero = ({ data }) => (
   <section className={`${classes.Background}`}>
-    <div>Hello</div>
     <div className="row">
       <div className={classes.Hero}>
         {/* {console.log("Data", data.Button)} */}

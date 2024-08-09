@@ -10,7 +10,7 @@
   //   $color-ternary
   // );
   // padding-top: 4.5rem;
-  height: 61rem;
+  // height: 61rem;
   display: flex;
   // padding: 6rem 0;
   gap: 2rem;
@@ -57,11 +57,11 @@
     width: 100%;
     // object-fit: cover;
     // margin-right: 6rem;
-    aspect-ratio: 1 / 1;
     filter: drop-shadow(0 0 9px rgba($color-black, 0.4));
 
     @include respond(tab-port) {
       width: 75%;
+      height: 30rem;
     }
 
     img {
