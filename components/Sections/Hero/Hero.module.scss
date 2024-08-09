@@ -19,6 +19,9 @@
 
   @include respond(tab-port) {
     flex-direction: column-reverse;
+    padding-bottom: 3rem;
+    // padding: 5rem 0;
+    height: 70rem;
   }
 
   &__Text {
@@ -31,6 +34,10 @@
     font-weight: 300;
     z-index: 1;
     // padding-left: 6rem;
+
+    @include respond(tab-port) {
+      flex: 0 1 auto;
+    }
 
     &__Subheading {
       margin: 1.5rem 0;
