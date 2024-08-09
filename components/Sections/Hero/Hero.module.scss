@@ -60,8 +60,8 @@
     filter: drop-shadow(0 0 9px rgba($color-black, 0.4));
 
     @include respond(tab-port) {
-      width: 75%;
-      height: 30rem;
+      width: 65%;
+      height: 20rem;
     }
 
     img {
