@@ -63,13 +63,15 @@
             height: 35rem;
           }
 
-          &:hover {
-            & > div:nth-child(1) {
-              opacity: 1;
-            }
+          @media only screen and (min-width: 56.26em) {
+            &:hover {
+              & > div:nth-child(1) {
+                opacity: 1;
+              }
 
-            a {
-              opacity: 1;
+              a {
+                opacity: 1;
+              }
             }
           }
 
