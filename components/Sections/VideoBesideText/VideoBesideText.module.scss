@@ -1,3 +1,5 @@
+@import "../../../styles/abstracts/mixins";
+
 .VideoBesideText {
   width: 100%;
   gap: 2rem;
@@ -6,9 +8,14 @@
   align-items: center;
   // grid-template-columns: 50% 50%;
 
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
   &__Video {
     // grid-column: 1/2;
     flex: 0 1 40%;
+    width: 100%;
 
     &__Frame {
       position: relative;

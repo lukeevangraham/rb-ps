@@ -1,14 +1,20 @@
+@import "../../../../styles/abstracts/mixins";
 @import "../../../../styles/abstracts/variables.scss";
 
 .Footer {
   position: relative;
   background-color: $color-secondary;
   font-size: $default-font-size;
-margin-top: auto;
+  margin-top: auto;
 
   &__Container {
     display: flex;
     justify-content: space-around;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      gap: 3rem;
+    }
 
     &__FirstColumn {
       line-height: 1.5;

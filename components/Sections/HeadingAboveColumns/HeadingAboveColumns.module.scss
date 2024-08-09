@@ -1,3 +1,4 @@
+@import "../../../styles/abstracts/mixins";
 @import "../../../styles/abstracts/variables.scss";
 
 .HeadingAboveColumns {
@@ -8,6 +9,10 @@
     display: flex;
     gap: 3rem;
     text-align: left;
+
+@include respond(tab-port) {
+  flex-direction: column;
+}
 
     &__Column {
       flex: 1 1 0;

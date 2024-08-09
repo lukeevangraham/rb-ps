@@ -1,3 +1,4 @@
+@import "../../../styles/abstracts/mixins";
 @import "../../../styles/abstracts/variables.scss";
 
 .Programs {
@@ -9,6 +10,11 @@
     display: flex;
     justify-content: space-evenly;
     gap: 2rem;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+
 
     &__Program {
       flex: 0 1 30%;
