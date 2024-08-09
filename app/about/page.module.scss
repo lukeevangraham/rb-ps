@@ -98,6 +98,11 @@
             opacity: 0;
             transition: all 0.2s;
           }
+          @include respond(tab-port) {
+            a {
+              opacity: 1;
+            }
+          }
         }
         &__BottomBar {
           // position: absolute;

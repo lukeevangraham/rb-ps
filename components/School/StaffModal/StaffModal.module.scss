@@ -1,7 +1,14 @@
+@import "../../../styles/abstracts/mixins";
+
 .StaffModal {
     // background-color: orangered;
   display: flex;
   gap: 2rem;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
 
   h3 {
     margin-bottom: 0.5rem;
