@@ -88,37 +88,7 @@ export default async function AboutUs() {
     </div>
   );
 
-  // const renderModal = showModal ? (
-  //   <Modal show={showModal} modalClosed={() => setShowModal(false)}>
-  //     <div className={classes.StaffModal}>
-  //       <div>
-  //         <h3>
-  //           {showModal.attributes.FirstName} {showModal.attributes.LastName}
-  //         </h3>
-  //         <h5>{showModal.attributes.Title}</h5>
-  //         <h6>
-  //           {" "}
-  //           <a href={`mailto:${showModal.attributes.Email}`}>
-  //             {showModal.attributes.Email}
-  //           </a>
-  //         </h6>
-  //         <p>{showModal.attributes.Bio}</p>
-  //       </div>
-  //       <div className={classes.StaffModal__Image}>
-  //         <Image
-  //           src={showModal.attributes.Image.data.attributes.url}
-  //           alt={
-  //             showModal.attributes.Image.data.alternativeText
-  //               ? showModal.attributes.Image.data.alternativeText
-  //               : `Photo of ${showModal.attributes.FirstName} ${showModal.attributes.LastName}`
-  //           }
-  //           width={285}
-  //           height={300}
-  //         />
-  //       </div>
-  //     </div>
-  //   </Modal>
-  // ) : null;
+
 
   return (
     <>
@@ -150,7 +120,7 @@ export default async function AboutUs() {
             </div>
             <div>
               <h3>Teaching Staff Member Profiles</h3>
-              <div className={classes.About__Staff__Group}>
+              <div className={`${classes.About__Staff__Group} row`}>
                 {staffData.data
                   .filter(
                     (member) => member.attributes.AdminStaffMember !== true

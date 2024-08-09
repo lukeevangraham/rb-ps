@@ -1,3 +1,4 @@
+@import "../../styles/abstracts/mixins";
 @import "../../styles/abstracts/variables.scss";
 
 .About {
@@ -38,6 +39,10 @@
       margin-bottom: 6rem;
       flex-wrap: wrap;
 
+      @include respond(tab-port) {
+        flex-direction: column;
+      }
+
       &__Member {
         // background-color: orangered;
         // height: 20rem;
@@ -51,6 +56,11 @@
           border-radius: 9px 9px 0 0;
           position: relative;
           overflow: hidden;
+
+          @include respond(tab-port) {
+            aspect-ratio: unset;
+            height: 35rem;
+          }
 
           &:hover {
             & > div:nth-child(1) {
