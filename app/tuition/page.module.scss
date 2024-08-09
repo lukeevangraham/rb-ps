@@ -1,7 +1,13 @@
 .Tuition {
   // background-color: orangered;
 
+  section:nth-child(2) {
+    // background-color: orangered;
+    padding: 0;
+  }
+  
   section:nth-child(3) {
+    padding-top: 6.5rem;
     padding-bottom: 3rem;
   }
   section:nth-child(4) {
