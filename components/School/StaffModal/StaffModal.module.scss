@@ -3,7 +3,7 @@
 .StaffModal {
   display: flex;
   gap: 2rem;
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: initial !important;
 
   @include respond(tab-port) {
@@ -34,8 +34,8 @@
     height: 30rem;
 
     @include respond(tab-port) {
-width: 100%;
-flex: unset;
+      width: 100%;
+      flex: unset;
     }
 
     img {
