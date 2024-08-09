@@ -31,7 +31,6 @@ const Calendar = async () => {
             data={
               parentData.data.attributes.CalendarItems.data[0].attributes.url
             }
-            type="application/pdf"
             style={{ width: "100%", height: "50vh", border: "none" }}
           />
         </div>
