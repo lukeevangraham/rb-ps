@@ -1,23 +1,35 @@
+@import "../../../styles/abstracts/mixins";
 @import "../../../styles/abstracts/variables.scss";
 
 .Hero {
-  position: relative;
+  // position: relative;
   height: 70vh;
-  background-image: linear-gradient(
-    to bottom right,
-    $color-ternary,
-    $color-ternary
-  );
+  // background-image: linear-gradient(
+  //   to bottom right,
+  //   $color-ternary,
+  //   $color-ternary
+  // );
+  // padding-top: 4.5rem;
+  display: flex;
+  padding: 3rem 0;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond(tab-port) {
+    flex-direction: column-reverse;
+  }
 
   &__Text {
-    position: absolute;
-    top: 50%;
-    width: 47%;
-    transform: translateY(-50%);
+    // position: absolute;
+    // top: 50%;
+    // width: 47%;
+    // transform: translateY(-50%);
+    flex: 0 1 111%;
     font-size: 5.375rem;
     font-weight: 300;
     z-index: 1;
-    padding-left: 6rem;
+    // padding-left: 6rem;
 
     &__Subheading {
       margin: 1.5rem 0;
@@ -27,20 +39,36 @@
   }
 
   &__MainImage {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    height: 80%;
-    width: 45%;
-    object-fit: cover;
-    margin-right: 6rem;
+    position: relative;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // right: 0;
+    // height: 80%;
+    // width: 45%;
+    flex: 0 1 auto;
+    width: 100%;
+    // object-fit: cover;
+    // margin-right: 6rem;
+    aspect-ratio: 1 / 1;
     filter: drop-shadow(0 0 9px rgba($color-black, 0.4));
+
+    @include respond(tab-port) {
+      width: 50%;
+    }
 
     img {
       z-index: 0;
       object-fit: cover;
+      // object-fit: contain;
       clip-path: url("#blob1");
     }
   }
+}
+
+.Background {
+  background-image: linear-gradient(
+    to bottom right,
+    $color-ternary,
+    $color-ternary
+  );
 }
