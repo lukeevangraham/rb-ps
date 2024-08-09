@@ -10,7 +10,7 @@
   //   $color-ternary
   // );
   // padding-top: 4.5rem;
-  // height: 61rem;
+  height: 61rem;
   display: flex;
   // padding: 6rem 0;
   gap: 2rem;
@@ -21,7 +21,7 @@
     flex-direction: column-reverse;
     padding-bottom: 3rem;
     // padding: 5rem 0;
-    // height: 70rem;
+    height: unset;
   }
 
   &__Text {
