@@ -27,10 +27,11 @@ const Calendar = async () => {
       <main className="u-padding-y-large">
         <h1>Calendar</h1>
         <div className="row">
-          <embed
-            src={
+          <object
+            data={
               parentData.data.attributes.CalendarItems.data[0].attributes.url
             }
+            type="application/pdf"
             style={{ width: "100%", height: "50vh", border: "none" }}
           />
         </div>
