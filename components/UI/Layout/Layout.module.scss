@@ -1,7 +1,7 @@
 @import "../../../styles/abstracts/mixins";
 
 .Layout {
-  // position: relative;
+  position: relative;
 
   &__DesktopOnly {
     // background-color: orangered;
@@ -13,8 +13,8 @@
   }
 
   &__Main {
-    // position: absolute;
-    // top: 16.5rem;
+    position: absolute;
+    top: 16.5rem;
     width: 100%;
     min-height: 100vh;
     display: flex;
