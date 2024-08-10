@@ -2,6 +2,8 @@ import QueryString from "qs";
 import { getGlobalInfo, fetchAPI } from "@/lib/api";
 import Layout from "@/components/UI/Layout/Layout";
 
+import classes from "./page.module.scss";
+
 const calendaryQuery = QueryString.stringify({
   fields: ["id"],
   populate: {
@@ -24,14 +26,18 @@ const Calendar = async () => {
   const [globalData, parentData] = await getData();
   return (
     <Layout global={globalData.data.attributes}>
-      <main className="u-padding-y-large">
+      <main className={`u-padding-y-large ${classes.Calendar}`}>
         <h1>Calendar</h1>
         <div className="row">
-          <img
+          {/* <embed
             src={
               parentData.data.attributes.CalendarItems.data[0].attributes.url
             }
             style={{ width: "100%", height: "50vh", border: "none" }}
+          /> */}
+          <iframe
+            src={`https://docs.google.com/viewerng/viewer?url=${parentData.data.attributes.CalendarItems.data[0].attributes.url}&embedded=true`}
+            frameBorder="0"
           />
         </div>
       </main>
