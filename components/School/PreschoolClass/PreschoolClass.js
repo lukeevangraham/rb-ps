@@ -46,11 +46,13 @@ const PreschoolClass = ({ id }) => {
         <Layout global={globalData.data.attributes}>
           <main className={classes.Program}>
             <div className="u-padding-y-large">
-              <h1>{programData.Title}</h1>
-              <div
-                className={`u-max-width-p`}
-                dangerouslySetInnerHTML={{ __html: programData.Overview }}
-              />
+              <div className="row">
+                <h1>{programData.Title}</h1>
+                <div
+                  className={`u-max-width-p`}
+                  dangerouslySetInnerHTML={{ __html: programData.Overview }}
+                />
+              </div>
             </div>
             <section
               className={`u-padding-y-large ${classes.Program__ClassList}`}
@@ -66,7 +68,12 @@ const PreschoolClass = ({ id }) => {
               </div>
             </section>
             <section className="u-padding-y-large u-max-width-p">
-              <div className={classes.Program__Details} dangerouslySetInnerHTML={{ __html: programData.Details }} />
+              <div className="row">
+                <div
+                  className={classes.Program__Details}
+                  dangerouslySetInnerHTML={{ __html: programData.Details }}
+                />
+              </div>
             </section>
           </main>
         </Layout>

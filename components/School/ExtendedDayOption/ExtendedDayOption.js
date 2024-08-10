@@ -25,23 +25,25 @@ const ExtendedDay = async ({ id }) => {
     <Layout global={globalData.data.attributes}>
       <main className={classes.ExtendedDayOption}>
         <div className="u-padding-y-large">
-          <div className="u-max-width-p">
-            <h1>{extendedOptionData.Name}</h1>
-            <div
-              dangerouslySetInnerHTML={{ __html: extendedOptionData.Summary }}
-            />
-            <div
-              className={`u-margin-bottom-medium ${classes.ExtendedDayOption__Overview}`}
-            >
-              {extendedOptionData.Overview}
+          <div className="row">
+            <div className="u-max-width-p">
+              <h1>{extendedOptionData.Name}</h1>
+              <div
+                dangerouslySetInnerHTML={{ __html: extendedOptionData.Summary }}
+              />
+              <div
+                className={`u-margin-bottom-medium ${classes.ExtendedDayOption__Overview}`}
+              >
+                {extendedOptionData.Overview}
+              </div>
+              <div
+                className={` u-margin-bottom-medium ${classes.ExtendedDayOption__Detail}`}
+                dangerouslySetInnerHTML={{ __html: extendedOptionData.Detail }}
+              />
+              {extendedOptionData.button ? (
+                <Button button={extendedOptionData.button} />
+              ) : null}
             </div>
-            <div
-              className={` u-margin-bottom-medium ${classes.ExtendedDayOption__Detail}`}
-              dangerouslySetInnerHTML={{ __html: extendedOptionData.Detail }}
-            />
-            {extendedOptionData.button ? (
-              <Button button={extendedOptionData.button} />
-            ) : null}
           </div>
         </div>
       </main>
