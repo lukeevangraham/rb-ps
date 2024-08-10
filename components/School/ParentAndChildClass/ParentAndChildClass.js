@@ -30,13 +30,15 @@ const ParentAndChildClass = async ({ id }) => {
 
   return (
     <Layout global={globalData.data.attributes}>
-      <main className={classes.ParentAndChildClass}>
+      <main className={`${classes.ParentAndChildClass}`}>
         <div className="u-padding-y-large">
-          <h1>{parentAndChildData.Title}</h1>
-          <div
-            className={`u-max-width-p`}
-            dangerouslySetInnerHTML={{ __html: parentAndChildData.Overview }}
-          />
+          <div className="row">
+            <h1>{parentAndChildData.Title}</h1>
+            <div
+              className={`u-max-width-p`}
+              dangerouslySetInnerHTML={{ __html: parentAndChildData.Overview }}
+            />
+          </div>
         </div>
         <ParentAndChildClassList program={parentAndChildData} />
       </main>
