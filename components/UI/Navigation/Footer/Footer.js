@@ -74,11 +74,6 @@ const Footer = ({ global }) => (
           <div></div>
         </div>
         <div>
-          <div>
-            <Link href="/tuition">Tuition</Link>
-          </div>
-        </div>
-        <div>
           <div>Parents</div>
           <div>
             <Link href={`/parents/handbook`}>Parent Handbook</Link>
@@ -91,6 +86,11 @@ const Footer = ({ global }) => (
           </div>
           <div>
             <Link href={`/parents/resources`}>Helpful Resources</Link>
+          </div>
+        </div>
+        <div>
+          <div>
+            <Link href="/tuition">Tuition</Link>
           </div>
         </div>
         <div>

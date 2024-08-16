@@ -93,6 +93,10 @@
 
 .MobileOnly {
   display: none;
+
+  & > * {
+    margin-left: 2rem;
+  }
   @include respond(tab-port) {
     // margin-top: 1.5rem;
     display: block;
