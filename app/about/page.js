@@ -115,7 +115,7 @@ export default async function AboutUs() {
             <h3>Administration Staff Member Profiles</h3>
             <div className={`${classes.About__Staff__Group} row`}>
               {staffData.data
-                .filter((member) => member.attributes.AdminStaffMember)
+                .filter((member) => member.attributes.AdminStaffMember).reverse()
                 .map((member) => renderStaffMember(member))}
             </div>
             <div>
