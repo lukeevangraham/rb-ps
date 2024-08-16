@@ -37,13 +37,13 @@ const Preschool = async () => {
                 <Link href={`/programs/preschool/${program.id}`}>
                   <h3>{program.Title}</h3>
                 </Link>
-                <div>
+                <p>
                   For children who turn {program.Title[0]}-years-old{" "}
                   <u>
                     {" "}
                     <em> on or before</em> September 1, {schoolYearBeginning}
                   </u>
-                </div>
+                </p>
               </div>
               <ClassList program={program} />
             </div>

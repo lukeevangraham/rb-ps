@@ -8,5 +8,9 @@
     & > div:nth-child(2) {
       font-size: $default-font-size;
     }
+
+    p {
+      margin-bottom: 1rem;
+    }
   }
 }
