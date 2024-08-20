@@ -2,7 +2,11 @@
 
 .Home {
   section:nth-child(2) {
-    background-color: $color-quaternary;
+    background-image: linear-gradient(
+      to bottom right,
+      $color-quaternary,
+      $color-secondary-darker
+    );
     color: $color-white;
   }
   section:nth-child(3) {

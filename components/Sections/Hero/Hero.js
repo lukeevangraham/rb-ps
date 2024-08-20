@@ -22,8 +22,8 @@ const Hero = ({ data }) => (
         </div>
         <div className={classes.Hero__MainImage}>
           <Image
-            src={data.mainImage.data.attributes.url}
-            alt={data.mainImage.data.attributes.alternativeText}
+            src={data.mainImage.data[0].attributes.url}
+            alt={data.mainImage.data[0].attributes.alternativeText}
             fill
             priority
           />

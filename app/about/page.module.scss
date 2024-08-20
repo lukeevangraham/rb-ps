@@ -9,11 +9,15 @@
   }
 
   section:nth-child(2) {
-    background-image: linear-gradient(to bottom right, $color-primary-light, $color-primary-lighter);
+    background-image: linear-gradient(
+      to bottom right,
+      $color-primary-light,
+      $color-quinary-light
+    );
   }
 
   section:nth-child(3) {
-    background-color: $color-quinary-light;
+    // background-color: orangered;
   }
 
   &__Philosophy {
@@ -24,7 +28,11 @@
   }
 
   &__Staff {
-    background-color: $color-quaternary;
+    background-image: linear-gradient(
+      to bottom right,
+      $color-quaternary,
+      $color-primary-dark
+    );
     // color: $color-white;
     h2 {
       text-align: center;
