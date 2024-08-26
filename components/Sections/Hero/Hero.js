@@ -3,7 +3,10 @@ import Button from "@/components/UI/Button/Button";
 
 import classes from "./Hero.module.scss";
 
-const Hero = ({ data }) => (
+const Hero = ({ data }) => {
+  const randomImageFromArray = Math.floor(Math.random()*data.mainImage.data.length)
+
+  return (
   <section className={`${classes.Background}`}>
     <div className="row">
       <div className={classes.Hero}>
@@ -22,8 +25,8 @@ const Hero = ({ data }) => (
         </div>
         <div className={classes.Hero__MainImage}>
           <Image
-            src={data.mainImage.data[0].attributes.url}
-            alt={data.mainImage.data[0].attributes.alternativeText}
+            src={data.mainImage.data[randomImageFromArray].attributes.url}
+            alt={data.mainImage.data[randomImageFromArray].attributes.alternativeText}
             fill
             priority
           />
@@ -45,6 +48,6 @@ const Hero = ({ data }) => (
       </div>
     </div>
   </section>
-);
+)};
 
 export default Hero;
