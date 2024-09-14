@@ -1,4 +1,4 @@
-@import "../../styles/abstracts/variables.scss";
+@import "../../../styles/abstracts/variables.scss";
 
 .Tour {
   // background-color: orangered;
@@ -19,6 +19,11 @@
         outline: none;
         box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
       }
+    }
+
+    &__Button {
+      margin-top: .6rem 0;
+      padding: 1.5rem 0;
     }
   }
 }
