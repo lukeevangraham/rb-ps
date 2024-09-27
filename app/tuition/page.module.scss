@@ -1,17 +1,27 @@
 .Tuition {
   // background-color: orangered;
 
-  section:nth-child(2) {
-    // background-color: orangered;
-    padding: 0;
+  & > div:nth-child(2) {
+    section {
+      padding: 1rem 0;
+    }
+    // background-color: yellowgreen;
+  }
+  & > div:nth-child(2) {
+    // background-color: yellowgreen;
   }
 
-  section:nth-child(3) {
-    padding-top: 6.5rem;
-    padding-bottom: 3rem;
-  }
-  section:nth-child(4) {
+  & > div:nth-child(3) {
+    section {
+      padding-top: 6rem;
+      padding-bottom: 3rem;
+    }
     // background-color: orangered;
-    padding-top: 0;
+  }
+  & > div:nth-child(4) {
+    section {
+      // background-color: orangered;
+      padding-top: 0;
+    }
   }
 }

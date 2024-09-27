@@ -28,15 +28,13 @@ const Tuition = async () => {
 
   return (
     <Layout global={globalData.data.attributes}>
-      <main className={classes.Tuition}>
-        <div className={`row u-padding-y-large`}>
-          <h1>Tuition</h1>
-          {tuitionData.data.attributes.Sections.map((section, index) => (
-            <>
-              <Sections sectionData={section} key={index} />
-            </>
-          ))}
-        </div>
+      <main className={`${classes.Tuition} u-padding-y-large`}>
+        <h1>Tuition</h1>
+        {tuitionData.data.attributes.Sections.map((section, index) => (
+          <div key={index}>
+            <Sections sectionData={section} key={index} />
+          </div>
+        ))}
       </main>
     </Layout>
   );
