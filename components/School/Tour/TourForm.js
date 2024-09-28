@@ -12,7 +12,7 @@ const TourForm = () => {
 
     setMessageStatus(1);
 
-    const res = await fetch("/api/contact", {
+    const res = await fetch("/api/tour", {
       body: JSON.stringify({
         firstName: e.target.firstName.value,
         lastName: e.target.lastName.value,

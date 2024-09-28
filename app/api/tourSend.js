@@ -1,6 +1,10 @@
 import axios from "axios";
 
 export default function handler(req, res) {
+
+  console.log("API Route hit!")
+
+
   let data = JSON.stringify({
     recipients: [{ address: "luke@grahamwebworks.com" }],
     content: {
