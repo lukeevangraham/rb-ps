@@ -71,9 +71,9 @@ const TourForm = () => {
           <input type="tel" name="phone" placeholder="Your Phone" />
           <input type="email" name="email" placeholder="Your Email" required />
           <select name="dayOfWeek">
-            <option value="wednesday">Wednesday</option>
-            <option value="thursday">Thursday</option>
-            <option value="friday">Friday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
           </select>
           <select name="time">
             <option value="9:00 am">9:00 am</option>
