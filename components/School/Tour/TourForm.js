@@ -56,30 +56,74 @@ const TourForm = () => {
           className={`u-max-width-p ${classes.Tour__Form}`}
           onSubmit={submitForm}
         >
-          <input
-            type="text"
-            name="firstName"
-            placeholder="Your First Name"
-            required
-          />
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Your Last Name"
-            required
-          />
-          <input type="tel" name="phone" placeholder="Your Phone" />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <select name="dayOfWeek">
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-          </select>
-          <select name="time">
-            <option value="9:00 am">9:00 am</option>
-            <option value="9:30 am">9:30 am</option>
-            <option value="10:00 am">10:00 am</option>
-          </select>
+          <div className={classes.Tour__Form__Group}>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First name"
+              required
+            />
+            <label
+              className={classes.Tour__Form__Group__Label}
+              htmlFor="firstName"
+            >
+              First name
+            </label>
+          </div>
+          <div className={classes.Tour__Form__Group}>
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last name"
+              required
+            />
+            <label
+              className={classes.Tour__Form__Group__Label}
+              htmlFor="lastName"
+            >
+              Last name
+            </label>
+          </div>
+          <div className={classes.Tour__Form__Group}>
+            <input type="tel" name="phone" placeholder="Your Phone" />
+            <label className={classes.Tour__Form__Group__Label} htmlFor="phone">
+              Phone number
+            </label>
+          </div>
+          <div className={classes.Tour__Form__Group}>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <label className={classes.Tour__Form__Group__Label} htmlFor="email">
+              Email
+            </label>
+          </div>
+          <div className={classes.Tour__Form__Group}>
+            <select name="dayOfWeek">
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+            </select>
+            <label
+              className={classes.Tour__Form__Group__Label}
+              htmlFor="dayOfWeek"
+            >
+              Day to schedule tour
+            </label>
+          </div>
+          <div className={classes.Tour__Form__Group}>
+            <select name="time">
+              <option value="9:00 am">9:00 am</option>
+              <option value="9:30 am">9:30 am</option>
+              <option value="10:00 am">10:00 am</option>
+            </select>
+            <label className={classes.Tour__Form__Group__Label} htmlFor="time">
+              Time to schedule tour
+            </label>
+          </div>
           <button className={classes.Tour__Form__Button}>Submit</button>
         </form>
       );

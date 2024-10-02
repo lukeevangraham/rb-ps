@@ -7,18 +7,60 @@
     // background-color: orangered;
     margin: 5rem auto;
 
-    input,
-    label,
-    select {
-      padding: 1.5rem 2rem;
-      font-family: "Lato";
-      font-size: $default-font-size;
-      margin: 0.6rem 0;
-      width: 100%;
+    &__Group {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+      input,
+      select {
+        font-size: $default-font-size;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem 1.5rem 0;
+        border-radius: 5px;
+        -webkit-appearance: initial;
+        background-color: $color-white;
+        border: 3px solid transparent;
+        margin: 1rem 0;
+        display: block;
+        width: 100%;
+        text-indent: 1.5rem;
+        transition: all 0.3s;
+        // -webkit-appearance: textfield;
+        // line-height: 5.6rem;
 
-      &:focus {
-        outline: none;
-        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+        &:focus {
+          outline: none;
+          box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+          border-bottom: 3px solid $color-primary;
+        }
+
+        &:focus:invalid {
+          border-bottom: 3px solid $color-error;
+        }
+      }
+
+      select {
+        /* Add arrow icon */
+        /* Source: https://material.io/tools/icons/?icon=keyboard_arrow_down&style=baseline */
+        background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" xml:space="preserve"><path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z"/><path fill="none" d="M0,0h24v24H0V0z"/></svg>');
+        background-position: center right;
+        background-repeat: no-repeat;
+      }
+
+      &__Label {
+        // background-color: orangered !important;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-left: 1.5rem;
+        margin-top: 0.7rem;
+        display: block;
+        transition: all 0.3s;
+      }
+      input:placeholder-shown + &__Label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
       }
     }
 
