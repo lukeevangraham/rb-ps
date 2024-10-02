@@ -85,7 +85,7 @@ const TourForm = () => {
             </label>
           </div>
           <div className={classes.Tour__Form__Group}>
-            <input type="tel" name="phone" placeholder="Your Phone" />
+            <input type="tel" name="phone" placeholder="Phone number" />
             <label className={classes.Tour__Form__Group__Label} htmlFor="phone">
               Phone number
             </label>
@@ -94,7 +94,7 @@ const TourForm = () => {
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder="Email"
               required
             />
             <label className={classes.Tour__Form__Group__Label} htmlFor="email">

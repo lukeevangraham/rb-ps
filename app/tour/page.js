@@ -23,7 +23,7 @@ const Tour = async () => {
     <Layout global={globalData.data.attributes}>
       <div className="u-padding-y-large">
         <div className="row">
-          <h1>Schedule a tour!</h1>
+          <h1>Schedule a tour</h1>
           <TourForm />
         </div>
       </div>
