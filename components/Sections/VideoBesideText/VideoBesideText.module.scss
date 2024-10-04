@@ -17,17 +17,11 @@
     // grid-column: 1/2;
     flex: 0 1 40%;
     width: 100%;
+    position: relative;
 
-    svg {
-      height: 2.25rem;
-      width: 2.25rem;
-      filter: $color-white;
-      background-color: orangered;
-    }
-
-    &__Frame {
+    // &__Frame {
       aspect-ratio: 16 / 9;
-      position: relative;
+      // position: absolute;
       // height: 33rem;
       width: 100%;
       video {
@@ -37,7 +31,30 @@
         height: 100%;
         width: 100%;
       }
-    }
+
+      // &__Play {
+      //   position: absolute;
+      //   z-index: 11;
+      //   width: 50%;
+      //   height: 50%;
+      //   top: 50%;
+      //   left: 50%;
+      //   transform: translate(-50%, -50%);
+
+      // }
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 12;
+        height: 50%;
+        width: 50%;
+        filter: $color-white;
+        // background-color: orangered;
+        fill: $color-white;
+      }
+    // }
   }
 
   &__Text {
