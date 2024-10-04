@@ -21,8 +21,6 @@ const getData = async () => {
 const Events = async () => {
   const [globalData, eventsData] = await getData();
 
-  console.log("ED: ", eventsData.data);
-
   return (
     <Layout global={globalData.data.attributes}>
       <main className={`u-padding-y-large ${classes.Events}`}>

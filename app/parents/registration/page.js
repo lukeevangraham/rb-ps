@@ -35,10 +35,7 @@ const Registration = async () => {
               __html: parentData.data.attributes.RegistrationPacketTopInfo,
             }}
           />
-          {console.log(
-            "PD: ",
-            parentData
-          )}
+
           <div className={classes.Registration__Items}>
             {parentData.data.attributes.RegistrationItems.data.map((item) => (
               <div key={item.id}>

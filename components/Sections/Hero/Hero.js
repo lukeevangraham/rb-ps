@@ -25,7 +25,7 @@ const Hero = ({ data }) => {
     return () => {
       clearInterval(id);
     };
-  }, [displayedImage]);
+  }, [displayedImage, amountOfMainImages]);
 
   return (
     <section className={`${classes.Wrapper}`}>
