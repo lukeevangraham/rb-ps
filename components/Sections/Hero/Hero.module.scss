@@ -1,8 +1,29 @@
 @import "../../../styles/abstracts/mixins";
 @import "../../../styles/abstracts/variables.scss";
 
+.Wrapper {
+  position: relative;
+
+  &__Image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+
+  &__Overlay {
+    background-color: rgba($color-black, 0.15);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
 .Hero {
-  // position: relative;
+  z-index: 2;
+  color: $color-white;
+  position: relative;
   // height: 70vh;
   // background-image: linear-gradient(
   //   to bottom right,
@@ -10,8 +31,8 @@
   //   $color-ternary
   // );
   // padding-top: 4.5rem;
-  height: 61rem;
-  display: flex;
+  height: 81rem;
+  // display: flex;
   // padding: 6rem 0;
   gap: 2rem;
   align-items: center;
@@ -25,15 +46,23 @@
   }
 
   &__Text {
-    // position: absolute;
-    // top: 50%;
+    position: absolute;
+    // top: 80%;
+    bottom: 10%;
     // width: 47%;
-    // transform: translateY(-50%);
-    flex: 0 1 111%;
+    // transform: translateY(-80%);
+    // flex: 0 1 111%;
+    // margin-top: 20rem;
     font-size: 5.375rem;
     font-weight: 300;
     z-index: 1;
     // padding-left: 6rem;
+
+    & > div {
+      text-shadow: 0 0 15px $color-black, 0 0 15px $color-black,
+        0 0 15px $color-black, 0 0 15px $color-black, 0 0 15px $color-black,
+        0 0 15px $color-black, 0 0 15px $color-black, 0 0 15px $color-black;
+    }
 
     @include respond(tab-port) {
       flex: 0 1 auto;
@@ -43,6 +72,14 @@
       margin: 1.5rem 0;
       font-size: 3.11rem;
       font-weight: 400;
+    }
+
+    &__Button {
+      a {
+        box-shadow: 0 0 15px $color-black, 0 0 15px $color-black,
+          0 0 15px $color-black, 0 0 15px $color-black, 0 0 15px $color-black;
+        text-shadow: none;
+      }
     }
   }
 
@@ -75,9 +112,9 @@
 }
 
 .Background {
-  // background-image: linear-gradient(
-  //   to bottom right,
-  //   $color-ternary,
-  //   $color-ternary
-  // );
+  background-image: linear-gradient(
+    to bottom right,
+    $color-ternary,
+    $color-ternary
+  );
 }
