@@ -8,11 +8,13 @@ const VideoBesideText = ({ data }) => (
     <div className="row">
       <div className={classes.VideoBesideText}>
         <div className={classes.VideoBesideText__Video}>
+          <svg>
+            <use xlinkHref="../images/sprite.svg#icon-play" />
+          </svg>
           <div className={classes.VideoBesideText__Video__Frame}>
             <Link href={`/video?url=${data.videoURL}}`}>
               <Image src={data.videoURL.replace(".mp4", ".jpg")} fill />
             </Link>
-            {/* <video src={data.videoURL} controls /> */}
           </div>
         </div>
         <div

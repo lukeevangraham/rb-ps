@@ -1,4 +1,5 @@
 @import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables.scss";
 
 .VideoBesideText {
   width: 100%;
@@ -16,6 +17,13 @@
     // grid-column: 1/2;
     flex: 0 1 40%;
     width: 100%;
+
+    svg {
+      height: 2.25rem;
+      width: 2.25rem;
+      filter: $color-white;
+      background-color: orangered;
+    }
 
     &__Frame {
       aspect-ratio: 16 / 9;

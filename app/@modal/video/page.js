@@ -15,7 +15,7 @@ const VideoModal = () => {
     <>
       <ModalNew>
         <div className={classes.Video}>
-          <video src={videoURL} controls />
+          <video src={videoURL} controls autoPlay />
         </div>
       </ModalNew>
     </>
