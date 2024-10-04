@@ -1,5 +1,7 @@
+import dynamic from "next/dynamic";
 import FAQs from "./FAQs/FAQs";
-import Hero from "./Hero/Hero";
+// import Hero from "./Hero/Hero";
+const Hero = dynamic(() => import("../Sections/Hero/Hero"), { ssr: false });
 import HeadingAboveButton from "./HeadingAboveButton/HeadingAboveButton";
 import HeadingAboveCards from "./HeadingAboveCards/HeadingAboveCards";
 import HeadingAboveColumns from "./HeadingAboveColumns/HeadingAboveColumns";

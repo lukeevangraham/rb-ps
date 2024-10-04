@@ -30,7 +30,15 @@ const Hero = ({ data }) => {
   return (
     <section className={`${classes.Wrapper}`}>
       <div className={classes.Wrapper__Image}>
-        <Image
+        <img
+          src={`${data.mainImage.data[displayedImage].attributes.url}`}
+          alt={
+            data.mainImage.data[displayedImage].attributes.alternativeText
+              ? `${data.mainImage.data[displayedImage].attributes.alternativeText}`
+              : "Happy preschool kids having fun"
+          }
+        />
+        {/* <Image
           src={`${data.mainImage.data[displayedImage].attributes.url}`}
           alt={
             data.mainImage.data[displayedImage].attributes.alternativeText
@@ -40,7 +48,7 @@ const Hero = ({ data }) => {
           fill
           priority
           style={{ objectFit: "cover", objectPosition: "top" }}
-        />
+        /> */}
       </div>
       <div className={classes.Wrapper__Overlay} />
       <div className="row">
