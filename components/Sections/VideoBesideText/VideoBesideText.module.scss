@@ -18,8 +18,10 @@
     width: 100%;
 
     &__Frame {
+      aspect-ratio: 16 / 9;
       position: relative;
-      height: 33rem;
+      // height: 33rem;
+      width: 100%;
       video {
         position: absolute;
         left: 0;
