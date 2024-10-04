@@ -18,43 +18,38 @@
     flex: 0 1 40%;
     width: 100%;
     position: relative;
+    aspect-ratio: 16 / 9;
 
-    // &__Frame {
-      aspect-ratio: 16 / 9;
-      // position: absolute;
-      // height: 33rem;
+    width: 100%;
+    video {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
       width: 100%;
-      video {
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-      }
+    }
 
-      // &__Play {
-      //   position: absolute;
-      //   z-index: 11;
-      //   width: 50%;
-      //   height: 50%;
-      //   top: 50%;
-      //   left: 50%;
-      //   transform: translate(-50%, -50%);
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 12;
+      height: 50%;
+      width: 50%;
+      filter: $color-white;
+      fill: $color-white;
+      transition: all 0.3s;
+    }
 
-      // }
+    &:hover {
       svg {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 12;
-        height: 50%;
-        width: 50%;
-        filter: $color-white;
-        // background-color: orangered;
-        fill: $color-white;
+        // scale: 1.25;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
       }
-    // }
+    }
   }
 
   &__Text {
