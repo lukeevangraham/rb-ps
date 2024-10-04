@@ -39,7 +39,6 @@ const Resources = async () => {
                 </a>
               </div>
             ))}
-            {console.log("PD: ", parentData.data.attributes.HelpfulResources)}
           </div>
         </div>
       </main>
