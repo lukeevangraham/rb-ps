@@ -99,4 +99,6 @@ const Hero = ({ data }) => {
   );
 };
 
+Hero.displayName = "Hero";
+
 export default Hero;
