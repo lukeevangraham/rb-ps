@@ -85,15 +85,9 @@
 
   &__MainImage {
     position: relative;
-    // top: 50%;
-    // transform: translateY(-50%);
-    // right: 0;
     height: 80%;
-    // width: 45%;
     flex: 0 1 auto;
     width: 100%;
-    // object-fit: cover;
-    // margin-right: 6rem;
     filter: drop-shadow(0 0 9px rgba($color-black, 0.4));
 
     @include respond(tab-port) {
