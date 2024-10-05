@@ -37,14 +37,13 @@
       z-index: 12;
       height: 50%;
       width: 50%;
-      filter: $color-white;
-      fill: $color-white;
+      fill: rgba($color-grey, 0.75);
       transition: all 0.3s;
     }
 
     &:hover {
       svg {
-        fill: $color-grey-light;
+        fill: rgba($color-grey-dark, .75);
         // scale: 1.25;
         // top: 50%;
         // left: 50%;
