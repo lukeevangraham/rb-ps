@@ -30,14 +30,6 @@ const Hero = ({ data }) => {
   return (
     <section className={`${classes.Wrapper}`}>
       <div className={classes.Wrapper__Image}>
-        {/* <img
-          src={`${data.mainImage.data[displayedImage].attributes.url}`}
-          alt={
-            data.mainImage.data[displayedImage].attributes.alternativeText
-              ? `${data.mainImage.data[displayedImage].attributes.alternativeText}`
-              : "Happy preschool kids having fun"
-          }
-        /> */}
         <Image
           src={`${data.mainImage.data[displayedImage].attributes.url}`}
           alt={
@@ -51,8 +43,8 @@ const Hero = ({ data }) => {
         />
       </div>
       <div className={classes.Wrapper__Overlay} />
-      <div className="row">
         <div className={classes.Hero}>
+      <div className="row">
           {/* {console.log("Data", data.Button)} */}
           <div className={classes.Hero__Text}>
             <div className={classes.Hero__Text__Headline}>{data.headline}</div>
