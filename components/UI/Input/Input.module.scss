@@ -1,0 +1,50 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.Input {
+  &__Group {
+    // background-color: orangered;
+    margin-bottom: 2rem;
+
+    input,
+    textarea {
+      font-size: $default-font-size;
+      font-family: inherit;
+      color: inherit;
+      padding: 1.5rem 2rem 1.5rem 0;
+      border-radius: 5px;
+      -webkit-appearance: initial;
+      background-color: $color-white;
+      border: 3px solid transparent;
+      margin: 1rem 0;
+      display: block;
+      width: 100%;
+      text-indent: 1.5rem;
+      transition: all 0.3s;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+        border-bottom: 3px solid $color-primary;
+      }
+
+      &:focus:invalid {
+        border-bottom: 3px solid $color-error;
+      }
+    }
+
+    &__Label {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-left: 1.5rem;
+      margin-top: 0.7rem;
+      display: block;
+      transition: all 0.3s;
+    }
+
+    input:placeholder-shown + &__Label {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4rem);
+    }
+  }
+}
