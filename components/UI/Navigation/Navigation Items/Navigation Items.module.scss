@@ -5,7 +5,7 @@
   width: 100%;
   font-size: 1.92rem;
   display: grid;
-  grid-template-rows: 12.5rem 1fr;
+  grid-template-rows: 15vh 1fr;
 
   @include respond(tab-port) {
     display: unset;

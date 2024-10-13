@@ -16,6 +16,7 @@ const Toolbar = ({ global, children, drawerToggleClicked }) => (
               alt="RBCPC Preschool logo"
               fill
               priority
+              style={{ objectPosition: "right center", objectFit: "contain" }}
             />
           </Link>
         </div>
