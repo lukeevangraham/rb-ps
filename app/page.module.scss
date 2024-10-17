@@ -16,7 +16,7 @@
     background-color: $color-quinary-light;
   }
   & > div:nth-child(4) {
-    background-image: linear-gradient(to bottom right, rgba($color-primary, .8), rgba($color-quaternary, .8)),
+    background-image: linear-gradient(to bottom right, rgba($color-primary, .85), rgba($color-quaternary, .85)),
       url("https://res.cloudinary.com/dzekujbym/image/upload/w_2000/v1729134606/classroom_89e9465717.jpg?updated_at=2024-10-17T03:10:07.308Z");
     background-size: cover;
     background-position: center;
