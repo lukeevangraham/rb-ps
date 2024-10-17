@@ -39,7 +39,7 @@ const Hero = ({ data }) => {
           }
           fill
           priority
-          style={{ objectFit: "cover", objectPosition: "top" }}
+          style={{ objectFit: "cover", objectPosition: "center" }}
         />
       </div>
       <div className={classes.Wrapper__Overlay} />
