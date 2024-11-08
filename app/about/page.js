@@ -21,6 +21,7 @@ const aboutDataQuery = QueryString.stringify({
 const staffsQuery = QueryString.stringify({
   populate: { Image: { populate: "*" } },
   sort: ["LastName:asc"],
+  pagination: { pageSize: 50 }
 });
 
 const getData = async () => {
@@ -43,6 +44,7 @@ export default async function AboutUs() {
   // const [globalData, setGlobalData] = useState(null);
   // const [aboutData, setAboutData] = useState(null);
   // const [staffData, setStaffData] = useState(null);
+
 
   // useEffect(() => {
   //   getData().then(function (res) {
@@ -88,8 +90,6 @@ export default async function AboutUs() {
     </div>
   );
 
-
-
   return (
     <>
       {globalData && globalData.data ? (
@@ -111,11 +111,13 @@ export default async function AboutUs() {
           >
             <div>
               <h2>Staff</h2>
+              {console.log("Admin: ", staffData.data)}
             </div>
             <h3>Administration Staff Member Profiles</h3>
             <div className={`${classes.About__Staff__Group} row`}>
               {staffData.data
-                .filter((member) => member.attributes.AdminStaffMember).reverse()
+                .filter((member) => member.attributes.AdminStaffMember)
+                .reverse()
                 .map((member) => renderStaffMember(member))}
             </div>
             <div>
