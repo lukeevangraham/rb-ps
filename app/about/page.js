@@ -21,7 +21,7 @@ const aboutDataQuery = QueryString.stringify({
 const staffsQuery = QueryString.stringify({
   populate: { Image: { populate: "*" } },
   sort: ["LastName:asc"],
-  pagination: { pageSize: 50 }
+  pagination: { pageSize: 50 },
 });
 
 const getData = async () => {
@@ -38,13 +38,23 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "About",
+  description:
+    "Learn about RBCPC Preschool's philosophy of celebrating individuality, fostering community, and sharing God's love. Discover their mission, values, and dedicated staff who nurture academic, social, and spiritual growth for children and families.",
+  openGraph: {
+    title: "About",
+    description:
+      "Learn about RBCPC Preschool's philosophy of celebrating individuality, fostering community, and sharing God's love. Discover their mission, values, and dedicated staff who nurture academic, social, and spiritual growth for children and families.",
+  },
+};
+
 export default async function AboutUs() {
   const [globalData, aboutData, staffData] = await getData();
   // const [showModal, setShowModal] = useState(false);
   // const [globalData, setGlobalData] = useState(null);
   // const [aboutData, setAboutData] = useState(null);
   // const [staffData, setStaffData] = useState(null);
-
 
   // useEffect(() => {
   //   getData().then(function (res) {
@@ -111,7 +121,6 @@ export default async function AboutUs() {
           >
             <div>
               <h2>Staff</h2>
-              {console.log("Admin: ", staffData.data)}
             </div>
             <h3>Administration Staff Member Profiles</h3>
             <div className={`${classes.About__Staff__Group} row`}>
