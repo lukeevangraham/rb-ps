@@ -22,6 +22,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Calendar",
+  description:
+    "Stay updated with RBCPC Preschool's calendar of events, important dates, and activities. Access a comprehensive schedule designed to keep parents informed and engaged in their child's educational journey.",
+  openGraph: {
+    title: "Calendar",
+    description:
+      "Stay updated with RBCPC Preschool's calendar of events, important dates, and activities. Access a comprehensive schedule designed to keep parents informed and engaged in their child's educational journey.",
+  },
+};
+
 const Calendar = async () => {
   const [globalData, parentData] = await getData();
   return (

@@ -23,6 +23,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Parent Handbook",
+  description:
+    "Access the RBCPC Preschool Parent Handbook for essential guidelines, policies, and resources. Explore helpful links to documents covering snacks, schedules, and the complete handbook to ensure a smooth experience for you and your child.",
+  openGraph: {
+    title: "Parent Handbook",
+    description:
+      "Access the RBCPC Preschool Parent Handbook for essential guidelines, policies, and resources. Explore helpful links to documents covering snacks, schedules, and the complete handbook to ensure a smooth experience for you and your child.",
+  },
+};
+
 const ParentHandbook = async () => {
   const [globalData, parentData] = await getData();
   return (

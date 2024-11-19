@@ -23,6 +23,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Registration",
+  description:
+    "Complete your child's enrollment at RBCPC Preschool with registration forms. Access essential packets for new and returning students, including detailed instructions for submission and record-keeping.",
+  openGraph: {
+    title: "Registration",
+    description:
+      "Complete your child's enrollment at RBCPC Preschool with registration forms. Access essential packets for new and returning students, including detailed instructions for submission and record-keeping.",
+  },
+};
+
 const Registration = async () => {
   const [globalData, parentData] = await getData();
   return (

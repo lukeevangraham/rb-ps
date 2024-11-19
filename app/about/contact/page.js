@@ -10,6 +10,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with RBCPC Preschool for inquiries about programs, enrollment, or general questions. Contact details include address, phone, email, and office hours, with a convenient form for direct communication.",
+  openGraph: {
+    title: "Contact",
+    description:
+      "Get in touch with RBCPC Preschool for inquiries about programs, enrollment, or general questions. Contact details include address, phone, email, and office hours, with a convenient form for direct communication.",
+  },
+};
+
 const Contact = async () => {
   const [globalData] = await getData();
 

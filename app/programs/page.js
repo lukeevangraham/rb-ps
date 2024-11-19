@@ -27,6 +27,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Programs",
+  description:
+    "Explore RBCPC Preschool's diverse programs, including parent-and-child classes for ages 1-3, preschool for ages 2-5, and options like extended days and early drop-off. Tailored to support early learning and growth.",
+  openGraph: {
+    title: "Programs",
+    description:
+      "Explore RBCPC Preschool's diverse programs, including parent-and-child classes for ages 1-3, preschool for ages 2-5, and options like extended days and early drop-off. Tailored to support early learning and growth.",
+  },
+};
+
 const Programs = async () => {
   const [globalData, homeData, programsData] = await getData();
 

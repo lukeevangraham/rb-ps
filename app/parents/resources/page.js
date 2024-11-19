@@ -23,6 +23,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Helpful Resources",
+  description:
+    "Discover valuable resources for RBCPC Preschool parents, including educational websites, community support, safety tips, and emergency preparedness. Access tools to enhance your child's learning and well-being.",
+  openGraph: {
+    title: "Helpful Resources",
+    description:
+      "Discover valuable resources for RBCPC Preschool parents, including educational websites, community support, safety tips, and emergency preparedness. Access tools to enhance your child's learning and well-being.",
+  },
+};
+
 const Resources = async () => {
   const [globalData, parentData] = await getData();
   return (

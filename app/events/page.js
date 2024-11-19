@@ -18,6 +18,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Events",
+  // description:
+  //   "Learn about RBCPC Preschool's philosophy of celebrating individuality, fostering community, and sharing God's love. Discover their mission, values, and dedicated staff who nurture academic, social, and spiritual growth for children and families.",
+  openGraph: {
+    title: "Events",
+    // description:
+    //   "Learn about RBCPC Preschool's philosophy of celebrating individuality, fostering community, and sharing God's love. Discover their mission, values, and dedicated staff who nurture academic, social, and spiritual growth for children and families.",
+  },
+};
+
 const Events = async () => {
   const [globalData, eventsData] = await getData();
 

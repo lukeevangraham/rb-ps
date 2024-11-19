@@ -11,6 +11,23 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }) {
+  const option = await fetchAPI(`/ps-programs-st?${extendedDayOptionsQuery}`);
+
+  return {
+    title: option.data.attributes.extendedDayOptions[params.id - 1].Name,
+    description: option.data.attributes.extendedDayOptions[
+      params.id - 1
+    ].Summary.replace(/<[^>]*>?/gm, ""),
+    openGraph: {
+      title: option.data.attributes.extendedDayOptions[params.id - 1].Name,
+      description: option.data.attributes.extendedDayOptions[
+        params.id - 1
+      ].Summary.replace(/<[^>]*>?/gm, ""),
+    },
+  };
+}
+
 const ExtendedDayOption = ({ params }) => <ExtendedDay id={params.id} />;
 
 export default ExtendedDayOption;
