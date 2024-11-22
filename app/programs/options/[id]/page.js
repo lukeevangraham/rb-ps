@@ -3,7 +3,7 @@ import ExtendedDay from "@/components/School/ExtendedDayOption/ExtendedDayOption
 
 export async function generateStaticParams() {
   const programData = await fetchAPI(
-    `/ps-programs-st?${extendedDayOptionsQuery}`
+    `/ps-programs-st?populate[extendedDayOptions][populate]=*`
   );
 
   return programData.data.attributes.extendedDayOptions.map((program) => ({

@@ -49,13 +49,12 @@ const Programs = async () => {
           {homeData.data.attributes.Sections.filter(
             (section) => section.Heading === "Our Programs"
           ).map((section) => (
-            <>
-              <Sections
-                sectionData={section}
-                keyData={section.id}
-                fromProgramsPage={programsData.data.attributes}
-              />
-            </>
+            <Sections
+              sectionData={section}
+              keyData={section.id}
+              fromProgramsPage={programsData.data.attributes}
+              key={section.id}
+            />
           ))}
 
           {/* <h2>Testing</h2> */}

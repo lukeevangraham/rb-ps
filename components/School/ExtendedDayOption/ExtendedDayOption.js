@@ -7,7 +7,7 @@ import classes from "./ExtendedDayOption.module.scss";
 const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
-    fetchAPI(`/ps-programs-st?${extendedDayOptionsQuery}`),
+    fetchAPI(`/ps-programs-st?populate[extendedDayOptions][populate]=*`),
   ]);
 
   return res;
@@ -16,10 +16,12 @@ const getData = async () => {
 const ExtendedDay = async ({ id }) => {
   const [globalData, programData] = await getData();
 
+  
   const extendedOptionData =
-    programData.data.attributes.extendedDayOptions.filter(
-      (program) => program.id == id
-    )[0];
+  programData.data.attributes.extendedDayOptions.filter(
+    (program) => program.id == id
+  )[0];
+
 
   return (
     <Layout global={globalData.data.attributes}>
@@ -40,8 +42,11 @@ const ExtendedDay = async ({ id }) => {
                 className={` u-margin-bottom-medium ${classes.ExtendedDayOption__Detail}`}
                 dangerouslySetInnerHTML={{ __html: extendedOptionData.Detail }}
               />
-              {extendedOptionData.button ? (
+              {/* {extendedOptionData.button ? (
                 <Button button={extendedOptionData.button} />
+              ) : null} */}
+              {extendedOptionData.Calendar && extendedOptionData.Calendar.data ? (
+                <Button button={{ text: extendedOptionData.Calendar.data.attributes.name, url: extendedOptionData.Calendar.data.attributes.url, newTab: true }} />
               ) : null}
             </div>
           </div>
