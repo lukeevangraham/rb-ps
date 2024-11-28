@@ -14,6 +14,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Parent & Child Class Options",
+  description:
+    "Join RBCPC Preschool's Parent and Child Classes to foster early learning and bonding with your 1- or 2-year-old. Explore fun, interactive sessions offered in fall and spring, designed for parents and toddlers to grow together.",
+  openGraph: {
+    title: "Parent & Child Class Options",
+    description:
+      "Join RBCPC Preschool's Parent and Child Classes to foster early learning and bonding with your 1- or 2-year-old. Explore fun, interactive sessions offered in fall and spring, designed for parents and toddlers to grow together.",
+  },
+};
+
 const ParentAndChild = async () => {
   const [globalData, parentAndChildData] = await getData();
 

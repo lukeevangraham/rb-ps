@@ -21,6 +21,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Preschool Options",
+  description:
+    "Discover RBCPC Preschool's programs for children aged 2 to 5, including specialized classes for 2-year-olds, 3-year-olds, and 4/5-year-olds/TK. Flexible schedules and nurturing environments foster growth and readiness for kindergarten.",
+  openGraph: {
+    title: "Preschool Options",
+    description:
+      "Discover RBCPC Preschool's programs for children aged 2 to 5, including specialized classes for 2-year-olds, 3-year-olds, and 4/5-year-olds/TK. Flexible schedules and nurturing environments foster growth and readiness for kindergarten.",
+  },
+};
+
 const Preschool = async () => {
   const [globalData, preschoolData] = await getData();
 

@@ -18,21 +18,40 @@ const preschoolQuery = QueryString.stringify({
   },
 });
 
-const getData = async (params) => {
-  const res = await Promise.all([
-    getGlobalInfo(),
-    fetchAPI(`/ps-programs-st?${preschoolQuery}`),
-  ]);
+export async function generateMetadata({ params }) {
+  const program = await fetchAPI(`/ps-programs-st?${preschoolQuery}`);
 
-  // console.log(
-  //   "HERE: ",
-  //   res[1].data.attributes.preschoolPrograms.map((program) => ({
-  //     id: program.id,
-  //   }))
-  // );
+  console.log("P: ", program.data.attributes.preschoolPrograms);
 
-  return res;
-};
+  return {
+    title: program.data.attributes.preschoolPrograms[params.id - 1].Title,
+    description: program.data.attributes.preschoolPrograms[
+      params.id - 1
+    ].Overview.replace(/<[^>]*>?/gm, ""),
+    openGraph: {
+      title: program.data.attributes.preschoolPrograms[params.id - 1].Title,
+      description: program.data.attributes.preschoolPrograms[
+        params.id - 1
+      ].Overview.replace(/<[^>]*>?/gm, ""),
+    },
+  };
+}
+
+// const getData = async (params) => {
+//   const res = await Promise.all([
+//     getGlobalInfo(),
+//     fetchAPI(`/ps-programs-st?${preschoolQuery}`),
+//   ]);
+
+//   // console.log(
+//   //   "HERE: ",
+//   //   res[1].data.attributes.preschoolPrograms.map((program) => ({
+//   //     id: program.id,
+//   //   }))
+//   // );
+
+//   return res;
+// };
 
 const PreschoolProgram = ({ params }) => {
   return (
