@@ -36,12 +36,14 @@ const getData = async () => {
   return res;
 };
 
-export async function generateMetadata({ params }) {
-  return {
+export const metadata = {
+  description:
+    "Discover RBCPC Preschool, a nurturing environment that fosters academic, social, and spiritual growth for children aged 1-5. Offering parent-and-child classes, preschool programs, and extended care options, we celebrate each child's uniqueness while building community and sharing God's love.",
+  openGraph: {
     description:
       "Discover RBCPC Preschool, a nurturing environment that fosters academic, social, and spiritual growth for children aged 1-5. Offering parent-and-child classes, preschool programs, and extended care options, we celebrate each child's uniqueness while building community and sharing God's love.",
-  };
-}
+  },
+};
 
 export default async function Home() {
   const [globalData, homeData, programsData] = await getData();

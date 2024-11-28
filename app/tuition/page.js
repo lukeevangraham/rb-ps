@@ -23,6 +23,17 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Tuition",
+  description:
+    "Explore tuition details for RBCPC Preschool, including the Electronic Fund Withdrawal Form and scholarship opportunities. Learn about financial assistance for eligible families and key deadlines for applications.",
+  openGraph: {
+    title: "Tuition",
+    description:
+      "Explore tuition details for RBCPC Preschool, including the Electronic Fund Withdrawal Form and scholarship opportunities. Learn about financial assistance for eligible families and key deadlines for applications.",
+  },
+};
+
 const Tuition = async () => {
   const [globalData, tuitionData] = await getData();
 
