@@ -30,21 +30,45 @@ const Hero = ({ data }) => {
   return (
     <section className={`${classes.Wrapper}`}>
       <div className={classes.Wrapper__Image}>
-        <Image
-          src={`${data.mainImage.data[displayedImage].attributes.url}`}
-          alt={
-            data.mainImage.data[displayedImage].attributes.alternativeText
-              ? `${data.mainImage.data[displayedImage].attributes.alternativeText}`
-              : "Happy preschool kids having fun"
-          }
-          fill
-          priority
-          style={{ objectFit: "cover", objectPosition: "center" }}
-        />
+        <picture>
+          <source
+            media="(max-width: 37.5em)"
+            srcSet={`${data.mainImage.data[
+              displayedImage
+            ].attributes.url.replace(
+              "/upload/",
+              `/upload/c_auto,g_auto,h_717,w_500/`
+            )}`}
+          />
+          <source
+            media="(max-width: 56.25em)"
+            srcSet={`${data.mainImage.data[
+              displayedImage
+            ].attributes.url.replace(
+              "/upload/",
+              `/upload/c_auto,g_auto,h_800,w_900/`
+            )}`}
+          />
+          <source
+            media="(min-width: 56.26em)"
+            srcSet={`${data.mainImage.data[displayedImage].attributes.url}`}
+          />
+          <Image
+            src={`${data.mainImage.data[displayedImage].attributes.url}`}
+            alt={
+              data.mainImage.data[displayedImage].attributes.alternativeText
+                ? `${data.mainImage.data[displayedImage].attributes.alternativeText}`
+                : "Happy preschool kids having fun"
+            }
+            fill
+            priority
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
+        </picture>
       </div>
       <div className={classes.Wrapper__Overlay} />
-        <div className={classes.Hero}>
-      <div className="row">
+      <div className={classes.Hero}>
+        <div className="row">
           {/* {console.log("Data", data.Button)} */}
           <div className={classes.Hero__Text}>
             <div className={classes.Hero__Text__Headline}>{data.headline}</div>
