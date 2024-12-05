@@ -16,14 +16,20 @@ export async function generateMetadata({ params }) {
 
   return {
     title: option.data.attributes.extendedDayOptions[params.id - 1].Name,
-    description: option.data.attributes.extendedDayOptions[
-      params.id - 1
-    ].Summary.replace(/<[^>]*>?/gm, ""),
+    description: option.data.attributes.extendedDayOptions[params.id - 1]
+      .Summary
+      ? option.data.attributes.extendedDayOptions[
+          params.id - 1
+        ].Summary.replace(/<[^>]*>?/gm, "")
+      : null,
     openGraph: {
       title: option.data.attributes.extendedDayOptions[params.id - 1].Name,
-      description: option.data.attributes.extendedDayOptions[
-        params.id - 1
-      ].Summary.replace(/<[^>]*>?/gm, ""),
+      description: option.data.attributes.extendedDayOptions[params.id - 1]
+        .Summary
+        ? option.data.attributes.extendedDayOptions[
+            params.id - 1
+          ].Summary.replace(/<[^>]*>?/gm, "")
+        : null,
     },
   };
 }
