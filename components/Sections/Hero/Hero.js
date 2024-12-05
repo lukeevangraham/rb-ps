@@ -37,7 +37,7 @@ const Hero = ({ data }) => {
               displayedImage
             ].attributes.url.replace(
               "/upload/",
-              `/upload/c_auto,g_auto,h_717,w_500/`
+              `/upload/c_fill,g_face,h_717,w_500/`
             )}`}
           />
           <source
@@ -46,7 +46,7 @@ const Hero = ({ data }) => {
               displayedImage
             ].attributes.url.replace(
               "/upload/",
-              `/upload/c_auto,g_auto,h_800,w_900/`
+              `/upload/c_fill,g_face,h_800,w_900/`
             )}`}
           />
           <source
