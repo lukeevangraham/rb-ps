@@ -1,27 +1,29 @@
 .ImageBesideText {
-    display: flex;
-    gap: 2rem;
-    height: 40rem;
-    margin: 10rem 0;
-  
-    &__Image {
-      flex: 0 0 40%;
-      // background-color: orangered;
-      padding: 3rem;
-  
-      &__Frame {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        box-shadow: 0 0 15px black;
-      }
-    }
-  
-    &__Text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      // background-color: yellowgreen;
+  display: flex;
+  gap: 2rem;
+  height: 40rem;
+  margin: 10rem 0;
+  // align-items: end;
+
+  &__Image {
+    flex: 0 0 40%;
+    // background-color: orangered;
+    padding: 3rem;
+
+    &__Frame {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      box-shadow: 0 0 15px black;
     }
   }
-  
+
+  &__Text {
+    // padding-top: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-self: flex-start;
+    // background-color: yellowgreen;
+  }
+}
