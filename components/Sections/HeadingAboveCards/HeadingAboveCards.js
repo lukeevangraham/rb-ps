@@ -19,18 +19,28 @@ const HeadingAboveCards = ({ data, fromProgramsPage, keyData }) => (
       <div className={classes.Programs__Group}>
         {data.Cards.map((card) => (
           <div className={classes.Programs__Group__Program} key={card.id}>
-            <div className={classes.Programs__Group__Program__Top}>
-              <div className={classes.Programs__Group__Program__Top__Image}>
-                <Image
-                  src={card.Image.data.attributes.url}
-                  alt={card.Image.data.attributes.alternativeText}
-                  fill
-                />
+            <Link
+              href={
+                card.Heading === "Preschool"
+                  ? `/programs/preschool`
+                  : card.Heading.includes("Parent And Child")
+                  ? `/programs/parent-and-child`
+                  : card.Heading.includes("Options") ? `/programs/options` : "/"
+              }
+            >
+              <div className={classes.Programs__Group__Program__Top}>
+                <div className={classes.Programs__Group__Program__Top__Image}>
+                  <Image
+                    src={card.Image.data.attributes.url}
+                    alt={card.Image.data.attributes.alternativeText}
+                    fill
+                  />
+                </div>
+                <div className={classes.Programs__Group__Program__Top__Text}>
+                  <h5>{card.Heading}</h5>
+                </div>
               </div>
-              <div className={classes.Programs__Group__Program__Top__Text}>
-                <h5>{card.Heading}</h5>
-              </div>
-            </div>
+            </Link>
             <div
               className={classes.Programs__Group__Program__Body}
               dangerouslySetInnerHTML={{ __html: card.TopInfo }}

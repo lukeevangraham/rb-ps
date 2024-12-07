@@ -105,7 +105,6 @@ export default async function AboutUs() {
       {globalData && globalData.data ? (
         <Layout global={globalData.data.attributes}>
           {/* {renderModal} */}
-          {console.log("AD: ", aboutData.data.attributes.Sections)}
           <div className={`${classes.About} u-padding-y-large`}>
             <div className="row">
               <h1>About Us</h1>
