@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { getGlobalInfo, fetchAPI } from "@/lib/api";
 import Layout from "@/components/UI/Layout/Layout";
 import ClassList from "../ClassList/ClassList";
+import Image from "next/image";
 
 import classes from "./PreschoolClass.module.scss";
 
@@ -17,7 +18,8 @@ const preschoolQuery = QueryString.stringify({
 const getData = async (params) => {
   const res = await Promise.all([
     getGlobalInfo(),
-    fetchAPI(`/ps-programs-st?${preschoolQuery}`),
+    // fetchAPI(`/ps-programs-st?${preschoolQuery}`),
+    fetchAPI(`/ps-programs-st?populate[preschoolPrograms][populate]=*`),
   ]);
 
   return res;
@@ -44,14 +46,26 @@ const PreschoolClass = ({ id }) => {
     <>
       {globalData && globalData.data ? (
         <Layout global={globalData.data.attributes}>
+          {console.log("PD: ", programData)}
           <main className={classes.Program}>
             <div className="u-padding-y-large">
               <div className="row">
-                <h1>{programData.Title}</h1>
-                <div
-                  className={`u-max-width-p`}
-                  dangerouslySetInnerHTML={{ __html: programData.Overview }}
-                />
+                <div className={classes.Program__Top}>
+                  <div className={classes.Program__Top__Words}>
+                    <h1 className="u-max-width-p">{programData.Title}</h1>
+                    <div
+                      className={`u-max-width-p`}
+                      dangerouslySetInnerHTML={{ __html: programData.Overview }}
+                    />
+                  </div>
+                  <div className={classes.Program__Top__Image}>
+                    <Image
+                      src={programData.Image.data[0].attributes.url}
+                      alt={programData.Image.data[0].attributes.alternativeText}
+                      fill
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <section

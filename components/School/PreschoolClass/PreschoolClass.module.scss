@@ -1,7 +1,36 @@
 @import "../../../styles/abstracts/variables.scss";
 
 .Program {
+  // background-color: orangered;
+
+  &__Top {
     // background-color: orangered;
+    display: flex;
+    gap: 1rem;
+
+    h1 {
+      text-align: left;
+      margin-bottom: 5rem;
+    }
+
+    &__Words {
+      flex-grow: 1;
+    }
+
+    &__Image {
+      position: relative;
+      // width: 35%;
+      flex: 0 1 35%;
+      // height: 25rem;
+      aspect-ratio: 9 / 9;
+      border-radius: 7px;
+      overflow: hidden;
+      
+      img {
+        object-fit: cover;
+      }
+    }
+  }
 
   &__Overview {
     // background-color: orangered;
