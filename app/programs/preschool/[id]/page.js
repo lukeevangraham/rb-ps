@@ -21,8 +21,6 @@ const preschoolQuery = QueryString.stringify({
 export async function generateMetadata({ params }) {
   const program = await fetchAPI(`/ps-programs-st?${preschoolQuery}`);
 
-  console.log("P: ", program.data.attributes.preschoolPrograms);
-
   return {
     title: program.data.attributes.preschoolPrograms[params.id - 1].Title,
     description: program.data.attributes.preschoolPrograms[
