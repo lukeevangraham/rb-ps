@@ -1,5 +1,41 @@
+@import "../../../styles/abstracts/mixins";
+
 .ParentAndChildClass {
   // background-color: orangered;
+
+  &__Top {
+    display: flex;
+    gap: 1rem;
+
+@include respond(tab-port) {
+  flex-direction: column-reverse;
+}
+
+    h1 {
+      text-align: left;
+      margin-bottom: 5rem;
+
+      @include respond(tab-port) {
+        margin-top: 5rem;
+      }
+    }
+
+    &__Words {
+      flex-grow: 1;
+    }
+
+    &__Image {
+      position: relative;
+      flex: 0 1 35%;
+      aspect-ratio: 9 / 9;
+      border-radius: 7px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
 
   &__Overview {
     // background-color: yellowgreen;

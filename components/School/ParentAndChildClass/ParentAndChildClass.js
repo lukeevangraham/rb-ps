@@ -1,4 +1,5 @@
 import QueryString from "qs";
+import Image from "next/image";
 import { getGlobalInfo, fetchAPI, parentAndChildQuery } from "@/lib/api";
 import Layout from "@/components/UI/Layout/Layout";
 import ParentAndChildClassList from "./ParentAndChildClassList/ParentAndChildClassList";
@@ -14,7 +15,8 @@ import classes from "./ParentAndChildClass.module.scss";
 const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
-    fetchAPI(`/ps-programs-st?${parentAndChildQuery}`),
+    // fetchAPI(`/ps-programs-st?${parentAndChildQuery}`),
+    fetchAPI(`/ps-programs-st?populate[parentAndChildPrograms][populate]=*`),
   ]);
 
   return res;
@@ -33,11 +35,30 @@ const ParentAndChildClass = async ({ id }) => {
       <main className={`${classes.ParentAndChildClass}`}>
         <div className="u-padding-y-large">
           <div className="row">
-            <h1>{parentAndChildData.Title}</h1>
-            <div
-              className={`u-max-width-p`}
-              dangerouslySetInnerHTML={{ __html: parentAndChildData.Overview }}
-            />
+            <div className={classes.ParentAndChildClass__Top}>
+              <div className={classes.ParentAndChildClass__Top__Words}>
+                <h1 className="u-max-width-p">{parentAndChildData.Title}</h1>
+                <div
+                  className={`u-max-width-p`}
+                  dangerouslySetInnerHTML={{
+                    __html: parentAndChildData.Overview,
+                  }}
+                />
+              </div>
+              <div className={classes.ParentAndChildClass__Top__Image}>
+                {console.log("HERE: ", parentAndChildData)}
+                {parentAndChildData.image.data ? (
+                  <Image
+                    src={parentAndChildData.image.data[0].attributes.url}
+                    alt={
+                      parentAndChildData.image.data[0].attributes
+                        .alternativeText
+                    }
+                    fill
+                  />
+                ) : null}
+              </div>
+            </div>
           </div>
         </div>
         <ParentAndChildClassList program={parentAndChildData} />

@@ -46,7 +46,6 @@ const PreschoolClass = ({ id }) => {
     <>
       {globalData && globalData.data ? (
         <Layout global={globalData.data.attributes}>
-          {console.log("PD: ", programData)}
           <main className={classes.Program}>
             <div className="u-padding-y-large">
               <div className="row">
