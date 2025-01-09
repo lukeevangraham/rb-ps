@@ -19,12 +19,8 @@ const NotificationBanner = ({ content }) => {
   return (
     <div className={classes.NotificationBanner}>
       {content.map((link, index) => (
-        <div>
-          <a
-            key={index}
-            href={link.url}
-            target={link.newTab ? "__blank" : "null"}
-          >
+        <div key={index}>
+          <a href={link.url} target={link.newTab ? "__blank" : "null"}>
             {link.text}
           </a>
         </div>
