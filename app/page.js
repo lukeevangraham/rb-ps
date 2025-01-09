@@ -16,7 +16,7 @@ import classes from "./page.module.scss";
 const homeDataQuery = qs.stringify({
   populate: {
     Sections: sectionQuery,
-    NotificationBannerLinks: { populate: "*" }
+    NotificationBannerLinks: { populate: "*" },
   },
   // populate: {
   //   Sections: { populate: "*" },
@@ -55,7 +55,12 @@ export default async function Home() {
   return (
     <Layout global={globalData.data.attributes}>
       <main className={classes.Home}>
-        <NotificationBanner content={homeData.data.attributes.NotificationBannerLinks} />
+        {homeData.data.attributes.NotificationBannerLinks ? (
+          <NotificationBanner
+            content={homeData.data.attributes.NotificationBannerLinks}
+          />
+        ) : null}
+
         {homeData.data.attributes.Sections.map((section, index) => (
           <div key={index}>
             <Sections
