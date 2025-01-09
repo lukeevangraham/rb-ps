@@ -9,12 +9,14 @@ import {
 } from "../lib/api";
 import Layout from "@/components/UI/Layout/Layout";
 import Sections from "@/components/Sections/Sections";
+import NotificationBanner from "@/components/UI/NotificationBanner/NotificationBanner";
 
 import classes from "./page.module.scss";
 
 const homeDataQuery = qs.stringify({
   populate: {
     Sections: sectionQuery,
+    NotificationBannerLinks: { populate: "*" }
   },
   // populate: {
   //   Sections: { populate: "*" },
@@ -53,6 +55,7 @@ export default async function Home() {
   return (
     <Layout global={globalData.data.attributes}>
       <main className={classes.Home}>
+        <NotificationBanner content={homeData.data.attributes.NotificationBannerLinks} />
         {homeData.data.attributes.Sections.map((section, index) => (
           <div key={index}>
             <Sections
