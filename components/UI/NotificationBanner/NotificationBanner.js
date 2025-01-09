@@ -14,7 +14,6 @@ const NotificationBanner = ({ content }) => {
 
   // console.log("SB: ", localStorage.getItem('showBanner'));
 
-  console.log("C: ", content);
 
   return (
     <div className={classes.NotificationBanner}>

@@ -8,7 +8,6 @@ import classes from "./page.module.scss";
 
 const VideoModal = () => {
   const searchParams = useSearchParams();
-  console.log("HERE: ", useSearchParams().get("url"));
   const videoURL = searchParams.get("url");
 
   return (

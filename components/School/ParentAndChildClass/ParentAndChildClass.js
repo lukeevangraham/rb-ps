@@ -46,7 +46,6 @@ const ParentAndChildClass = async ({ id }) => {
                 />
               </div>
               <div className={classes.ParentAndChildClass__Top__Image}>
-                {console.log("HERE: ", parentAndChildData)}
                 {parentAndChildData.image.data ? (
                   <Image
                     src={parentAndChildData.image.data[0].attributes.url}
