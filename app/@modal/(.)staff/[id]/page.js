@@ -13,7 +13,7 @@ const getData = async (id) => {
     populate: { Image: { populate: "*" } },
   });
 
-  const res = await Promise.all([fetchAPI(`/ps-staffs/?${staffsQuery}`)]);
+  const res = await Promise.all([fetchAPI(`/ps-staffs/?filters[id][$eq]=${id}&populate[Image][populate]=*`)]);
   return res;
 };
 

@@ -9,6 +9,7 @@ import Button from "@/components/UI/Button/Button";
 import Modal from "@/components/UI/Modal/Modal";
 import { fetchAPI, getGlobalInfo, sectionQuery } from "@/lib/api";
 import Sections from "@/components/Sections/Sections";
+import UserImageDefault from "@/components/UI/UserImageDefault/UserImageDefault";
 
 import classes from "./page.module.scss";
 
@@ -68,15 +69,20 @@ export default async function AboutUs() {
     <div key={member.id} className={classes.About__Staff__Group__Member}>
       <div className={classes.About__Staff__Group__Member__Image}>
         <div className={classes.About__Staff__Group__Member__Image__Overlay} />
-        <Image
-          src={member.attributes.Image.data.attributes.url}
-          fill
-          alt={
-            member.attributes.Image.data.alternativeText
-              ? member.attributes.Image.data.alternativeText
-              : `Photo of ${member.attributes.FirstName} ${member.attributes.LastName}`
-          }
-        />
+        {member.attributes.Image.data ? (
+          <Image
+            src={member.attributes.Image.data.attributes.url}
+            fill
+            alt={
+              member.attributes.Image.data.alternativeText
+                ? member.attributes.Image.data.alternativeText
+                : `Photo of ${member.attributes.FirstName} ${member.attributes.LastName}`
+            }
+          />
+        ) : (
+          <UserImageDefault />
+        )}
+
         {/* <Link href={`/staff/${member.id}`}> */}
         <Button
           button={{
@@ -124,19 +130,23 @@ export default async function AboutUs() {
             </div>
             <h3>Administration Staff Member Profiles</h3>
             <div className={`${classes.About__Staff__Group} row`}>
-              {staffData.data
-                .filter((member) => member.attributes.AdminStaffMember)
-                .reverse()
-                .map((member) => renderStaffMember(member))}
+              {staffData.data.length
+                ? staffData.data
+                    .filter((member) => member.attributes.AdminStaffMember)
+                    .reverse()
+                    .map((member) => renderStaffMember(member))
+                : null}
             </div>
             <div>
               <h3>Teaching Staff Member Profiles</h3>
               <div className={`${classes.About__Staff__Group}`}>
-                {staffData.data
-                  .filter(
-                    (member) => member.attributes.AdminStaffMember !== true
-                  )
-                  .map((member) => renderStaffMember(member))}
+                {staffData.data.length
+                  ? staffData.data
+                      .filter(
+                        (member) => member.attributes.AdminStaffMember !== true
+                      )
+                      .map((member) => renderStaffMember(member))
+                  : null}
               </div>
             </div>
           </section>

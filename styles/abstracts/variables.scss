@@ -12,6 +12,7 @@ $color-ternary: #deffeb;
 
 $color-quaternary: #2b523b;
 $color-quaternary-dark: darken($color-quaternary, 10);
+$color-quaternary-darker: darken($color-quaternary, 15);
 
 $color-quinary: #abffcd;
 $color-quinary-light: lighten(#abffcd, 13.5);
