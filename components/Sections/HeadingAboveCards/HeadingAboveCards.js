@@ -19,13 +19,14 @@ const HeadingAboveCards = ({ data, fromProgramsPage, keyData }) => (
       <div className={classes.Programs__Group}>
         {data.Cards.map((card) => (
           <div className={classes.Programs__Group__Program} key={card.id}>
+            {console.log("C: ", card)}
             <Link
               href={
                 card.Heading === "Preschool"
                   ? `/programs/preschool`
                   : card.Heading.includes("Parent And Child")
                   ? `/programs/parent-and-child`
-                  : card.Heading.includes("Options") ? `/programs/options` : "/"
+                  : card.Heading.includes("Enrichment") ? `/programs/options` : "/"
               }
             >
               <div className={classes.Programs__Group__Program__Top}>
@@ -60,7 +61,7 @@ const HeadingAboveCards = ({ data, fromProgramsPage, keyData }) => (
                           group: "parent-and-child",
                         })
                       )
-                    : card.Heading.includes("Options")
+                    : card.Heading.includes("Enrichment")
                     ? fromProgramsPage.extendedDayOptions.map((program) =>
                         renderProgramLinks(program, {
                           group: "options",
