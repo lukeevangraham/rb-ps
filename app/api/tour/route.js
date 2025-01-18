@@ -5,7 +5,7 @@ export const POST = async (req) => {
   const body = await req.json();
 
   let data = JSON.stringify({
-    recipients: [{ address: "luke@grahamwebworks.com" }],
+    recipients: [{ address: "luke@grahamwebworks.com" }, { address: "preschooldirector@rbcpc.org" }],
     content: {
       from: {
         email: "luke@mail.grahamwebworks.com",
