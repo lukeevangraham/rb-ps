@@ -45,9 +45,11 @@ const Preschool = async () => {
           {preschoolData.data.attributes.preschoolPrograms.map((program) => (
             <div className={classes.Preschool__Program} key={program.id}>
               <div className="row">
-                <Link href={`/programs/preschool/${program.id}`}>
-                  <h3>{program.Title}</h3>
-                </Link>
+                <h3>
+                  <Link href={`/programs/preschool/${program.id}`}>
+                    {program.Title}
+                  </Link>
+                </h3>
                 <p>
                   For children who turn {program.Title[0]}-years-old{" "}
                   <u>

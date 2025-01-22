@@ -9,11 +9,11 @@ import Image from "next/image";
 
 import classes from "./PreschoolClass.module.scss";
 
-const preschoolQuery = QueryString.stringify({
-  populate: {
-    preschoolPrograms: { populate: "*" },
-  },
-});
+// const preschoolQuery = QueryString.stringify({
+//   populate: {
+//     preschoolPrograms: { populate: "*" },
+//   },
+// });
 
 const getData = async (params) => {
   const res = await Promise.all([

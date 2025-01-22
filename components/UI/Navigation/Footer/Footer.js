@@ -69,7 +69,7 @@ const Footer = ({ global }) => (
           </div>
           <div>
             {" "}
-            <Link href="/programs/options"> Extended Day</Link>
+            <Link href="/programs/options"> Enrichment</Link>
           </div>
           <div></div>
         </div>

@@ -17,9 +17,15 @@ const VideoBesideText = ({ data }) => (
             <Image
               src={PlayIcon}
               className={classes.VideoBesideText__Video__Frame}
+              alt="Play icon to start a video"
             />
             {/* <Link href={`/video?url=${data.videoURL}}`}> */}
-            <Image src={data.videoURL.replace(".mp4", ".jpg")} fill />
+
+            <Image
+              src={data.videoURL.replace(".mp4", ".jpg")}
+              alt="photo of a child playing"
+              fill
+            />
             {/* </Link> */}
           </Link>
         </div>

@@ -11,28 +11,30 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }) {
-  const option = await fetchAPI(`/ps-programs-st?${extendedDayOptionsQuery}`);
+// export async function generateMetadata({ params }) {
+//   const option = await fetchAPI(`/ps-programs-st?${extendedDayOptionsQuery}`);
 
-  return {
-    title: option.data.attributes.extendedDayOptions[params.id - 1].Name,
-    description: option.data.attributes.extendedDayOptions[params.id - 1]
-      .Summary
-      ? option.data.attributes.extendedDayOptions[
-          params.id - 1
-        ].Summary.replace(/<[^>]*>?/gm, "")
-      : null,
-    openGraph: {
-      title: option.data.attributes.extendedDayOptions[params.id - 1].Name,
-      description: option.data.attributes.extendedDayOptions[params.id - 1]
-        .Summary
-        ? option.data.attributes.extendedDayOptions[
-            params.id - 1
-          ].Summary.replace(/<[^>]*>?/gm, "")
-        : null,
-    },
-  };
-}
+//   console.log("Option: ", option.data.attributes.extendedDayOptions)
+
+//   return {
+//     title: option.data.attributes.extendedDayOptions[params.id - 1].Name,
+//     description: option.data.attributes.extendedDayOptions[params.id - 1]
+//       .Summary
+//       ? option.data.attributes.extendedDayOptions[
+//           params.id - 1
+//         ].Summary.replace(/<[^>]*>?/gm, "")
+//       : null,
+//     openGraph: {
+//       title: option.data.attributes.extendedDayOptions[params.id - 1].Name,
+//       description: option.data.attributes.extendedDayOptions[params.id - 1]
+//         .Summary
+//         ? option.data.attributes.extendedDayOptions[
+//             params.id - 1
+//           ].Summary.replace(/<[^>]*>?/gm, "")
+//         : null,
+//     },
+//   };
+// }
 
 const ExtendedDayOption = ({ params }) => <ExtendedDay id={params.id} />;
 

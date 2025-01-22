@@ -15,7 +15,6 @@
       flex-direction: column;
     }
 
-
     &__Program {
       flex: 0 1 30%;
       // padding: 1rem;
@@ -66,10 +65,14 @@
           text-align: left;
           line-height: 1.5;
           margin-bottom: 0;
+
+          &:last-child {
+            padding-bottom: 2.5rem;
+          }
         }
 
         ul {
-          padding: 2.5rem 3.5rem;
+          padding: 2.5rem 3.5rem 0 3.5rem;
           list-style: none;
           margin-left: 0;
 

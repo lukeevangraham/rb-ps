@@ -1,0 +1,48 @@
+@import "../../../../styles/abstracts/mixins";
+@import "../../../../styles/abstracts/variables.scss";
+
+.OutdoorClassroom {
+  &__Top {
+    display: flex;
+    gap: 1rem;
+
+    @include respond(tab-port) {
+      flex-direction: column-reverse;
+    }
+
+    &__Words {
+      // background-color: orangered;
+      flex-grow: 1;
+
+      h1 {
+        text-align: left;
+        margin-bottom: 5rem;
+
+        @include respond(tab-port) {
+          margin-top: 5rem;
+        }
+      }
+    }
+
+    &__Image {
+      position: relative;
+      flex: 0 1 35%;
+      aspect-ratio: 1 / 1;
+      border-radius: 7px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__ClassList {
+    background-color: $color-ternary;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  }
+}

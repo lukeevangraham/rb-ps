@@ -46,8 +46,8 @@ const Programs = async () => {
       <main className={classes.Programs}>
         <div className={`row u-padding-y-large`}>
           <h1>Our Programs</h1>
-          {/* {console.log("PD: ", programsData.data.attributes)}
-          {console.log("HD: ", homeData.data.attributes.Sections)} */}
+          {/* {console.log("PD: ", programsData.data.attributes)} */}
+          {/* {console.log("HD: ", homeData.data.attributes.Sections)} */}
           {homeData.data.attributes.Sections.filter(
             (section) => section.Heading === "Our Programs"
           ).map((section) => (
