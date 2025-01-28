@@ -6,8 +6,17 @@ const renderClassTimes = (oldTime, increment) => {
   const startTime = new Date();
   startTime.setHours(oldTime.split(":")[0], oldTime.split(":")[1]);
 
-  const endTime = new Date(startTime);
-  endTime.setHours(endTime.getHours() + increment);
+  let endTime = new Date(startTime);
+
+  if (increment % 1 !== 0) {
+    const multiplier = (increment + "").split(".")[1] * 0.1;
+    endTime.setHours(endTime.getHours() + (increment + "").split(".")[0]);
+    const newEndTime = new Date(endTime.getTime() + ((60 * multiplier) * 60000));
+    endTime = newEndTime
+  } else {
+    endTime.setHours(endTime.getHours() + increment);
+  }
+
   return (
     <div
       className={`${classes.ClassList__Time} ${classes.ClassList__Body}`}
