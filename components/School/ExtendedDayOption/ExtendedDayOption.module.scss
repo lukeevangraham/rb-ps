@@ -3,13 +3,31 @@
 .ExtendedDayOption {
   font-size: $default-font-size;
 
-  &__Overview {
-    // background-color: orangered;
-    line-height: 1.5;
+  &__Top {
+    display: flex;
+    gap: 1rem;
+
+    &__Overview {
+      // background-color: orangered;
+      line-height: 1.5;
+    }
+
+    &__Image {
+      position: relative;
+      flex: 0 1 35%;
+      aspect-ratio: 1 / 1;
+      border-radius: 7px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+      }
+    }
   }
 
   &__Detail {
     // background-color: orangered;
-    margin-bottom: 4rem;
+    background-color: $color-ternary;
+    // margin-bottom: 4rem;
   }
 }
