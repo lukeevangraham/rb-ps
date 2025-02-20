@@ -60,10 +60,10 @@ const ClassList = ({ program }) => (
             className={`${classes.ClassOption__Classes__Class} ${classes.ClassList__Body}`}
           >{`${item.dailyClassHours} hours -- ${item.numberOfDaysPerWeek}x a week`}</div>
           {renderClassTimes(item.startTime, item.dailyClassHours)}
-          <div className={classes.ClassList__Body}>{`$${numberWithCommas(
+          <div className={classes.ClassList__Body}><span className={classes.ClassList__DesktopHide}>Annual Tuition: </span> {`$${numberWithCommas(
             item.annualTuition
           )}`}</div>
-          <div className={classes.ClassList__Body}>{`$${numberWithCommas(
+          <div className={classes.ClassList__Body}><span className={classes.ClassList__DesktopHide}>Ten Equal Payments of: </span> {`$${numberWithCommas(
             item.annualTuition / 10
           )}`}</div>
         </React.Fragment>

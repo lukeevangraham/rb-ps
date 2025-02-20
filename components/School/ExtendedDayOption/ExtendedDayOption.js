@@ -29,56 +29,59 @@ const ExtendedDay = async ({ id }) => {
       <main className={classes.ExtendedDayOption}>
         {/* <div className="u-padding-y-large"> */}
         <div className="u-padding-y-large">
-        <div className="row">
-          <div className={`${classes.ExtendedDayOption__Top}`}>
-            <div className="u-max-width-p">
-              <h1>{extendedOptionData.Name}</h1>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: extendedOptionData.Summary,
-                }}
-              />
-              <div
-                className={`u-margin-bottom-medium ${classes.ExtendedDayOption__Top__Overview}`}
-              >
-                {extendedOptionData.Overview}
+          <div className="row">
+            <div className={`${classes.ExtendedDayOption__Top}`}>
+              <div className="u-max-width-p">
+                <h1>{extendedOptionData.Name}</h1>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: extendedOptionData.Summary,
+                  }}
+                />
+                <div
+                  className={`u-margin-bottom-medium ${classes.ExtendedDayOption__Top__Overview}`}
+                >
+                  {extendedOptionData.Overview}
+                </div>
               </div>
-            </div>
-            <div className={classes.ExtendedDayOption__Top__Image}>
-              <Image
-                src={extendedOptionData.image.data[0].attributes.url}
-                alt={
-                  extendedOptionData.image.data[0].attributes.alternativeText
-                    ? extendedOptionData.image.data[0].attributes
-                        .alternativeText
-                    : "Kids eating food"
-                }
-                fill
-              />
+              <div className={classes.ExtendedDayOption__Top__Image}>
+                <Image
+                  src={extendedOptionData.image.data[0].attributes.url}
+                  alt={
+                    extendedOptionData.image.data[0].attributes.alternativeText
+                      ? extendedOptionData.image.data[0].attributes
+                          .alternativeText
+                      : "Kids eating food"
+                  }
+                  fill
+                />
+              </div>
             </div>
           </div>
         </div>
-        </div>
         <div className={classes.ExtendedDayOption__Detail}>
-          <div className="u-max-width-p u-padding-y-large">
-            <div
-              className={` u-margin-bottom-medium`}
-              dangerouslySetInnerHTML={{
-                __html: extendedOptionData.Detail,
-              }}
-            />
-            {/* {extendedOptionData.button ? (
-                <Button button={extendedOptionData.button} />
-                ) : null} */}
-            {extendedOptionData.Calendar && extendedOptionData.Calendar.data ? (
-              <Button
-                button={{
-                  text: extendedOptionData.Calendar.data.attributes.name,
-                  url: extendedOptionData.Calendar.data.attributes.url,
-                  newTab: true,
+          <div className="row">
+            <div className="u-max-width-p u-padding-y-large">
+              <div
+                className={` u-margin-bottom-medium`}
+                dangerouslySetInnerHTML={{
+                  __html: extendedOptionData.Detail,
                 }}
               />
-            ) : null}
+              {/* {extendedOptionData.button ? (
+                <Button button={extendedOptionData.button} />
+                ) : null} */}
+              {extendedOptionData.Calendar &&
+              extendedOptionData.Calendar.data ? (
+                <Button
+                  button={{
+                    text: extendedOptionData.Calendar.data.attributes.name,
+                    url: extendedOptionData.Calendar.data.attributes.url,
+                    newTab: true,
+                  }}
+                />
+              ) : null}
+            </div>
           </div>
         </div>
         {/* </div> */}
