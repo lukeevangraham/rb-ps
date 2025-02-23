@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import NavigationItem from "./Navigation Item/Navigation Item";
+import Button from "../../Button/Button";
 import Link from "next/link";
 
 import classes from "./Navigation Items.module.scss";
@@ -45,7 +46,14 @@ const NavigationItems = ({ links, button }) => {
               : null}
           </React.Fragment>
         ))}
+        {button ? (
+          <div className={classes.Nav__List__ButtonWrap}>
+            {" "}
+            <Button button={button} />
+          </div>
+        ) : null}
       </ul>
+      {console.log("Button: ", button)}
 
       {parentsClicked ? (
         parentMenu("toolbar")

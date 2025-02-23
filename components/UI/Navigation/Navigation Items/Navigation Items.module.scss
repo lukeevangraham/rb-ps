@@ -41,6 +41,25 @@
         }
       }
     }
+
+    &__ButtonWrap {
+      @include respond(tab-port) {
+        margin: 3rem 0 0 0;
+      }
+
+      a {
+        padding: 1.5rem 1.5rem;
+        font-size: 1.92rem;
+
+        @include respond(tab-land) {
+          padding: 1.5rem 0.75rem;
+        }
+
+        @include respond(tab-port) {
+          background-color: $color-quaternary-dark;
+        }
+      }
+    }
   }
 
   &__MegaMenu {

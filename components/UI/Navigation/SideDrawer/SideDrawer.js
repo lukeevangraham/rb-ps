@@ -28,7 +28,7 @@ const SideDrawer = ({ open, closed, global }) => (
           </div>
         </div>
       </Link>
-      <NavigationItems links={global.Navbar.Links} />
+      <NavigationItems links={global.Navbar.Links} button={global.Navbar.Button} />
       {/* <div className={classes.SideDrawer__Nav}>
         <ul>
           {global.Navbar.Links.map((link) => (

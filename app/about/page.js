@@ -150,6 +150,12 @@ export default async function AboutUs() {
               </div>
             </div>
           </section>
+          {/* <section className="u-padding-y-large">
+            <div className="row">
+
+            <h2>Frequently Asked Questions</h2>
+            </div>
+          </section> */}
         </Layout>
       ) : (
         <div>Loading...</div>
