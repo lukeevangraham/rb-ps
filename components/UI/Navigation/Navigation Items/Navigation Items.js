@@ -53,7 +53,6 @@ const NavigationItems = ({ links, button }) => {
           </div>
         ) : null}
       </ul>
-      {console.log("Button: ", button)}
 
       {parentsClicked ? (
         parentMenu("toolbar")
