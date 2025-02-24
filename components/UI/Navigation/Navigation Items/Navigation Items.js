@@ -46,7 +46,6 @@ const NavigationItems = ({ links, button }) => {
               : null}
           </React.Fragment>
         ))}
-        {console.log("Button: ", button)}
         {button ? (
           <div className={classes.Nav__List__ButtonWrap}>
             {" "}

@@ -41,7 +41,7 @@ const TourForm = () => {
     case 200:
       theFormItself = (
         <div className={classes.Tour__Form__Success}>
-          <h3>Your information was successfully delivered</h3>
+          <h3>Your information was successfully delivered. Someone from our office will connect with you shortly to confirm your tour.</h3>
         </div>
       );
       break;
