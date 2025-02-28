@@ -14,7 +14,7 @@ const FAQs = ({ data, fromHome }) => (
             </div>
           ))}
         </div>
-        {fromHome ? <Link href={"/about#FAQs"}><h4>More FAQs</h4></Link> : null}
+        {fromHome ? <Link href={"/about#FAQs"}> <h4>More FAQs</h4></Link> : null}
       </div>
     </div>
   </section>

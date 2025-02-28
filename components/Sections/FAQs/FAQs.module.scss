@@ -6,16 +6,21 @@
   margin: auto;
 
   &__Group {
-
     & > * {
-
       margin-bottom: 6rem;
     }
   }
 
   h4 {
-    // text-decoration: underline;
-    border-bottom: 2px $color-primary solid;
+    color: $color-primary;
+    border-bottom: 1px solid $color-primary;
+    text-decoration: none;
+    transition: all 0.2s;
     width: fit-content;
+
+    &:hover {
+      color: $color-quaternary;
+      border-bottom: 1px solid $color-quaternary;
+    }
   }
 }
