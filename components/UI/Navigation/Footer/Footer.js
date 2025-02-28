@@ -38,7 +38,7 @@ const Footer = ({ global }) => (
           <div>
             <Link href="/about#Philosophy">Our Philosophy</Link>
           </div>
-          <div>FAQs</div>
+          <Link href="/about#FAQs">FAQs</Link>
           <div>
             <Link href="/about#OurStaff">Our Staff</Link>
           </div>

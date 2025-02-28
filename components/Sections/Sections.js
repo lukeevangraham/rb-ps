@@ -23,7 +23,7 @@ const sectionComponents = {
 };
 
 // DISPLAY A SECTION INDIVIDUALLY
-const Sections = ({ sectionData, fromProgramsPage, keyData }) => {
+const Sections = ({ sectionData, fromProgramsPage, fromHome, keyData }) => {
   const SectionComponent = sectionComponents[sectionData.__component];
 
   if (!SectionComponent) {
@@ -36,6 +36,7 @@ const Sections = ({ sectionData, fromProgramsPage, keyData }) => {
       data={sectionData}
       keyData={keyData}
       fromProgramsPage={fromProgramsPage ? fromProgramsPage : null}
+      fromHome={fromHome ? fromHome : null}
     />
   );
 };

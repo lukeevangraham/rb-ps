@@ -67,6 +67,7 @@ export default async function Home() {
               sectionData={section}
               keyData={index}
               fromProgramsPage={programsData.data.attributes}
+              fromHome={true}
             />
           </div>
         ))}

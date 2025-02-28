@@ -1,3 +1,5 @@
+@import "../../../styles/abstracts/variables.scss";
+
 .FAQs {
   // background-color: orangered;
   max-width: 70rem;
@@ -9,5 +11,11 @@
 
       margin-bottom: 6rem;
     }
+  }
+
+  h4 {
+    // text-decoration: underline;
+    border-bottom: 2px $color-primary solid;
+    width: fit-content;
   }
 }

@@ -1,7 +1,8 @@
 import classes from "./FAQs.module.scss";
+import Link from "next/link";
 
-const FAQs = ({ data }) => (
-  <section className={`${classes.QandA} u-padding-y-large`}>
+const FAQs = ({ data, fromHome }) => (
+  <section className={`${classes.QandA} u-padding-y-large`} id="FAQs">
     <div className="row">
       <div className={classes.FAQs}>
         <h2>{data.Heading}</h2>
@@ -13,6 +14,7 @@ const FAQs = ({ data }) => (
             </div>
           ))}
         </div>
+        {fromHome ? <Link href={"/about#FAQs"}><h4>More FAQs</h4></Link> : null}
       </div>
     </div>
   </section>
