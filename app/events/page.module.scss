@@ -1,3 +1,64 @@
+@import "../../styles/abstracts/variables.scss";
+
 .Events {
-    // background-color: orangered;
+  // background-color: orangered;
+
+  &__Group {
+    &__Event {
+      display: grid;
+      grid-template-columns: 20% 1fr 1fr;
+      gap: 2rem;
+
+      &__Date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__Day {
+          // background-color: orangered;
+          font-size: 5.375rem;
+          font-weight: 300;
+        }
+
+        &__Month {
+          font-size: $default-font-size;
+          font-weight: 700;
+        }
+      }
+
+      &__Info {
+        // display: flex;
+
+        &__Subhead {
+          display: flex;
+          gap: 4rem;
+          color: $color-grey;
+          padding-top: .7rem;
+          margin-bottom: 1.4rem;
+
+          & > * {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.7rem;
+          }
+
+          svg {
+            height: 1.7rem;
+            width: 1.7rem;
+            fill: $color-grey;
+          }
+        }
+      }
+
+      &__Image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }
