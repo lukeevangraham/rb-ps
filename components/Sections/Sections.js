@@ -5,6 +5,7 @@ const Hero = dynamic(() => import("../Sections/Hero/Hero"), { ssr: false });
 import HeadingAboveButton from "./HeadingAboveButton/HeadingAboveButton";
 import HeadingAboveCards from "./HeadingAboveCards/HeadingAboveCards";
 import HeadingAboveColumns from "./HeadingAboveColumns/HeadingAboveColumns";
+import HeadingAboveFiles from "./HeadingAboveFiles/HeadingAboveFiles";
 import ImageBesideText from "./ImageBesideText/ImageBesideText";
 import RichText from "./RichText/RichText";
 import Testimonies from "./Testimonies/Testimonies";
@@ -20,6 +21,7 @@ const sectionComponents = {
   "section.rich-text": RichText,
   "section.testimonies": Testimonies,
   "section.video-beside-text": VideoBesideText,
+  "section.heading-above-files": HeadingAboveFiles,
 };
 
 // DISPLAY A SECTION INDIVIDUALLY

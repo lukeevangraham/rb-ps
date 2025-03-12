@@ -67,18 +67,25 @@ const Events = async () => {
                       <svg>
                         <use xlinkHref="../images/sprite.svg#icon-clock" />{" "}
                       </svg>
-                  <div className={classes.Events__Group__Event__Info__Subhead__Time__MobileOnly}>
-                    {new Date(event.attributes.StartDate).toLocaleDateString(
-                      "en-US",
-                      { month: "short" }
-                    )}
-                  </div>
-                      <div className={classes.Events__Group__Event__Info__Subhead__Time__MobileOnly}>
-                    {new Date(event.attributes.StartDate).toLocaleDateString(
-                      "en-US",
-                      { day: "numeric" }
-                    )},
-                  </div>
+                      <div
+                        className={
+                          classes.Events__Group__Event__Info__Subhead__Time__MobileOnly
+                        }
+                      >
+                        {new Date(
+                          event.attributes.StartDate
+                        ).toLocaleDateString("en-US", { month: "short" })}
+                      </div>
+                      <div
+                        className={
+                          classes.Events__Group__Event__Info__Subhead__Time__MobileOnly
+                        }
+                      >
+                        {new Date(
+                          event.attributes.StartDate
+                        ).toLocaleDateString("en-US", { day: "numeric" })}
+                        ,
+                      </div>
                       <div>{event.attributes.Time}</div>
                     </div>
                     <div>
