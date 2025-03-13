@@ -17,30 +17,64 @@
       &__Date {
         flex: 0 1 20%;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        gap: 1rem;
+        justify-content: center;
+
+        // padding: 0 2rem;
+        // justify-content: space-between;
+        // flex-direction: column;
+        // align-items: center;
 
         @include respond(tab-port) {
           display: none;
         }
 
-        &__Day {
-          // background-color: orangered;
-          font-size: 5.375rem;
+        & > * {
+          // display: flex;
+          // flex-direction: column;
+          // align-items: center;
+          // justify-content: center;
+          display: grid;
+          // grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: min-content 1fr;
+
+          font-size: 4rem;
           font-weight: 300;
           color: $color-primary;
+
+          & > * {
+            &:first-child {
+              grid-row: 1 / 2;
+              font-size: 5.375rem;
+              font-weight: 300;
+              color: $color-primary;
+            }
+
+            &:nth-child(2) {
+              grid-row: 2 / 3;
+              font-size: $default-font-size;
+              font-weight: 700;
+              color: $color-black;
+              text-align: center;
+            }
+          }
         }
 
-        &__Month {
-          font-size: $default-font-size;
-          font-weight: 700;
-        }
+        // &__Day {
+        //   font-size: 5.375rem;
+        //   font-weight: 300;
+        //   color: $color-primary;
+        // }
+
+        // &__Month {
+        //   font-size: $default-font-size;
+        //   font-weight: 700;
+        // }
       }
 
       &__Info {
         flex: 1 1 30%;
         // display: flex;
-
 
         &__Subhead {
           display: flex;

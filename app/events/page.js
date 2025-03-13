@@ -38,22 +38,40 @@ const Events = async () => {
       <main className={`u-padding-y-large ${classes.Events}`}>
         <div className="row">
           <h1>Events</h1>
-          {console.log("E: ", eventsData.data[0].attributes)}
           <div className={classes.Events__Group}>
             {eventsData.data.map((event) => (
               <div key={event.id} className={classes.Events__Group__Event}>
                 <div className={classes.Events__Group__Event__Date}>
-                  <div className={classes.Events__Group__Event__Date__Day}>
-                    {new Date(event.attributes.StartDate).toLocaleDateString(
-                      "en-US",
-                      { day: "2-digit" }
-                    )}
+                  <div className={classes.Events__Group__Event__Date__Start}>
+                    <div>
+                      {new Date(event.attributes.StartDate).toLocaleDateString(
+                        "en-US",
+                        { day: "2-digit" }
+                      )}
+                    </div>
+                    <div>
+                      {new Date(event.attributes.StartDate).toLocaleDateString(
+                        "en-US",
+                        { month: "short" }
+                      )}
+                    </div>
                   </div>
-                  <div className={classes.Events__Group__Event__Date__Month}>
-                    {new Date(event.attributes.StartDate).toLocaleDateString(
-                      "en-US",
-                      { month: "short" }
-                    )}
+                  <div>
+                    <div>-</div>
+                  </div>
+                  <div className={classes.Events__Group__Event__Date__End}>
+                    <div>
+                      {new Date(event.attributes.EndDate).toLocaleDateString(
+                        "en-US",
+                        { day: "2-digit" }
+                      )}
+                    </div>
+                    <div>
+                      {new Date(event.attributes.EndDate).toLocaleDateString(
+                        "en-US",
+                        { month: "short" }
+                      )}
+                    </div>
                   </div>
                 </div>
                 <div className={classes.Events__Group__Event__Info}>
@@ -84,6 +102,33 @@ const Events = async () => {
                         {new Date(
                           event.attributes.StartDate
                         ).toLocaleDateString("en-US", { day: "numeric" })}
+                      </div>
+                      <div
+                        className={
+                          classes.Events__Group__Event__Info__Subhead__Time__MobileOnly
+                        }
+                      >
+                        -
+                      </div>
+                      <div
+                        className={
+                          classes.Events__Group__Event__Info__Subhead__Time__MobileOnly
+                        }
+                      >
+                        {new Date(event.attributes.EndDate).toLocaleDateString(
+                          "en-US",
+                          { month: "short" }
+                        )}
+                      </div>
+                      <div
+                        className={
+                          classes.Events__Group__Event__Info__Subhead__Time__MobileOnly
+                        }
+                      >
+                        {new Date(event.attributes.EndDate).toLocaleDateString(
+                          "en-US",
+                          { day: "numeric" }
+                        )}
                         ,
                       </div>
                       <div>{event.attributes.Time}</div>
