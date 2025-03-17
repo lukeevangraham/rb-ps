@@ -5,6 +5,7 @@ import HeadingAboveCards from "@/components/Sections/HeadingAboveCards/HeadingAb
 import Image from "next/image";
 
 import classes from "./page.module.scss";
+import { cache } from "react";
 
 // const eventsQuery = QueryString.stringify({
 //   populate: { Image: { populate: "*" } },
@@ -13,7 +14,7 @@ import classes from "./page.module.scss";
 const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
-    fetchAPI(`/ps-events?populate=*`),
+    fetchAPI(`/ps-events?populate=*`, { cache: "no-cache" }),
   ]);
 
   return res;
@@ -37,6 +38,7 @@ const Events = async () => {
     <Layout global={globalData.data.attributes}>
       <main className={`u-padding-y-large ${classes.Events}`}>
         <div className="row">
+          {console.log("E: ", eventsData.data[0].attributes)}
           <h1>Events</h1>
           <div className={classes.Events__Group}>
             {eventsData.data.map((event) => (
@@ -44,16 +46,14 @@ const Events = async () => {
                 <div className={classes.Events__Group__Event__Date}>
                   <div className={classes.Events__Group__Event__Date__Start}>
                     <div>
-                      {new Date(event.attributes.StartDate).toLocaleDateString(
-                        "en-US",
-                        { day: "2-digit" }
-                      )}
+                      {new Date(
+                        event.attributes.StartDate.replace(/-/g, "/")
+                      ).toLocaleDateString("en-US", { day: "2-digit" })}
                     </div>
                     <div>
-                      {new Date(event.attributes.StartDate).toLocaleDateString(
-                        "en-US",
-                        { month: "short" }
-                      )}
+                      {new Date(
+                        event.attributes.StartDate.replace(/-/g, "/")
+                      ).toLocaleDateString("en-US", { month: "short" })}
                     </div>
                   </div>
                   <div>
@@ -61,16 +61,14 @@ const Events = async () => {
                   </div>
                   <div className={classes.Events__Group__Event__Date__End}>
                     <div>
-                      {new Date(event.attributes.EndDate).toLocaleDateString(
-                        "en-US",
-                        { day: "2-digit" }
-                      )}
+                      {new Date(
+                        event.attributes.EndDate.replace(/-/g, "/")
+                      ).toLocaleDateString("en-US", { day: "2-digit" })}
                     </div>
                     <div>
-                      {new Date(event.attributes.EndDate).toLocaleDateString(
-                        "en-US",
-                        { month: "short" }
-                      )}
+                      {new Date(
+                        event.attributes.EndDate.replace(/-/g, "/")
+                      ).toLocaleDateString("en-US", { month: "short" })}
                     </div>
                   </div>
                 </div>
