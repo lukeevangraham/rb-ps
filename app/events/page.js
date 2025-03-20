@@ -145,11 +145,11 @@ const Events = async () => {
                   />
                 </div>
                 <div className={classes.Events__Group__Event__Image}>
-                  <Image
+                  {/* <Image
                     src={event.attributes.Image.data.attributes.url}
                     alt={event.attributes.Image.data.attributes.alternativeText}
                     fill
-                  />
+                  /> */}
                 </div>
 
                 {/* <div
