@@ -144,12 +144,15 @@ const Events = async () => {
                     }}
                   />
                 </div>
+                {console.log("HERE: ", event.attributes.Image)}
                 <div className={classes.Events__Group__Event__Image}>
-                  {/* <Image
-                    src={event.attributes.Image.data.attributes.url}
-                    alt={event.attributes.Image.data.attributes.alternativeText}
+                  <Image
+                    src={event.attributes.Image.data[0].attributes.url}
+                    alt={
+                      event.attributes.Image.data[0].attributes.alternativeText
+                    }
                     fill
-                  /> */}
+                  />
                 </div>
 
                 {/* <div
