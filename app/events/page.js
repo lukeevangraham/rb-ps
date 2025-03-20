@@ -38,7 +38,7 @@ const Events = async () => {
     <Layout global={globalData.data.attributes}>
       <main className={`u-padding-y-large ${classes.Events}`}>
         <div className="row">
-          {console.log("E: ", eventsData.data[0].attributes)}
+          {/* {console.log("E: ", eventsData.data[0].attributes)} */}
           <h1>Events</h1>
           <div className={classes.Events__Group}>
             {eventsData.data.map((event) => (
@@ -144,16 +144,33 @@ const Events = async () => {
                     }}
                   />
                 </div>
-                {console.log("HERE: ", event.attributes.Image)}
-                <div className={classes.Events__Group__Event__Image}>
-                  <Image
-                    src={event.attributes.Image.data[0].attributes.url}
-                    alt={
-                      event.attributes.Image.data[0].attributes.alternativeText
-                    }
-                    fill
-                  />
-                </div>
+                {event.attributes.Image.data.length ? (
+                  <div className={classes.Events__Group__Event__Images}>
+                    {event.attributes.Image.data.map((image) => (
+                      <div
+                        className={classes.Events__Group__Event__Images__Image}
+                      >
+                        <Image
+                          key={image.id}
+                          src={image.attributes.url}
+                          alt={image.attributes.alternativeText}
+                          fill
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className={classes.Events__Group__Event__Image}>
+                    <Image
+                      src={event.attributes.Image.data[0].attributes.url}
+                      alt={
+                        event.attributes.Image.data[0].attributes
+                          .alternativeText
+                      }
+                      fill
+                    />
+                  </div>
+                )}
 
                 {/* <div
                   dangerouslySetInnerHTML={{

@@ -116,6 +116,27 @@
           object-fit: cover;
         }
       }
+
+      &__Images {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        flex: 1 1 30%;
+        width: 100%;
+        display: flex;
+        gap: 0.5rem;
+
+        &__Image {
+          position: relative;
+          // height: 20px;
+          width: 50%;
+          border-radius: 6px;
+          overflow: hidden;
+
+          img {
+            object-fit: cover;
+          }
+        }
+      }
     }
   }
 }
