@@ -149,6 +149,7 @@ const Events = async () => {
                     {event.attributes.Image.data.map((image) => (
                       <div
                         className={classes.Events__Group__Event__Images__Image}
+                        key={image.id}
                       >
                         <Image
                           key={image.id}
