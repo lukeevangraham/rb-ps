@@ -26,7 +26,7 @@ export default function RootLayout({ children, modal }) {
         {children}
         {modal}
       </body>
-      <GoogleAnalytics gaId="G-FQ31JPPR0K" trackPageViews />
+      <GoogleAnalytics gaId="G-FQ31JPPR0K" />
     </html>
   );
 }

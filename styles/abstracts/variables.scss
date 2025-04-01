@@ -1,22 +1,24 @@
+@use "sass:color";
+
 // COLORS
 $color-primary: #2c854f;
-$color-primary-light: lighten($color-primary, 50);
-$color-primary-lighter: lighten($color-primary, 80);
-$color-primary-dark: darken($color-primary, 30);
+$color-primary-light: color.adjust($color-primary, $lightness: 50%);
+$color-primary-lighter: color.adjust($color-primary, $lightness: 80%);
+$color-primary-dark: color.adjust($color-primary, $lightness: -30%);
 
 $color-secondary: #abebc5;
-$color-secondary-dark: darken($color-secondary, 7.5);
-$color-secondary-darker: darken($color-secondary, 60);
+$color-secondary-dark: color.adjust($color-secondary, $lightness: -7.5%);
+$color-secondary-darker: color.adjust($color-secondary, $lightness: -60%);
 
 $color-ternary: #deffeb;
 
 $color-quaternary: #2b523b;
-$color-quaternary-dark: darken($color-quaternary, 10);
-$color-quaternary-darker: darken($color-quaternary, 15);
+$color-quaternary-dark: color.adjust($color-quaternary, $lightness: -10%);
+$color-quaternary-darker: color.adjust($color-quaternary, $lightness: -15%);
 
 $color-quinary: #abffcd;
-$color-quinary-light: lighten(#abffcd, 13.5);
-$color-quinary-lighter: lighten(#abffcd, 20);
+$color-quinary-light: color.adjust($color-quinary, $lightness: 13.5%);
+$color-quinary-lighter: color.adjust($color-quinary, $lightness: 20%);
 
 $color-grey-light-1: rgb(235, 235, 235);
 $color-grey-light: #cecece;
