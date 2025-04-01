@@ -1,4 +1,5 @@
 import { Lato } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Link from "next/link";
 
 import "../styles/globals.scss";
@@ -25,6 +26,7 @@ export default function RootLayout({ children, modal }) {
         {children}
         {modal}
       </body>
+      <GoogleAnalytics gaId="G-FQ31JPPR0K" trackPageViews />
     </html>
   );
 }
