@@ -19,7 +19,7 @@ const SideDrawer = ({ open, closed, global }) => (
           <div className={classes.SideDrawer__Brand__Logo}>
             <Image
               src={global.Navbar.Logo.data.attributes.url}
-              alt={global.Navbar.Logo.data.attributes.alternativeText}
+              alt="RBCPC Preschool logo"
               fill
             />
           </div>
@@ -28,7 +28,10 @@ const SideDrawer = ({ open, closed, global }) => (
           </div>
         </div>
       </Link>
-      <NavigationItems links={global.Navbar.Links} button={global.Navbar.Button} />
+      <NavigationItems
+        links={global.Navbar.Links}
+        button={global.Navbar.Button}
+      />
       {/* <div className={classes.SideDrawer__Nav}>
         <ul>
           {global.Navbar.Links.map((link) => (
