@@ -47,10 +47,10 @@ const NavigationItems = ({ links, button }) => {
           </React.Fragment>
         ))}
         {button ? (
-          <div className={classes.Nav__List__ButtonWrap}>
+          <li className={classes.Nav__List__ButtonWrap}>
             {" "}
             <Button button={button} />
-          </div>
+          </li>
         ) : null}
       </ul>
 
