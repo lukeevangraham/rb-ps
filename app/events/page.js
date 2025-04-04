@@ -22,12 +22,12 @@ const getData = async () => {
 
 export const metadata = {
   title: "Events",
-  // description:
-  //   "Learn about RBCPC Preschool's philosophy of celebrating individuality, fostering community, and sharing God's love. Discover their mission, values, and dedicated staff who nurture academic, social, and spiritual growth for children and families.",
+  description:
+    "​The RBCPC Preschool Events page provides information on upcoming activities and special events for preschool families, such as the Annual Preschool Art Show, Craft Fair and more.",
   openGraph: {
     title: "Events",
-    // description:
-    //   "Learn about RBCPC Preschool's philosophy of celebrating individuality, fostering community, and sharing God's love. Discover their mission, values, and dedicated staff who nurture academic, social, and spiritual growth for children and families.",
+    description:
+      "​The RBCPC Preschool Events page provides information on upcoming activities and special events for preschool families, such as the Annual Preschool Art Show, Craft Fair and more.",
   },
 };
 
