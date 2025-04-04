@@ -71,7 +71,7 @@ const Hero = ({ data }) => {
         <div className="row">
           {/* {console.log("Data", data.Button)} */}
           <div className={classes.Hero__Text}>
-            <div className={classes.Hero__Text__Headline}>{data.headline}</div>
+            <h1 className={classes.Hero__Text__Headline}>{data.headline}</h1>
             <div className={classes.Hero__Text__Subheading}>
               {data.subheading}
             </div>

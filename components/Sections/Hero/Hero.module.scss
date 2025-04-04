@@ -60,12 +60,18 @@
     // transform: translateY(-80%);
     // flex: 0 1 111%;
     // margin-top: 20rem;
-    font-size: 5.375rem;
-    font-weight: 300;
     z-index: 1;
     // padding-left: 6rem;
+    font-size: 5.375rem;
 
-    & > div {
+    &__Headline {
+      font-size: 5.375rem;
+      font-weight: 300;
+      // background-color: orangered;
+    }
+
+    & > div,
+    h1 {
       text-shadow: 0 0 15px $color-black, 0 0 15px $color-black,
         0 0 15px $color-black, 0 0 15px $color-black, 0 0 15px $color-black,
         0 0 15px $color-black, 0 0 15px $color-black, 0 0 15px $color-black;
