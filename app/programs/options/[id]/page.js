@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const option = await fetchAPI(
-    `/ps-programs-st?populate[extendedDayOptions][populate]=*&id=${params.id}`
+    `/ps-programs-st?populate[extendedDayOptions][populate]=*`
   );
 
   // console.log("Option: ", option.data.attributes.extendedDayOptions)

@@ -16,17 +16,6 @@ const getData = async () => {
   return res;
 };
 
-export const metadata = {
-  title: "Extended Day Options",
-  description:
-    "Learn about RBCPC Preschool's Extended Day options, including 6-hour classes, Lunch Bunch, and Early Drop-Off services. Flexible programs support busy schedules while enhancing the preschool experience for children.",
-  openGraph: {
-    title: "Extended Day Options",
-    description:
-      "Learn about RBCPC Preschool's Extended Day options, including 6-hour classes, Lunch Bunch, and Early Drop-Off services. Flexible programs support busy schedules while enhancing the preschool experience for children.",
-  },
-};
-
 const ExtendedDay = async ({ id }) => {
   const [globalData, programData] = await getData();
 
