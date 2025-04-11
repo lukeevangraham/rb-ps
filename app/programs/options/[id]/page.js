@@ -16,10 +16,24 @@ export async function generateMetadata({ params }) {
     `/ps-programs-st?populate[extendedDayOptions][populate]=*`
   );
 
-  // console.log("Option: ", option.data.attributes.extendedDayOptions)
-
-  console.log("Params: ", params.id);
-  console.log("Option: ", option.data.attributes.extendedDayOptions);
+  return {
+    title: option.data.attributes.extendedDayOptions[params.id - 2].Name,
+    description: option.data.attributes.extendedDayOptions[params.id - 2]
+      .Summary
+      ? option.data.attributes.extendedDayOptions[
+          params.id - 2
+        ].Summary.replace(/<[^>]*>?/gm, "")
+      : null,
+    openGraph: {
+      title: option.data.attributes.extendedDayOptions[params.id - 2].Name,
+      description: option.data.attributes.extendedDayOptions[params.id - 2]
+        .Summary
+        ? option.data.attributes.extendedDayOptions[
+            params.id - 2
+          ].Summary.replace(/<[^>]*>?/gm, "")
+        : null,
+    },
+  };
 
   // return {
   //   title: option.data.attributes.extendedDayOptions[params.id - 1].Name,
