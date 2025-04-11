@@ -12,7 +12,7 @@ const lato = Lato({
 });
 
 export const metadata = {
-  metadatBase: new URL("https://rbcpcpreschool.org"),
+  metadataBase: new URL("https://rbcpcpreschool.org"),
   title: {
     default: "RBCPC Preschool",
     template: "%s - RBCPC Preschool",
