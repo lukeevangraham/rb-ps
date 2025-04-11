@@ -12,24 +12,28 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
+  const param = await params;
+
   const option = await fetchAPI(
     `/ps-programs-st?populate[extendedDayOptions][populate]=*`
   );
 
+  // const prepData = await
+
   return {
-    title: option.data.attributes.extendedDayOptions[params.id - 2].Name,
-    description: option.data.attributes.extendedDayOptions[params.id - 2]
-      .Summary
-      ? option.data.attributes.extendedDayOptions[
-          params.id - 2
-        ].Summary.replace(/<[^>]*>?/gm, "")
+    title: option.data.attributes.extendedDayOptions[param.id - 2].Name,
+    description: option.data.attributes.extendedDayOptions[param.id - 2].Summary
+      ? option.data.attributes.extendedDayOptions[param.id - 2].Summary.replace(
+          /<[^>]*>?/gm,
+          ""
+        )
       : null,
     openGraph: {
-      title: option.data.attributes.extendedDayOptions[params.id - 2].Name,
-      description: option.data.attributes.extendedDayOptions[params.id - 2]
+      title: option.data.attributes.extendedDayOptions[param.id - 2].Name,
+      description: option.data.attributes.extendedDayOptions[param.id - 2]
         .Summary
         ? option.data.attributes.extendedDayOptions[
-            params.id - 2
+            param.id - 2
           ].Summary.replace(/<[^>]*>?/gm, "")
         : null,
     },
@@ -55,6 +59,9 @@ export async function generateMetadata({ params }) {
   // };
 }
 
-const ExtendedDayOption = ({ params }) => <ExtendedDay id={params.id} />;
+const ExtendedDayOption = async ({ params }) => {
+  const param = await params;
+  return <ExtendedDay id={param.id} />;
+};
 
 export default ExtendedDayOption;
