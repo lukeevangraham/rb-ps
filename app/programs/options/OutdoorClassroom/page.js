@@ -17,9 +17,19 @@ const getData = async () => {
   return res;
 };
 
+export const metadata = {
+  title: "Outdoor Classroom",
+  description:
+    "The Outdoor Classroom at RBCPC Preschool offers hands-on learning experiences for children enrolled in the 3's or 4/5's classes, allowing them to explore their outdoor environment. Session times are listed here and include Lunch Bunch. Families can sign up for multiple sessions during online registration.",
+  openGraph: {
+    title: "Outdoor Classroom",
+    description:
+      "The Outdoor Classroom at RBCPC Preschool offers hands-on learning experiences for children enrolled in the 3's or 4/5's classes, allowing them to explore their outdoor environment. Session times are listed here and include Lunch Bunch. Families can sign up for multiple sessions during online registration.",
+  },
+};
+
 const OutdoorClassroom = async () => {
   const [globalData, outdoorClassroomData] = await getData();
-
 
   return (
     <Layout global={globalData.data.attributes}>
@@ -72,7 +82,7 @@ const OutdoorClassroom = async () => {
             <OutdoorList
               data={
                 outdoorClassroomData.data.attributes.OutdoorClassroom
-      .OutdoorClassroomSession
+                  .OutdoorClassroomSession
               }
             />
             {/* <div className={classes.OutdoorClassroom__ClassList__List}>

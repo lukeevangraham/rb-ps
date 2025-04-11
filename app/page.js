@@ -39,6 +39,7 @@ const getData = async () => {
 };
 
 export const metadata = {
+  title: "RBCPC Preschool | Nurturing Growth Through Faith & Play",
   description:
     "Discover RBCPC Preschool, a nurturing environment that fosters academic, social, and spiritual growth for children aged 1-5. Offering parent-and-child classes, preschool programs, and extended care options, we celebrate each child's uniqueness while building community and sharing God's love.",
   openGraph: {
@@ -54,13 +55,12 @@ export default async function Home() {
 
   return (
     <Layout global={globalData.data.attributes}>
-        {homeData.data.attributes.NotificationBannerLinks ? (
-          <NotificationBanner
-            content={homeData.data.attributes.NotificationBannerLinks}
-          />
-        ) : null}
+      {homeData.data.attributes.NotificationBannerLinks ? (
+        <NotificationBanner
+          content={homeData.data.attributes.NotificationBannerLinks}
+        />
+      ) : null}
       <main className={classes.Home}>
-
         {homeData.data.attributes.Sections.map((section, index) => (
           <div key={index}>
             <Sections
