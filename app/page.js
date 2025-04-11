@@ -41,10 +41,10 @@ const getData = async () => {
 export const metadata = {
   title: "RBCPC Preschool | Nurturing Growth Through Faith & Play",
   description:
-    "Discover RBCPC Preschool, a nurturing environment that fosters academic, social, and spiritual growth for children aged 1-5. Offering parent-and-child classes, preschool programs, and extended care options, we celebrate each child's uniqueness while building community and sharing God's love.",
+    "RBCPC Preschool fosters academic, social, and spiritual growth for ages 1–5 with classes, extended care, and a loving, faith-based community.",
   openGraph: {
     description:
-      "Discover RBCPC Preschool, a nurturing environment that fosters academic, social, and spiritual growth for children aged 1-5. Offering parent-and-child classes, preschool programs, and extended care options, we celebrate each child's uniqueness while building community and sharing God's love.",
+      "RBCPC Preschool fosters academic, social, and spiritual growth for ages 1–5 with classes, extended care, and a loving, faith-based community.",
   },
 };
 
