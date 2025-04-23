@@ -10,29 +10,29 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
+  const { id } = await params;
+
   const selectedClass = await fetchAPI(
     `/ps-programs-st?${parentAndChildQuery}`
   );
 
   return {
-    title:
-      selectedClass.data.attributes.parentAndChildPrograms[params.id - 1].Title,
+    title: selectedClass.data.attributes.parentAndChildPrograms[id - 1].Title,
     description: selectedClass.data.attributes.parentAndChildPrograms[
-      params.id - 1
+      id - 1
     ].Overview.replace(/<[^>]*>?/gm, ""),
     openGraph: {
-      title:
-        selectedClass.data.attributes.parentAndChildPrograms[params.id - 1]
-          .Title,
+      title: selectedClass.data.attributes.parentAndChildPrograms[id - 1].Title,
       description: selectedClass.data.attributes.parentAndChildPrograms[
-        params.id - 1
+        id - 1
       ].Overview.replace(/<[^>]*>?/gm, ""),
     },
   };
 }
 
-const ParentAndChildProgram = ({ params }) => (
-  <ParentAndChildClass id={params.id} />
-);
+const ParentAndChildProgram = async ({ params }) => {
+  const { id } = await params;
+  return <ParentAndChildClass id={id} />;
+};
 
 export default ParentAndChildProgram;

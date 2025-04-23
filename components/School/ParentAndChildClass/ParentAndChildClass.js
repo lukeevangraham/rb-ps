@@ -52,6 +52,9 @@ const ParentAndChildClass = async ({ id }) => {
                     alt={
                       parentAndChildData.image.data[0].attributes
                         .alternativeText
+                        ? parentAndChildData.image.data[0].attributes
+                            .alternativeText
+                        : "Parent and child playing and learning"
                     }
                     fill
                   />
