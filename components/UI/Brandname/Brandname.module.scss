@@ -1,12 +1,26 @@
 @import "../../../styles/abstracts/variables.scss";
+@import "../../../styles/abstracts/mixins.scss";
 
 .Brandname {
-  // background-color: orangered;
   // font-size: 3.4rem;
   font-size: 4.25vmin;
+  // font-size: 3.7vw;
+  // font-size: 4.684rem;
   color: $color-white;
   padding-left: 1rem;
   // border-bottom: none;
+
+  @include respond("tab-port") {
+    font-size: 3.9rem;
+  }
+
+  @include respond("phone") {
+    font-size: 2.8rem;
+  }
+
+  @include respond("big-desktop") {
+    font-size: 4.684rem;
+  }
 }
 
 .FromFooter {
