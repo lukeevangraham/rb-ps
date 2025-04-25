@@ -39,7 +39,7 @@ const getData = async () => {
 };
 
 export const metadata = {
-  title: "RBCPC Preschool | Nurturing Growth Through Faith & Play",
+  title: "Nurturing Growth Through Faith & Play",
   description:
     "RBCPC Preschool fosters academic, social, and spiritual growth for ages 1–5 with classes, extended care, and a loving, faith-based community.",
   openGraph: {
