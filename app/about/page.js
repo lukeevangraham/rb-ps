@@ -47,6 +47,16 @@ export const metadata = {
     title: "About",
     description:
       "Learn about RBCPC Preschool's philosophy of celebrating individuality, fostering community, and sharing God's love. Discover their mission, values, and dedicated staff who nurture academic, social, and spiritual growth for children and families.",
+    url: "/about",
+    type: "website",
+    images: [
+      {
+        url: "/images/rbcpcPreschoolOG.jpg",
+        width: 1200,
+        height: 630,
+        alt: "RBCPC Preschool",
+      },
+    ],
   },
 };
 

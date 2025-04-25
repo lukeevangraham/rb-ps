@@ -21,6 +21,18 @@ export const metadata = {
   alternates: {
     canonical: "./",
   },
+  // openGraph: {
+  //   url: "https://rbcpcpreschool.org",
+  //   images: [
+  //     {
+  //       url: "/images/rbcpcPreschoolOG.jpg",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "RBCPC Preschool",
+  //     },
+  //   ],
+  //   type: "website",
+  // },
 };
 
 export default function RootLayout({ children, modal }) {
