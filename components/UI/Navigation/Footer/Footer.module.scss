@@ -76,6 +76,11 @@
     display: flex;
     justify-content: space-between;
 
+    @include respond(tab-port) {
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+
     & > div:first-child {
       font-size: 1.5rem;
       color: rgba($color-quaternary, 0.7);
