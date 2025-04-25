@@ -68,4 +68,39 @@
       }
     }
   }
+
+  &__Copyright {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba($color-primary, 0.4);
+    display: flex;
+    justify-content: space-between;
+
+    & > div:first-child {
+      font-size: 1.5rem;
+      color: rgba($color-quaternary, 0.7);
+    }
+
+    &__Social {
+      height: 3rem;
+      display: flex;
+      gap: 0.9rem;
+
+      a {
+        text-decoration: none;
+        border-bottom: 0;
+
+        svg {
+          height: 2.5rem;
+          width: 2.5rem;
+          fill: $color-quaternary;
+          transition: all 0.2s;
+
+          &:hover {
+            fill: $color-black;
+          }
+        }
+      }
+    }
+  }
 }

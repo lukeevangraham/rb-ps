@@ -100,6 +100,35 @@ const Footer = ({ global }) => (
         </div>
       </div>
     </div>
+    <div class="row">
+      <div className={classes.Footer__Copyright}>
+        <div>
+          Copyright © {new Date().getFullYear()} RBCPC Preschool, All rights
+          reserved
+        </div>
+        <div className={classes.Footer__Copyright__Social}>
+          <a
+            href="https://www.facebook.com/rbcpcpreschool"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+          >
+            <svg>
+              <use xlinkHref="../images/sprite.svg#icon-facebook" />{" "}
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/rbcpcpreschool/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg>
+              <use xlinkHref="../images/sprite.svg#icon-instagram" />{" "}
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 );
 
