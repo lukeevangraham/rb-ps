@@ -45,7 +45,6 @@ export const metadata = {
   openGraph: {
     description:
       "RBCPC Preschool fosters academic, social, and spiritual growth for ages 1–5 with classes, extended care, and a loving, faith-based community.",
-
     url: "/",
     images: [
       {

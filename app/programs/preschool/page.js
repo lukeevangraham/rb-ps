@@ -29,6 +29,16 @@ export const metadata = {
     title: "Preschool Options",
     description:
       "Discover RBCPC Preschool's programs for children aged 2 to 5, including specialized classes for 2-year-olds, 3-year-olds, and 4/5-year-olds/TK. Flexible schedules and nurturing environments foster growth and readiness for kindergarten.",
+    url: "/programs/preschool",
+    type: "website",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dzekujbym/image/upload/v1745624911/rbcpc_Prechool_OG_6efb2b8eec.jpg?updated_at=2025-04-25T23:48:31.780Z",
+        width: 1200,
+        height: 630,
+        alt: "RBCPC Preschool",
+      },
+    ],
   },
 };
 

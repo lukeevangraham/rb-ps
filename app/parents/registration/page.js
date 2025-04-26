@@ -32,6 +32,16 @@ export const metadata = {
     description:
       "Complete your child's enrollment at RBCPC Preschool with registration forms. Access essential packets for new and returning students, including detailed instructions for submission and record-keeping.",
   },
+  url: "/parents/registration",
+  type: "website",
+  images: [
+    {
+      url: "https://res.cloudinary.com/dzekujbym/image/upload/v1745624911/rbcpc_Prechool_OG_6efb2b8eec.jpg?updated_at=2025-04-25T23:48:31.780Z",
+      width: 1200,
+      height: 630,
+      alt: "RBCPC Preschool",
+    },
+  ],
 };
 
 const Registration = async () => {

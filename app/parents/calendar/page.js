@@ -30,6 +30,16 @@ export const metadata = {
     title: "Calendar",
     description:
       "Stay updated with RBCPC Preschool's calendar of events, important dates, and activities. Access a comprehensive schedule designed to keep parents informed and engaged in their child's educational journey.",
+    url: `/parents/calendar`,
+    type: "website",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dzekujbym/image/upload/v1745624911/rbcpc_Prechool_OG_6efb2b8eec.jpg?updated_at=2025-04-25T23:48:31.780Z",
+        width: 1200,
+        height: 630,
+        alt: "RBCPC Preschool",
+      },
+    ],
   },
 };
 

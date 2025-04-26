@@ -31,6 +31,16 @@ export const metadata = {
     title: "Parent Handbook",
     description:
       "Access the RBCPC Preschool Parent Handbook for essential guidelines, policies, and resources. Explore helpful links to documents covering snacks, schedules, and the complete handbook to ensure a smooth experience for you and your child.",
+    url: "/parents/handbook",
+    type: "website",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dzekujbym/image/upload/v1745624911/rbcpc_Prechool_OG_6efb2b8eec.jpg?updated_at=2025-04-25T23:48:31.780Z",
+        width: 1200,
+        height: 630,
+        alt: "RBCPC Preschool",
+      },
+    ],
   },
 };
 

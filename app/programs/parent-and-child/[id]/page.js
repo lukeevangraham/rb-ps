@@ -28,6 +28,16 @@ export async function generateMetadata({ params }) {
       description: selectedClass.data.attributes.parentAndChildPrograms[
         id - 1
       ].Overview.replace(/<[^>]*>?/gm, ""),
+      url: `/programs/parent-and-child/${id}`,
+      type: "website",
+      images: [
+        {
+          url: "https://res.cloudinary.com/dzekujbym/image/upload/v1745624911/rbcpc_Prechool_OG_6efb2b8eec.jpg?updated_at=2025-04-25T23:48:31.780Z",
+          width: 1200,
+          height: 630,
+          alt: "RBCPC Preschool",
+        },
+      ],
     },
   };
 }

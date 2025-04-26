@@ -14,13 +14,23 @@ const getData = async () => {
 };
 
 export const metadata = {
-  title: "Extended Day Options",
+  title: "Enrichment Options",
   description:
-    "Learn about RBCPC Preschool's Extended Day options, including 6-hour classes, Lunch Bunch, and Early Drop-Off services. Flexible programs support busy schedules while enhancing the preschool experience for children.",
+    "Learn about RBCPC Preschool's Enrichment options, including 6-hour classes, Lunch Bunch, and Early Drop-Off services. Flexible programs support busy schedules while enhancing the preschool experience for children.",
   openGraph: {
-    title: "Extended Day Options",
+    title: "Enrichment Options",
     description:
-      "Learn about RBCPC Preschool's Extended Day options, including 6-hour classes, Lunch Bunch, and Early Drop-Off services. Flexible programs support busy schedules while enhancing the preschool experience for children.",
+      "Learn about RBCPC Preschool's Enrichment options, including 6-hour classes, Lunch Bunch, and Early Drop-Off services. Flexible programs support busy schedules while enhancing the preschool experience for children.",
+    url: "/programs/options",
+    type: "website",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dzekujbym/image/upload/v1745624911/rbcpc_Prechool_OG_6efb2b8eec.jpg?updated_at=2025-04-25T23:48:31.780Z",
+        width: 1200,
+        height: 630,
+        alt: "RBCPC Preschool",
+      },
+    ],
   },
 };
 

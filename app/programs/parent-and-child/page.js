@@ -22,6 +22,16 @@ export const metadata = {
     title: "Parent & Child Class Options",
     description:
       "Join RBCPC Preschool's Parent and Child Classes to foster early learning and bonding with your 1- or 2-year-old. Explore fun, interactive sessions offered in fall and spring, designed for parents and toddlers to grow together.",
+    url: "/programs/parent-and-child",
+    type: "website",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dzekujbym/image/upload/v1745624911/rbcpc_Prechool_OG_6efb2b8eec.jpg?updated_at=2025-04-25T23:48:31.780Z",
+        width: 1200,
+        height: 630,
+        alt: "RBCPC Preschool",
+      },
+    ],
   },
 };
 

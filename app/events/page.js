@@ -28,6 +28,16 @@ export const metadata = {
     title: "Events",
     description:
       "​The RBCPC Preschool Events page provides information on upcoming activities and special events for preschool families, such as the Annual Preschool Art Show, Craft Fair and more.",
+    type: "website",
+    url: "https://www.rbcpcpreschool.org/events",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dzekujbym/image/upload/v1745624911/rbcpc_Prechool_OG_6efb2b8eec.jpg?updated_at=2025-04-25T23:48:31.780Z",
+        width: 1200,
+        height: 630,
+        alt: "Events",
+      },
+    ],
   },
 };
 

@@ -25,6 +25,16 @@ export const metadata = {
     title: "Outdoor Classroom",
     description:
       "The Outdoor Classroom at RBCPC Preschool offers hands-on learning experiences for children enrolled in the 3's or 4/5's classes, allowing them to explore their outdoor environment. Session times are listed here and include Lunch Bunch. Families can sign up for multiple sessions during online registration.",
+    url: "/programs/options/OutdoorClassroom",
+    type: "website",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dzekujbym/image/upload/v1745624911/rbcpc_Prechool_OG_6efb2b8eec.jpg?updated_at=2025-04-25T23:48:31.780Z",
+        width: 1200,
+        height: 630,
+        alt: "RBCPC Preschool",
+      },
+    ],
   },
 };
 
