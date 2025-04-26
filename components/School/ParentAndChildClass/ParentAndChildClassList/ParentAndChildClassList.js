@@ -51,8 +51,6 @@ const ParentAndChildClassList = ({ program }) => {
     })
     .join(" ");
 
-  console.log("Registration date: ", registrationDate);
-
   return (
     <div className={`u-padding-y-large ${classes.ParentAndChildClassList}`}>
       <div className="row">

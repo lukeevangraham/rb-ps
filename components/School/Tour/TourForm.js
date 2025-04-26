@@ -28,7 +28,7 @@ const TourForm = () => {
     });
 
     const result = await res.json();
-    console.log("RES: ", result);
+    // console.log("RES: ", result);
 
     result.status === 200 ? setMessageStatus(200) : null;
   };
@@ -41,7 +41,10 @@ const TourForm = () => {
     case 200:
       theFormItself = (
         <div className={classes.Tour__Form__Success}>
-          <h3>Your information was successfully delivered. Someone from our office will connect with you shortly to confirm your tour.</h3>
+          <h3>
+            Your information was successfully delivered. Someone from our office
+            will connect with you shortly to confirm your tour.
+          </h3>
         </div>
       );
       break;
@@ -91,12 +94,7 @@ const TourForm = () => {
             </label>
           </div>
           <div className={classes.Tour__Form__Group}>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
+            <input type="email" name="email" placeholder="Email" required />
             <label className={classes.Tour__Form__Group__Label} htmlFor="email">
               Email
             </label>
