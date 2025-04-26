@@ -13,11 +13,15 @@ const getData = async (id) => {
     populate: { Image: { populate: "*" } },
   });
 
-  const res = await Promise.all([fetchAPI(`/ps-staffs/?filters[id][$eq]=${id}&populate[Image][populate]=*`)]);
+  const res = await Promise.all([
+    fetchAPI(`/ps-staffs/?filters[id][$eq]=${id}&populate[Image][populate]=*`),
+  ]);
   return res;
 };
 
-const StaffMemberModal = async ({ params: { id } }) => {
+const StaffMemberModal = async ({ params }) => {
+  const { id } = await params;
+
   const [memberData] = await getData(id);
 
   return (
