@@ -1,14 +1,31 @@
+@import "../../../styles/abstracts/mixins";
+
 .ImageBesideText {
   display: flex;
   gap: 2rem;
   height: 40rem;
   margin: 10rem 0;
+
+  @include respond(tab-port) {
+    // gap: 0;
+    margin: 5rem 0;
+  }
   // align-items: end;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    height: auto;
+  }
 
   &__Image {
     flex: 0 0 40%;
     // background-color: orangered;
     padding: 3rem;
+
+    @include respond(tab-port) {
+      flex: unset;
+      height: 30rem;
+    }
 
     &__Frame {
       position: relative;
