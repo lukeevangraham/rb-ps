@@ -39,7 +39,10 @@
 
     &__Session {
       font-weight: 900;
-      margin-top: 2rem;
+
+      @include respond(tab-port) {
+        margin-top: 2rem;
+      }
     }
   }
   // }
