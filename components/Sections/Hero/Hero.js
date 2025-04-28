@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
 import Button from "@/components/UI/Button/Button";
 
@@ -71,18 +72,20 @@ const Hero = ({ data }) => {
         <div className="row">
           {/* {console.log("Data", data.Button)} */}
           <div className={classes.Hero__Text}>
-            <h1 className={classes.Hero__Text__Headline}>{data.headline}</h1>
-            <div className={classes.Hero__Text__Subheading}>
-              {data.subheading}
-            </div>
+            <Fade cascade damping={0.2} triggerOnce>
+              <h1 className={classes.Hero__Text__Headline}>{data.headline}</h1>
+              <div className={classes.Hero__Text__Subheading}>
+                {data.subheading}
+              </div>
 
-            {data.Button
-              ? data.Button.map((button) => (
-                  <div className={classes.Hero__Text__Button} key={button.id}>
-                    <Button button={button} />
-                  </div>
-                ))
-              : null}
+              {data.Button
+                ? data.Button.map((button) => (
+                    <div className={classes.Hero__Text__Button} key={button.id}>
+                      <Button button={button} />
+                    </div>
+                  ))
+                : null}
+            </Fade>
           </div>
           {/* <div className={classes.Hero__MainImage}>
             <Image

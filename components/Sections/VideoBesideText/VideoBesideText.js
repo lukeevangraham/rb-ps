@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Fade, Slide } from "react-awesome-reveal";
 
 import PlayIcon from "../../../public/images/play.svg";
 
@@ -29,6 +30,7 @@ const VideoBesideText = ({ data }) => (
             {/* </Link> */}
           </Link>
         </div>
+
         <div
           className={classes.VideoBesideText__Text}
           dangerouslySetInnerHTML={{ __html: data.text }}
