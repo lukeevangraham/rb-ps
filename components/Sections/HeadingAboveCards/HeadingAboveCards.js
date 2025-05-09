@@ -34,7 +34,6 @@ const HeadingAboveCards = ({ data, fromProgramsPage, keyData }) => (
 
       {/* {console.log("FPP: ", fromProgramsPage)} */}
 
-
       <div className={classes.Programs__Group}>
         {data.Cards.map((card) => (
           <div className={classes.Programs__Group__Program} key={card.id}>

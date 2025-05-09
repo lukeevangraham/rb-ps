@@ -38,7 +38,7 @@ const Contact = async () => {
     <>
       <Layout global={globalData.data.attributes}>
         <main className="u-padding-y-large">
-          <div class="row">
+          <div className="row">
             <h1>Contact Us</h1>
 
             <div className={classes.Form}>

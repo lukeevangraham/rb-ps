@@ -100,7 +100,7 @@ const Footer = ({ global }) => (
         </div>
       </div>
     </div>
-    <div class="row">
+    <div className="row">
       <div className={classes.Footer__Copyright}>
         <div>
           Copyright © {new Date().getFullYear()} RBCPC Preschool, All rights
