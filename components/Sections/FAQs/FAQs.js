@@ -8,7 +8,7 @@ const FAQs = ({ data, fromHome }) => (
       <div className={classes.FAQs}>
         <h2>{data.Heading}</h2>
         <div className={classes.FAQs__Group}>
-          <Fade cascade>
+          <Fade triggerOnce>
             {data.QandA.map((QandA) => (
               <div key={QandA.id}>
                 <h5>{QandA.Question}</h5>

@@ -22,6 +22,10 @@
     // background-color: orangered;
     padding: 3rem;
 
+    & > * {
+      height: 100%;
+    }
+
     @include respond(tab-port) {
       flex: unset;
       height: 30rem;

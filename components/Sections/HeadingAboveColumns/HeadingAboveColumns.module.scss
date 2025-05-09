@@ -10,12 +10,16 @@
     gap: 3rem;
     text-align: left;
 
-@include respond(tab-port) {
-  flex-direction: column;
-}
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+
+    & > * {
+      flex: 1 1 0;
+    }
 
     &__Column {
-      flex: 1 1 0;
+      // flex: 1 1 0;
       display: flex;
       flex-direction: column;
       // align-items: center;
