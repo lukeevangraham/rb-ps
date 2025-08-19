@@ -19,17 +19,23 @@ const StaffModal = ({ memberData }) => {
           <p>{memberData.attributes.Bio}</p>
         </div>
         <div className={classes.StaffModal__Image}>
-          <Image
-            src={memberData.attributes.Image.data.attributes.url}
-            alt={
-              memberData.attributes.Image.data.alternativeText
-                ? memberData.attributes.Image.data.alternativeText
-                : `Photo of ${memberData.attributes.FirstName} ${memberData.attributes.LastName}`
-            }
-            // width={285}
-            // height={300}
-            fill
-          />
+          {memberData.attributes.Image.data ? (
+            <Image
+              src={memberData.attributes.Image.data.attributes.url}
+              alt={
+                memberData.attributes.Image.data.alternativeText
+                  ? memberData.attributes.Image.data.alternativeText
+                  : `Photo of ${memberData.attributes.FirstName} ${memberData.attributes.LastName}`
+              }
+              // width={285}
+              // height={300}
+              fill
+            />
+          ) : (
+            <svg>
+              <use xlinkHref="../images/sprite.svg#icon-man" />
+            </svg>
+          )}
         </div>
       </div>
     </>

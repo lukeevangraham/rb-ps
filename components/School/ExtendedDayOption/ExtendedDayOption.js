@@ -9,7 +9,8 @@ const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
     fetchAPI(
-      `/ps-programs-st?populate[extendedDayOptions][populate]=*&populate[extendedDayOptions][Image][populate]=*`
+      `/ps-programs-st?populate[extendedDayOptions][populate]=*&populate[extendedDayOptions][Image][populate]=*`,
+      { next: { revalidate: 0 } }
     ),
   ]);
 
