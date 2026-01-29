@@ -10,7 +10,8 @@ const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
     fetchAPI(
-      `/ps-programs-st?populate[OutdoorClassroom][populate]=*&populate[OutdoorClassroom][Image][populate]=*`
+      `/ps-programs-st?populate[OutdoorClassroom][populate]=*&populate[OutdoorClassroom][Image][populate]=*`,
+      { next: { revalidate: 0 } },
     ),
   ]);
 
