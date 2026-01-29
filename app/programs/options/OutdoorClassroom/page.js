@@ -11,7 +11,7 @@ const getData = async () => {
     getGlobalInfo(),
     fetchAPI(
       `/ps-programs-st?populate[OutdoorClassroom][populate]=*&populate[OutdoorClassroom][Image][populate]=*`,
-      { next: { revalidate: 0 } },
+      { next: { revalidate: 60 } },
     ),
   ]);
 
