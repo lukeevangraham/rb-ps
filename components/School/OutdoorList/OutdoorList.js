@@ -2,8 +2,9 @@ import React from "react";
 
 import classes from "./OutdoorList.module.scss";
 
-const OutdoorList = ({ data }) => (
+const OutdoorList = ({ data, pricePerDay }) => (
   <div className={classes.OutdoorList}>
+    {console.log("OutdoorList data:", data)}
     <div className={classes.OutdoorList__Heading}></div>
     <div className={classes.OutdoorList__Heading}></div>
     <div className={classes.OutdoorList__Heading}></div>
@@ -18,14 +19,14 @@ const OutdoorList = ({ data }) => (
         </div>
         <div className={classes.OutdoorList__Body}>
           {new Date(
-            item.StartDate.replace(/-/g, "/").replace(/T.+/, "")
+            item.StartDate.replace(/-/g, "/").replace(/T.+/, ""),
           ).toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
           })}{" "}
           -{" "}
           {new Date(
-            item.EndDate.replace(/-/g, "/").replace(/T.+/, "")
+            item.EndDate.replace(/-/g, "/").replace(/T.+/, ""),
           ).toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
@@ -36,11 +37,11 @@ const OutdoorList = ({ data }) => (
         </div>
         <div className={classes.OutdoorList__Body}>
           <span className={classes.OutdoorList__DesktopHide}>Mon./Wed. </span> $
-          {item.ClassDays.split(" or ")[0] * 25}
+          {item.MondayWednesdayPrice}
         </div>
         <div className={classes.OutdoorList__Body}>
           <span className={classes.OutdoorList__DesktopHide}>Tue. </span> $
-          {item.ClassDays.split(" or ")[1] * 25}
+          {item.TuesdayOnlyPrice}
         </div>
       </React.Fragment>
     ))}
