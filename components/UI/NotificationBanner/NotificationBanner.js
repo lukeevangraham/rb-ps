@@ -14,12 +14,15 @@ const NotificationBanner = ({ content }) => {
 
   // console.log("SB: ", localStorage.getItem('showBanner'));
 
-
   return (
     <div className={classes.NotificationBanner}>
       {content.map((link, index) => (
         <div key={index}>
-          <a href={link.url} target={link.newTab ? "__blank" : "null"}>
+          <a
+            href={link.url}
+            target={link.newTab ? "_blank" : "_self"}
+            rel="noopener noreferrer"
+          >
             {link.text}
           </a>
         </div>

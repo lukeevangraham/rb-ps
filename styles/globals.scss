@@ -38,10 +38,22 @@ a {
   color: $color-primary;
   border-bottom: 1px solid $color-primary;
   text-decoration: none;
-  transition: all .2s;
+  transition:
+    color 0.2s,
+    border-color 0.2s; // Avoid 'all'
 
-  &:hover {
-    color: $color-quaternary;
+  // Only apply hover to devices that support it
+  @media (hover: hover) {
+    &:hover {
+      color: $color-quaternary;
+      border-bottom-color: $color-quaternary;
+    }
+  }
+
+  // Ensure immediate feedback on mobile without "sticking"
+  &:active {
+    opacity: 0.7;
+    transition: none;
   }
 }
 
@@ -52,4 +64,3 @@ a {
 main {
   background-color: $color-primary-lighter;
 }
-
