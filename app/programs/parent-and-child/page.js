@@ -5,11 +5,14 @@ import Link from "next/link";
 import { getGlobalInfo, fetchAPI, parentAndChildQuery } from "@/lib/api";
 
 import classes from "./page.module.scss";
+import next from "next";
 
 const getData = async () => {
   const res = await Promise.all([
     getGlobalInfo(),
-    fetchAPI(`/ps-programs-st?${parentAndChildQuery}`),
+    fetchAPI(`/ps-programs-st?${parentAndChildQuery}`, {
+      next: { revalidate: 60 },
+    }),
   ]);
   return res;
 };
@@ -59,7 +62,7 @@ const ParentAndChild = async () => {
                   <ParentAndChildClassList program={program} />
                 </div>
               </div>
-            )
+            ),
           )}
         </div>
       </main>
