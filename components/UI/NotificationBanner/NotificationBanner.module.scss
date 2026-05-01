@@ -10,12 +10,13 @@
   display: flex;
   // gap: 2rem;
   justify-content: center;
-  font-size: 1.9rem;
+  font-size: 1.75rem;
 
   & > * {
     flex: 0 1 33.33%;
     padding: 0 3rem;
     text-align: center;
+    text-wrap: balance;
     align-content: center;
     &:not(:first-child) {
       border-left: solid 1px $color-quaternary;
