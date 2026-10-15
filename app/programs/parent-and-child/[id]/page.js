@@ -1,6 +1,12 @@
 import { fetchAPI, parentAndChildQuery } from "@/lib/api";
 import ParentAndChildClass from "@/components/School/ParentAndChildClass/ParentAndChildClass";
 
+// 1. Force dynamic rendering so Vercel doesn't lock these pages into build-time HTML
+export const dynamic = "force-dynamic";
+
+// 2. Fetch fresh data on every request (or set a low revalidate time like 60)
+export const revalidate = 0;
+
 export async function generateStaticParams() {
   const programData = await fetchAPI(`/ps-programs-st?${parentAndChildQuery}`, {
     cache: "no-store",
@@ -15,19 +21,26 @@ export async function generateMetadata({ params }) {
   const { id } = await params;
 
   const selectedClass = await fetchAPI(
-    `/ps-programs-st?${parentAndChildQuery}`
+    `/ps-programs-st?${parentAndChildQuery}`,
+    { cache: "no-store" },
   );
 
   return {
-    title: selectedClass.data.attributes.parentAndChildPrograms[id - 1].Title,
-    description: selectedClass.data.attributes.parentAndChildPrograms[
-      id - 1
-    ].Overview.replace(/<[^>]*>?/gm, ""),
-    openGraph: {
-      title: selectedClass.data.attributes.parentAndChildPrograms[id - 1].Title,
-      description: selectedClass.data.attributes.parentAndChildPrograms[
+    title:
+      selectedClass.data.attributes.parentAndChildPrograms[id - 1]?.Title ??
+      "Parent & Child Class",
+    description:
+      selectedClass.data.attributes.parentAndChildPrograms[
         id - 1
-      ].Overview.replace(/<[^>]*>?/gm, ""),
+      ]?.Overview?.replace(/<[^>]*>?/gm, "") ?? "",
+    openGraph: {
+      title:
+        selectedClass.data.attributes.parentAndChildPrograms[id - 1]?.Title ??
+        "Parent & Child Class",
+      description:
+        selectedClass.data.attributes.parentAndChildPrograms[
+          id - 1
+        ]?.Overview?.replace(/<[^>]*>?/gm, "") ?? "",
       url: `/programs/parent-and-child/${id}`,
       type: "website",
       images: [
